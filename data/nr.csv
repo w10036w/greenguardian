@@ -1,0 +1,4537 @@
+country,x,y
+Aruba,1994,0.001851767
+Aruba,1995,0.001873982
+Aruba,1996,0.00202384
+Aruba,1997,0.001699988
+Aruba,1998,0.001724594
+Aruba,1999,0.001261142
+Aruba,2000,0.00120327
+Aruba,2001,0.001370844
+Aruba,2002,0.001722948
+Aruba,2003,0.002077798
+Aruba,2004,0.002014873
+Aruba,2005,0.002141748
+Aruba,2006,0.002647675
+Aruba,2007,0.002922053
+Aruba,2008,0.002983697
+Aruba,2009,0.003916672
+Aruba,2010,0.00378301
+Aruba,2011,0.004410108
+Afghanistan,2001,2.718432262
+Afghanistan,2002,2.237168656
+Afghanistan,2003,2.193836811
+Afghanistan,2004,1.695922658
+Afghanistan,2005,1.42473012
+Afghanistan,2006,1.897871205
+Afghanistan,2007,1.970593314
+Afghanistan,2008,2.130239658
+Afghanistan,2009,1.662857035
+Afghanistan,2010,1.728279519
+Afghanistan,2011,1.680947321
+Afghanistan,2012,1.247582327
+Angola,1993,41.8171957
+Angola,1994,55.22221059
+Angola,1995,55.37357586
+Angola,1996,51.31062332
+Angola,1997,48.50056247
+Angola,1998,31.9696016
+Angola,1999,49.96358608
+Angola,2000,65.03671027
+Angola,2001,52.57309083
+Angola,2002,46.0537996
+Angola,2003,49.15317657
+Angola,2004,55.28645062
+Angola,2005,71.60536177
+Angola,2006,66.37878672
+Angola,2007,60.62104368
+Angola,2008,67.43752054
+Angola,2009,38.72942382
+Angola,2010,46.17956617
+Angola,2011,45.52800151
+Angola,2012,42.46325355
+Albania,1993,5.924703962
+Albania,1994,2.942333436
+Albania,1995,2.527271733
+Albania,1996,2.47865005
+Albania,1997,2.195940769
+Albania,1998,0.974810442
+Albania,1999,1.031862581
+Albania,2000,1.670759544
+Albania,2001,1.154553848
+Albania,2002,1.3175441
+Albania,2003,1.203658213
+Albania,2004,1.465543652
+Albania,2005,1.770057282
+Albania,2006,2.487619435
+Albania,2007,3.481049413
+Albania,2008,3.284329651
+Albania,2009,2.034254503
+Albania,2010,3.450129153
+Albania,2011,5.285512253
+Albania,2012,5.647743062
+Andorra,1993,0
+Andorra,1994,0
+Andorra,1995,0
+Andorra,1996,0
+Andorra,1997,0
+Andorra,1998,0
+Andorra,1999,0
+Andorra,2000,0
+Andorra,2001,0
+Andorra,2002,0
+Andorra,2003,0
+Andorra,2004,0
+Andorra,2005,0
+Andorra,2006,0
+Andorra,2007,0
+Andorra,2008,0
+Arab World,1993,22.76949016
+Arab World,1994,20.91761926
+Arab World,1995,21.55835678
+Arab World,1996,24.22022411
+Arab World,1997,21.46203001
+Arab World,1998,14.61586513
+Arab World,1999,17.28127052
+Arab World,2000,28.47486657
+Arab World,2001,24.44699169
+Arab World,2002,22.56138683
+Arab World,2003,27.96467795
+Arab World,2004,33.69743334
+Arab World,2005,42.14947604
+Arab World,2006,42.17168367
+Arab World,2007,38.94461794
+Arab World,2008,45.27583821
+Arab World,2009,27.56977125
+Arab World,2010,30.0119894
+Arab World,2011,34.72793779
+Arab World,2012,32.81086571
+United Arab Emirates,1993,21.33559314
+United Arab Emirates,1994,19.06633764
+United Arab Emirates,1995,18.97003186
+United Arab Emirates,1996,21.73930704
+United Arab Emirates,1997,19.50790898
+United Arab Emirates,1998,13.03081296
+United Arab Emirates,1999,14.13506804
+United Arab Emirates,2000,22.92253249
+United Arab Emirates,2001,19.0381477
+United Arab Emirates,2002,16.50403259
+United Arab Emirates,2003,20.49366814
+United Arab Emirates,2004,23.12672316
+United Arab Emirates,2005,28.28608982
+United Arab Emirates,2006,28.58954057
+United Arab Emirates,2007,26.54721266
+United Arab Emirates,2008,30.56781714
+United Arab Emirates,2009,18.81248561
+United Arab Emirates,2010,21.68610133
+United Arab Emirates,2011,25.57665714
+United Arab Emirates,2012,23.83330763
+Argentina,1993,2.084586408
+Argentina,1994,1.556297561
+Argentina,1995,1.837192495
+Argentina,1996,2.329076649
+Argentina,1997,2.135788436
+Argentina,1998,1.421397222
+Argentina,1999,1.761817043
+Argentina,2000,3.502016397
+Argentina,2001,3.233017819
+Argentina,2002,7.503739279
+Argentina,2003,8.144343531
+Argentina,2004,8.886148682
+Argentina,2005,10.65307658
+Argentina,2006,10.12280937
+Argentina,2007,8.361461007
+Argentina,2008,9.345964371
+Argentina,2009,5.278816922
+Argentina,2010,5.184934085
+Argentina,2011,5.227992224
+Argentina,2012,4.514184465
+Armenia,1993,0.022802051
+Armenia,1994,0.349831157
+Armenia,1995,0.686422405
+Armenia,1996,0.481747411
+Armenia,1997,0.604732437
+Armenia,1998,0.186332569
+Armenia,1999,0.171212919
+Armenia,2000,0.422815812
+Armenia,2001,0.406440519
+Armenia,2002,0.578221361
+Armenia,2003,0.586009913
+Armenia,2004,1.025036482
+Armenia,2005,0.926928268
+Armenia,2006,1.823446548
+Armenia,2007,1.317400724
+Armenia,2008,1.699404521
+Armenia,2009,2.23990014
+Armenia,2010,3.745952429
+Armenia,2011,4.996072194
+Armenia,2012,5.216660743
+Antigua and Barbuda,1993,0
+Antigua and Barbuda,1994,0
+Antigua and Barbuda,1995,0
+Antigua and Barbuda,1996,0
+Antigua and Barbuda,1997,0
+Antigua and Barbuda,1998,0
+Antigua and Barbuda,1999,0
+Antigua and Barbuda,2000,0
+Antigua and Barbuda,2001,0
+Antigua and Barbuda,2002,0
+Antigua and Barbuda,2003,0
+Antigua and Barbuda,2004,0
+Antigua and Barbuda,2005,0
+Antigua and Barbuda,2006,0
+Antigua and Barbuda,2007,0
+Antigua and Barbuda,2008,0
+Antigua and Barbuda,2009,0
+Antigua and Barbuda,2010,0
+Antigua and Barbuda,2011,0
+Antigua and Barbuda,2012,0
+Australia,1993,2.587680884
+Australia,1994,2.435559033
+Australia,1995,2.34468912
+Australia,1996,2.465969241
+Australia,1997,2.198436457
+Australia,1998,2.257055777
+Australia,1999,2.178212737
+Australia,2000,3.681715972
+Australia,2001,3.860570465
+Australia,2002,3.686167386
+Australia,2003,3.953014533
+Australia,2004,4.5989666
+Australia,2005,5.928043639
+Australia,2006,7.075413114
+Australia,2007,9.44715902
+Australia,2008,11.12118039
+Australia,2009,6.716020398
+Australia,2010,9.765221374
+Australia,2011,10.56206146
+Australia,2012,8.003753567
+Austria,1993,0.379155272
+Austria,1994,0.374051124
+Austria,1995,0.302896161
+Austria,1996,0.328593223
+Austria,1997,0.345825366
+Austria,1998,0.303541268
+Austria,1999,0.315850305
+Austria,2000,0.424075506
+Austria,2001,0.438103061
+Austria,2002,0.37205663
+Austria,2003,0.384983064
+Austria,2004,0.328611457
+Austria,2005,0.394624829
+Austria,2006,0.442138779
+Austria,2007,0.486044518
+Austria,2008,0.575745671
+Austria,2009,0.35153341
+Austria,2010,0.450098142
+Austria,2011,0.433610532
+Austria,2012,0.460145425
+Azerbaijan,1993,32.81582901
+Azerbaijan,1994,33.75030286
+Azerbaijan,1995,38.92923815
+Azerbaijan,1996,47.08229205
+Azerbaijan,1997,34.09002999
+Azerbaijan,1998,21.59694516
+Azerbaijan,1999,32.38763046
+Azerbaijan,2000,55.70468995
+Azerbaijan,2001,45.18367751
+Azerbaijan,2002,39.8085692
+Azerbaijan,2003,43.65022307
+Azerbaijan,2004,48.41545815
+Azerbaijan,2005,65.08098447
+Azerbaijan,2006,68.16586828
+Azerbaijan,2007,62.85581757
+Azerbaijan,2008,63.8046593
+Azerbaijan,2009,42.75313805
+Azerbaijan,2010,46.13686466
+Azerbaijan,2011,44.01115745
+Azerbaijan,2012,38.53604934
+Burundi,1993,12.61917693
+Burundi,1994,14.6134013
+Burundi,1995,20.04065766
+Burundi,1996,25.28328415
+Burundi,1997,21.49758889
+Burundi,1998,23.06689203
+Burundi,1999,14.02893029
+Burundi,2000,12.27157553
+Burundi,2001,16.32666905
+Burundi,2002,21.67497803
+Burundi,2003,29.53918072
+Burundi,2004,23.35638276
+Burundi,2005,20.37747161
+Burundi,2006,23.82809029
+Burundi,2007,30.40027073
+Burundi,2008,32.54970119
+Burundi,2009,28.18123256
+Burundi,2010,27.22197305
+Burundi,2011,26.08564352
+Burundi,2012,23.38658135
+Belgium,1993,0.000121465
+Belgium,1994,2.37E-05
+Belgium,1995,4.79E-06
+Belgium,1996,5.46E-05
+Belgium,1997,4.12E-06
+Belgium,1998,0
+Belgium,1999,7.25E-06
+Belgium,2000,0.084900477
+Belgium,2001,0.084264815
+Belgium,2002,0.077551537
+Belgium,2003,0.063838599
+Belgium,2004,0.04459615
+Belgium,2005,0.047478948
+Belgium,2006,0.056535255
+Belgium,2007,0.054815452
+Belgium,2008,0.064661018
+Belgium,2009,0.049028573
+Belgium,2010,0.064552875
+Belgium,2011,0.058862004
+Belgium,2012,0.072425879
+Benin,1993,4.956576406
+Benin,1994,7.726352825
+Benin,1995,7.732331667
+Benin,1996,7.474045688
+Benin,1997,7.349885555
+Benin,1998,6.454020122
+Benin,1999,4.370277542
+Benin,2000,4.043654396
+Benin,2001,3.962230975
+Benin,2002,4.470874176
+Benin,2003,4.47169179
+Benin,2004,3.597124377
+Benin,2005,3.475338317
+Benin,2006,4.451573029
+Benin,2007,4.976921802
+Benin,2008,5.224457016
+Benin,2009,4.850000377
+Benin,2010,5.470693818
+Benin,2011,5.402672162
+Benin,2012,4.942459911
+Burkina Faso,1993,6.960923927
+Burkina Faso,1994,10.05551149
+Burkina Faso,1995,11.620477
+Burkina Faso,1996,11.33725198
+Burkina Faso,1997,11.59244481
+Burkina Faso,1998,9.906193428
+Burkina Faso,1999,4.719761919
+Burkina Faso,2000,4.928184139
+Burkina Faso,2001,4.681827651
+Burkina Faso,2002,5.642635339
+Burkina Faso,2003,5.305082868
+Burkina Faso,2004,4.722286843
+Burkina Faso,2005,5.437814966
+Burkina Faso,2006,7.078269161
+Burkina Faso,2007,8.486382704
+Burkina Faso,2008,9.956138748
+Burkina Faso,2009,10.95223898
+Burkina Faso,2010,15.3093666
+Burkina Faso,2011,19.83766839
+Burkina Faso,2012,22.12350349
+Bangladesh,1993,2.803116314
+Bangladesh,1994,2.722017267
+Bangladesh,1995,2.732105281
+Bangladesh,1996,4.986387269
+Bangladesh,1997,2.367190669
+Bangladesh,1998,2.405735399
+Bangladesh,1999,2.421692411
+Bangladesh,2000,3.383296964
+Bangladesh,2001,3.497153781
+Bangladesh,2002,2.510582514
+Bangladesh,2003,4.106068513
+Bangladesh,2004,4.368743151
+Bangladesh,2005,6.194770096
+Bangladesh,2006,7.165571188
+Bangladesh,2007,6.977261996
+Bangladesh,2008,8.772093343
+Bangladesh,2009,4.518414658
+Bangladesh,2010,5.104491321
+Bangladesh,2011,4.767120426
+Bangladesh,2012,4.20189935
+Bulgaria,1993,1.785882726
+Bulgaria,1994,2.065823366
+Bulgaria,1995,1.99859494
+Bulgaria,1996,2.898063869
+Bulgaria,1997,2.160215063
+Bulgaria,1998,1.237271507
+Bulgaria,1999,1.58925738
+Bulgaria,2000,1.679561888
+Bulgaria,2001,1.218486789
+Bulgaria,2002,1.343320334
+Bulgaria,2003,1.282274501
+Bulgaria,2004,1.622403041
+Bulgaria,2005,1.888730774
+Bulgaria,2006,3.11734491
+Bulgaria,2007,2.578999613
+Bulgaria,2008,2.516836485
+Bulgaria,2009,1.711253877
+Bulgaria,2010,2.590181896
+Bulgaria,2011,3.124610021
+Bulgaria,2012,2.800823935
+Bahrain,1993,23.58458034
+Bahrain,1994,19.90957652
+Bahrain,1995,20.56710036
+Bahrain,1996,25.26802939
+Bahrain,1997,23.06477457
+Bahrain,1998,15.76664134
+Bahrain,1999,18.21865286
+Bahrain,2000,26.10481078
+Bahrain,2001,22.8136632
+Bahrain,2002,20.0259745
+Bahrain,2003,23.52859697
+Bahrain,2004,25.13300821
+Bahrain,2005,31.442165
+Bahrain,2006,30.96323223
+Bahrain,2007,28.86870337
+Bahrain,2008,34.98125376
+Bahrain,2009,21.12450176
+Bahrain,2010,22.66894521
+Bahrain,2011,26.55368571
+Bahrain,2012,23.73788757
+"Bahamas, The",1993,0.192701401
+"Bahamas, The",1994,0.188564357
+"Bahamas, The",1995,0.197931406
+"Bahamas, The",1996,0.19660252
+"Bahamas, The",1997,0.137340826
+"Bahamas, The",1998,0.029312614
+"Bahamas, The",1999,0.022643369
+"Bahamas, The",2000,0.021067145
+"Bahamas, The",2001,0.02055922
+"Bahamas, The",2002,0.022257578
+"Bahamas, The",2003,0.025292397
+"Bahamas, The",2004,0.022150431
+"Bahamas, The",2005,0.021881231
+"Bahamas, The",2006,0.026423968
+"Bahamas, The",2007,0.029445601
+"Bahamas, The",2008,0.032585056
+"Bahamas, The",2009,0.034151316
+"Bahamas, The",2010,0.033619312
+"Bahamas, The",2011,0.037419678
+"Bahamas, The",2012,0.034376458
+Bosnia and Herzegovina,1994,0.144976646
+Bosnia and Herzegovina,1995,0.118073198
+Bosnia and Herzegovina,1996,0.085342778
+Bosnia and Herzegovina,1997,2.686709352
+Bosnia and Herzegovina,1998,2.651641934
+Bosnia and Herzegovina,1999,2.201408333
+Bosnia and Herzegovina,2000,1.883482025
+Bosnia and Herzegovina,2001,1.519867683
+Bosnia and Herzegovina,2002,1.847426749
+Bosnia and Herzegovina,2003,1.680658432
+Bosnia and Herzegovina,2004,1.714046771
+Bosnia and Herzegovina,2005,2.005044767
+Bosnia and Herzegovina,2006,2.084638416
+Bosnia and Herzegovina,2007,2.568364926
+Bosnia and Herzegovina,2008,4.826341316
+Bosnia and Herzegovina,2009,2.077615572
+Bosnia and Herzegovina,2010,3.550479813
+Bosnia and Herzegovina,2011,4.804204622
+Bosnia and Herzegovina,2012,2.396580754
+Belarus,1993,3.852284366
+Belarus,1994,3.543952876
+Belarus,1995,4.222590584
+Belarus,1996,5.744771378
+Belarus,1997,4.84882534
+Belarus,1998,1.87464692
+Belarus,1999,2.9462581
+Belarus,2000,3.910649203
+Belarus,2001,3.496514836
+Belarus,2002,3.376677752
+Belarus,2003,3.186207871
+Belarus,2004,2.795066252
+Belarus,2005,2.881506587
+Belarus,2006,2.918675485
+Belarus,2007,2.608294213
+Belarus,2008,2.648341521
+Belarus,2009,2.12821882
+Belarus,2010,2.497630651
+Belarus,2011,2.779689599
+Belarus,2012,2.512461308
+Belize,1993,1.588463621
+Belize,1994,1.389305652
+Belize,1995,1.539442801
+Belize,1996,1.508481759
+Belize,1997,1.351842651
+Belize,1998,0.836748295
+Belize,1999,0.801312333
+Belize,2000,0.809103515
+Belize,2001,0.768943244
+Belize,2002,0.798336753
+Belize,2003,0.881255441
+Belize,2004,0.725670815
+Belize,2005,0.672435353
+Belize,2006,0.546355792
+Belize,2007,0.781918122
+Belize,2008,0.869500674
+Belize,2009,0.812409531
+Belize,2010,1.008753685
+Belize,2011,0.882042036
+Belize,2012,0.826204274
+Bermuda,1993,0
+Bermuda,1994,0
+Bermuda,1995,0
+Bermuda,1996,0
+Bermuda,1997,0
+Bermuda,1998,0
+Bermuda,1999,0
+Bermuda,2000,0
+Bermuda,2001,0
+Bermuda,2002,0
+Bermuda,2003,0
+Bermuda,2004,0
+Bermuda,2005,0
+Bermuda,2006,0
+Bermuda,2007,0
+Bermuda,2008,0
+Bermuda,2009,0
+Bermuda,2010,0
+Bermuda,2011,0
+Bermuda,2012,0
+Bolivia,1993,7.867832167
+Bolivia,1994,7.586422721
+Bolivia,1995,7.439012086
+Bolivia,1996,8.653739736
+Bolivia,1997,7.649648529
+Bolivia,1998,4.549472903
+Bolivia,1999,4.255228674
+Bolivia,2000,8.919398413
+Bolivia,2001,9.305171636
+Bolivia,2002,9.230196968
+Bolivia,2003,15.35774547
+Bolivia,2004,21.67096463
+Bolivia,2005,40.14633546
+Bolivia,2006,39.15568744
+Bolivia,2007,37.76514199
+Bolivia,2008,41.45469374
+Bolivia,2009,17.88410124
+Bolivia,2010,20.06955261
+Bolivia,2011,22.47883923
+Bolivia,2012,18.48207326
+Brazil,1993,3.583990127
+Brazil,1994,2.675504754
+Brazil,1995,2.243358681
+Brazil,1996,2.266976271
+Brazil,1997,2.106292738
+Brazil,1998,1.805635002
+Brazil,1999,2.988367464
+Brazil,2000,3.94247526
+Brazil,2001,4.141508709
+Brazil,2002,5.10707576
+Brazil,2003,5.929773086
+Brazil,2004,5.648695406
+Brazil,2005,6.621542316
+Brazil,2006,6.764043873
+Brazil,2007,7.622906403
+Brazil,2008,8.389975572
+Brazil,2009,4.873821148
+Brazil,2010,6.143111418
+Brazil,2011,6.436514209
+Brazil,2012,6.269592158
+Barbados,1993,0.391403193
+Barbados,1994,0.328351975
+Barbados,1995,0.357628681
+Barbados,1996,0.366347661
+Barbados,1997,0.279468353
+Barbados,1998,0.262154428
+Barbados,1999,0.385571462
+Barbados,2000,0.575967805
+Barbados,2001,0.130122839
+Barbados,2002,0.09102386
+Barbados,2003,0.1271186
+Barbados,2004,0.07561692
+Barbados,2005,0.089493637
+Barbados,2006,0.01855797
+Barbados,2007,0.019416924
+Barbados,2008,0.027001502
+Barbados,2009,0.020187176
+Barbados,2010,0.023805664
+Barbados,2011,0.025288153
+Barbados,2012,0.028345091
+Brunei Darussalam,1993,36.11501314
+Brunei Darussalam,1994,33.91748824
+Brunei Darussalam,1995,31.99818719
+Brunei Darussalam,1996,36.46452186
+Brunei Darussalam,1997,32.7290649
+Brunei Darussalam,1998,28.18993138
+Brunei Darussalam,1999,31.61482486
+Brunei Darussalam,2000,51.46200326
+Brunei Darussalam,2001,49.40305786
+Brunei Darussalam,2002,42.86304866
+Brunei Darussalam,2003,54.4565882
+Brunei Darussalam,2004,53.72927726
+Brunei Darussalam,2005,67.9542138
+Brunei Darussalam,2006,65.31085841
+Brunei Darussalam,2007,59.38443584
+Brunei Darussalam,2008,71.83134401
+Brunei Darussalam,2009,45.57035802
+Brunei Darussalam,2010,45.42345921
+Brunei Darussalam,2011,41.59987955
+Brunei Darussalam,2012,35.9911085
+Bhutan,1993,30.90120492
+Bhutan,1994,27.87024745
+Bhutan,1995,28.73847879
+Bhutan,1996,63.97887389
+Bhutan,1997,18.42792189
+Bhutan,1998,23.63094844
+Bhutan,1999,24.49243314
+Bhutan,2000,17.79167972
+Bhutan,2001,15.81119902
+Bhutan,2002,9.11858989
+Bhutan,2003,14.66398411
+Bhutan,2004,14.60586339
+Bhutan,2005,12.69076405
+Bhutan,2006,18.42329999
+Bhutan,2007,16.88044166
+Bhutan,2008,17.07378
+Bhutan,2009,15.71026514
+Bhutan,2010,24.26869874
+Bhutan,2011,19.49452008
+Bhutan,2012,16.92743375
+Botswana,1993,0.447340504
+Botswana,1994,0.696050647
+Botswana,1995,1.003634965
+Botswana,1996,0.767178864
+Botswana,1997,0.731562654
+Botswana,1998,0.456393665
+Botswana,1999,0.271580942
+Botswana,2000,1.47352805
+Botswana,2001,0.439564711
+Botswana,2002,0.52531703
+Botswana,2003,1.548716333
+Botswana,2004,3.255103975
+Botswana,2005,3.772948568
+Botswana,2006,8.008436886
+Botswana,2007,9.259868959
+Botswana,2008,5.995088868
+Botswana,2009,3.664168709
+Botswana,2010,4.99142889
+Botswana,2011,4.756428015
+Botswana,2012,3.741782791
+Central African Republic,1993,5.710430695
+Central African Republic,1994,9.722384302
+Central African Republic,1995,9.844299222
+Central African Republic,1996,10.46239352
+Central African Republic,1997,11.64999789
+Central African Republic,1998,11.81377623
+Central African Republic,1999,7.199897522
+Central African Republic,2000,8.149539219
+Central African Republic,2001,8.707990649
+Central African Republic,2002,9.636665678
+Central African Republic,2003,8.933148757
+Central African Republic,2004,6.328486419
+Central African Republic,2005,6.970120047
+Central African Republic,2006,8.283907593
+Central African Republic,2007,8.652083149
+Central African Republic,2008,9.456937437
+Central African Republic,2009,7.531827567
+Central African Republic,2010,8.358334401
+Central African Republic,2011,8.56075113
+Central African Republic,2012,8.49429772
+Canada,1993,3.20217157
+Canada,1994,3.154326261
+Canada,1995,3.250945015
+Canada,1996,3.897056247
+Canada,1997,3.509234908
+Canada,1998,2.446149454
+Canada,1999,2.344303113
+Canada,2000,4.967657358
+Canada,2001,4.414309139
+Canada,2002,3.559954531
+Canada,2003,4.457793899
+Canada,2004,4.839019567
+Canada,2005,6.652808643
+Canada,2006,6.774014207
+Canada,2007,6.45691281
+Canada,2008,8.001986108
+Canada,2009,3.559036274
+Canada,2010,4.123149308
+Canada,2011,4.923906809
+Canada,2012,4.38012849
+Central Europe and the Baltics,1993,2.166634657
+Central Europe and the Baltics,1994,1.823795716
+Central Europe and the Baltics,1995,1.64756037
+Central Europe and the Baltics,1996,1.657343577
+Central Europe and the Baltics,1997,1.481733652
+Central Europe and the Baltics,1998,1.144351326
+Central Europe and the Baltics,1999,1.242550631
+Central Europe and the Baltics,2000,1.872857833
+Central Europe and the Baltics,2001,1.707209714
+Central Europe and the Baltics,2002,1.360779133
+Central Europe and the Baltics,2003,1.454824554
+Central Europe and the Baltics,2004,1.586628645
+Central Europe and the Baltics,2005,1.616777634
+Central Europe and the Baltics,2006,1.809455415
+Central Europe and the Baltics,2007,1.555285442
+Central Europe and the Baltics,2008,1.989269491
+Central Europe and the Baltics,2009,1.176183628
+Central Europe and the Baltics,2010,1.552502323
+Central Europe and the Baltics,2011,1.775954445
+Central Europe and the Baltics,2012,1.634558568
+Switzerland,1993,0.078963313
+Switzerland,1994,0.072402451
+Switzerland,1995,0.060767376
+Switzerland,1996,0.050301248
+Switzerland,1997,0.062316774
+Switzerland,1998,0.064305449
+Switzerland,1999,0.066632578
+Switzerland,2000,0.128041921
+Switzerland,2001,0.087277058
+Switzerland,2002,0.056542238
+Switzerland,2003,0.051672566
+Switzerland,2004,0.038302032
+Switzerland,2005,0.041906307
+Switzerland,2006,0.050580216
+Switzerland,2007,0.055333738
+Switzerland,2008,0.056549103
+Switzerland,2009,0.044413746
+Switzerland,2010,0.050733132
+Switzerland,2011,0.040447376
+Switzerland,2012,0.046395384
+Channel Islands,1998,0
+Channel Islands,1999,0
+Channel Islands,2000,0
+Channel Islands,2001,0
+Channel Islands,2002,0
+Channel Islands,2003,0
+Channel Islands,2004,0
+Channel Islands,2005,0
+Channel Islands,2006,0
+Channel Islands,2007,0
+Chile,1993,8.123082577
+Chile,1994,8.948281679
+Chile,1995,9.645163384
+Chile,1996,7.893735032
+Chile,1997,7.793442286
+Chile,1998,6.419029907
+Chile,1999,7.402570725
+Chile,2000,8.81112222
+Chile,2001,8.861644033
+Chile,2002,8.43809816
+Chile,2003,8.995793802
+Chile,2004,13.1596019
+Chile,2005,14.53029048
+Chile,2006,22.8037833
+Chile,2007,23.08992676
+Chile,2008,22.05719478
+Chile,2009,16.3831765
+Chile,2010,19.59018147
+Chile,2011,20.03239001
+Chile,2012,17.55998388
+China,1993,5.437256542
+China,1994,4.269643032
+China,1995,4.28402496
+China,1996,4.354032176
+China,1997,3.538048058
+China,1998,2.305409594
+China,1999,2.16822196
+China,2000,3.22522163
+China,2001,3.183194828
+China,2002,2.348059826
+China,2003,2.867808348
+China,2004,5.390177641
+China,2005,5.7218688
+China,2006,6.443269594
+China,2007,7.466227223
+China,2008,10.77329407
+China,2009,4.566604672
+China,2010,6.954084587
+China,2011,8.197205115
+China,2012,5.793257266
+Cote d'Ivoire,1993,1.321846927
+Cote d'Ivoire,1994,2.051977801
+Cote d'Ivoire,1995,2.257576908
+Cote d'Ivoire,1996,2.911357311
+Cote d'Ivoire,1997,2.970056556
+Cote d'Ivoire,1998,2.244464398
+Cote d'Ivoire,1999,2.097007671
+Cote d'Ivoire,2000,3.501637126
+Cote d'Ivoire,2001,3.220439241
+Cote d'Ivoire,2002,3.412037015
+Cote d'Ivoire,2003,4.159356714
+Cote d'Ivoire,2004,4.551379356
+Cote d'Ivoire,2005,7.728263934
+Cote d'Ivoire,2006,11.04586932
+Cote d'Ivoire,2007,9.242788363
+Cote d'Ivoire,2008,10.67186988
+Cote d'Ivoire,2009,7.042689646
+Cote d'Ivoire,2010,7.816247818
+Cote d'Ivoire,2011,9.241269297
+Cote d'Ivoire,2012,8.792382269
+Cameroon,1993,6.662943243
+Cameroon,1994,9.586648048
+Cameroon,1995,10.93594824
+Cameroon,1996,11.90154494
+Cameroon,1997,11.15270052
+Cameroon,1998,7.93457215
+Cameroon,1999,7.697097974
+Cameroon,2000,13.32265081
+Cameroon,2001,9.903717263
+Cameroon,2002,9.701097819
+Cameroon,2003,9.130807729
+Cameroon,2004,9.303509249
+Cameroon,2005,11.36135396
+Cameroon,2006,13.54127196
+Cameroon,2007,13.3150835
+Cameroon,2008,15.36282248
+Cameroon,2009,9.523547385
+Cameroon,2010,10.74510771
+Cameroon,2011,11.09021075
+Cameroon,2012,11.10222892
+"Congo, Dem. Rep.",1993,10.20654844
+"Congo, Dem. Rep.",1994,21.70641268
+"Congo, Dem. Rep.",1995,32.05831611
+"Congo, Dem. Rep.",1996,34.32840302
+"Congo, Dem. Rep.",1997,30.90519177
+"Congo, Dem. Rep.",1998,28.3947631
+"Congo, Dem. Rep.",1999,28.02184784
+"Congo, Dem. Rep.",2000,6.643361993
+"Congo, Dem. Rep.",2001,17.19070925
+"Congo, Dem. Rep.",2002,17.93527145
+"Congo, Dem. Rep.",2003,22.8970029
+"Congo, Dem. Rep.",2004,21.0935513
+"Congo, Dem. Rep.",2005,20.77140003
+"Congo, Dem. Rep.",2006,26.63632081
+"Congo, Dem. Rep.",2007,29.24676673
+"Congo, Dem. Rep.",2008,32.63516012
+"Congo, Dem. Rep.",2009,31.1161565
+"Congo, Dem. Rep.",2010,37.42847146
+"Congo, Dem. Rep.",2011,40.23570464
+"Congo, Dem. Rep.",2012,33.39618801
+"Congo, Rep.",1993,54.80267059
+"Congo, Rep.",1994,52.98477557
+"Congo, Rep.",1995,50.29297028
+"Congo, Rep.",1996,55.37074189
+"Congo, Rep.",1997,65.51708023
+"Congo, Rep.",1998,49.87501445
+"Congo, Rep.",1999,59.57810608
+"Congo, Rep.",2000,75.08250182
+"Congo, Rep.",2001,66.85908975
+"Congo, Rep.",2002,62.42076771
+"Congo, Rep.",2003,59.30257089
+"Congo, Rep.",2004,60.31629116
+"Congo, Rep.",2005,72.57996946
+"Congo, Rep.",2006,78.61489755
+"Congo, Rep.",2007,65.88503506
+"Congo, Rep.",2008,67.81035715
+"Congo, Rep.",2009,56.11214644
+"Congo, Rep.",2010,66.62086657
+"Congo, Rep.",2011,69.97725488
+"Congo, Rep.",2012,73.40132281
+Colombia,1993,5.123093141
+Colombia,1994,3.298430651
+Colombia,1995,3.963357998
+Colombia,1996,4.883586001
+Colombia,1997,4.317963161
+Colombia,1998,3.117545658
+Colombia,1999,5.277220332
+Colombia,2000,7.415693787
+Colombia,2001,5.722682215
+Colombia,2002,5.429985686
+Colombia,2003,6.894431404
+Colombia,2004,8.146767534
+Colombia,2005,8.804639442
+Colombia,2006,9.875182854
+Colombia,2007,9.074540351
+Colombia,2008,12.12875673
+Colombia,2009,7.678566256
+Colombia,2010,9.620921973
+Colombia,2011,12.37981959
+Colombia,2012,10.81777104
+Comoros,1993,0.983450401
+Comoros,1994,1.642568803
+Comoros,1995,2.359712492
+Comoros,1996,2.613384051
+Comoros,1997,2.71866121
+Comoros,1998,2.708715254
+Comoros,1999,1.902227853
+Comoros,2000,1.939149892
+Comoros,2001,1.869624509
+Comoros,2002,2.075305155
+Comoros,2003,2.032062323
+Comoros,2004,1.631017034
+Comoros,2005,1.636522652
+Comoros,2006,2.118893785
+Comoros,2007,2.48419873
+Comoros,2008,2.805512622
+Comoros,2009,2.58915635
+Comoros,2010,2.886708351
+Comoros,2011,2.857171119
+Comoros,2012,2.775954671
+Cabo Verde,1993,0.309868691
+Cabo Verde,1994,0.465145013
+Cabo Verde,1995,0.600497497
+Cabo Verde,1996,0.630220397
+Cabo Verde,1997,0.640346619
+Cabo Verde,1998,0.59607852
+Cabo Verde,1999,0.378621913
+Cabo Verde,2000,0.3636786
+Cabo Verde,2001,0.361404726
+Cabo Verde,2002,0.419675902
+Cabo Verde,2003,0.430840622
+Cabo Verde,2004,0.382916047
+Cabo Verde,2005,0.379859524
+Cabo Verde,2006,0.43986469
+Cabo Verde,2007,0.462767022
+Cabo Verde,2008,0.501165385
+Cabo Verde,2009,0.498617701
+Cabo Verde,2010,0.573481943
+Cabo Verde,2011,0.577110204
+Cabo Verde,2012,0.562638763
+Costa Rica,1993,2.165264715
+Costa Rica,1994,2.256363997
+Costa Rica,1995,2.407109179
+Costa Rica,1996,2.416800435
+Costa Rica,1997,2.078147042
+Costa Rica,1998,0.878325175
+Costa Rica,1999,0.727559801
+Costa Rica,2000,0.923272296
+Costa Rica,2001,0.999390379
+Costa Rica,2002,0.976619389
+Costa Rica,2003,1.145465919
+Costa Rica,2004,1.000018387
+Costa Rica,2005,0.965219683
+Costa Rica,2006,1.099272337
+Costa Rica,2007,1.352966531
+Costa Rica,2008,1.358691469
+Costa Rica,2009,1.136340808
+Costa Rica,2010,1.233367853
+Costa Rica,2011,0.947273492
+Costa Rica,2012,0.890578579
+Caribbean small states,1993,7.786445443
+Caribbean small states,1994,2.475194519
+Caribbean small states,1995,6.52956624
+Caribbean small states,1996,7.315869291
+Caribbean small states,1997,1.677550272
+Caribbean small states,1998,3.497395636
+Caribbean small states,1999,1.02795109
+Caribbean small states,2000,1.031063672
+Caribbean small states,2001,1.072673861
+Caribbean small states,2002,0.862230774
+Caribbean small states,2003,0.830318372
+Caribbean small states,2004,0.916898135
+Caribbean small states,2005,25.56799008
+Caribbean small states,2006,1.149929612
+Caribbean small states,2007,25.05802008
+Caribbean small states,2008,30.57973253
+Caribbean small states,2009,1.657097922
+Caribbean small states,2010,2.186769387
+Caribbean small states,2011,2.890875284
+Caribbean small states,2012,3.324534623
+Cuba,1993,1.055802725
+Cuba,1994,0.85799102
+Cuba,1995,1.174160432
+Cuba,1996,1.53957511
+Cuba,1997,1.399500596
+Cuba,1998,0.735602207
+Cuba,1999,1.00970513
+Cuba,2000,2.657046841
+Cuba,2001,1.841059515
+Cuba,2002,2.298940105
+Cuba,2003,3.135290998
+Cuba,2004,3.948224722
+Cuba,2005,4.425500369
+Cuba,2006,5.403100399
+Cuba,2007,8.317498509
+Cuba,2008,6.090371141
+Cuba,2009,3.207209429
+Cuba,2010,4.792379685
+Cuba,2011,5.578279836
+Cayman Islands,1996,0
+Cyprus,1993,0.023421299
+Cyprus,1994,0.017916471
+Cyprus,1995,0.01638488
+Cyprus,1996,0.031526517
+Cyprus,1997,0.054787827
+Cyprus,1998,0.029026977
+Cyprus,1999,0.025641679
+Cyprus,2000,0.037484193
+Cyprus,2001,0.025741668
+Cyprus,2002,0.017228359
+Cyprus,2003,0.012351476
+Cyprus,2004,0.013345461
+Cyprus,2005,0.00141542
+Cyprus,2006,0.00122901
+Cyprus,2007,0.010673268
+Cyprus,2008,0.009188879
+Cyprus,2009,0.006185317
+Cyprus,2010,0.009067086
+Cyprus,2011,0.009848572
+Cyprus,2012,0.010084134
+Czech Republic,1993,0.985967148
+Czech Republic,1994,0.921779694
+Czech Republic,1995,0.700159568
+Czech Republic,1996,0.648290589
+Czech Republic,1997,0.711704588
+Czech Republic,1998,0.751516092
+Czech Republic,1999,0.79730759
+Czech Republic,2000,0.835715656
+Czech Republic,2001,0.84509846
+Czech Republic,2002,0.597546097
+Czech Republic,2003,0.506923148
+Czech Republic,2004,0.628693635
+Czech Republic,2005,0.479779829
+Czech Republic,2006,0.498191374
+Czech Republic,2007,0.558126289
+Czech Republic,2008,1.000988746
+Czech Republic,2009,0.415042125
+Czech Republic,2010,0.688620783
+Czech Republic,2011,0.852826624
+Czech Republic,2012,0.639951342
+Germany,1993,0.145455352
+Germany,1994,0.14141099
+Germany,1995,0.118240018
+Germany,1996,0.137241085
+Germany,1997,0.141567524
+Germany,1998,0.132890671
+Germany,1999,0.129858306
+Germany,2000,0.260872259
+Germany,2001,0.237996901
+Germany,2002,0.18496214
+Germany,2003,0.211025775
+Germany,2004,0.203284183
+Germany,2005,0.264687669
+Germany,2006,0.277778571
+Germany,2007,0.277304192
+Germany,2008,0.359076535
+Germany,2009,0.173553044
+Germany,2010,0.203356516
+Germany,2011,0.233508156
+Germany,2012,0.19977017
+Djibouti,1993,1.004084869
+Djibouti,1994,1.119704714
+Djibouti,1995,1.952588586
+Djibouti,1996,2.083095249
+Djibouti,1997,1.180297339
+Djibouti,1998,0.919224972
+Djibouti,1999,0.570325405
+Djibouti,2000,0.553909358
+Djibouti,2001,0.816000523
+Djibouti,2002,1.038911363
+Djibouti,2003,1.503390467
+Djibouti,2004,1.334672569
+Djibouti,2005,1.247890206
+Djibouti,2006,1.140685475
+Djibouti,2007,0.921846242
+Djibouti,2008,0.935331097
+Djibouti,2009,0.738014846
+Djibouti,2010,1.598805645
+Djibouti,2011,2.863095605
+Djibouti,2012,1.901009303
+Dominica,1993,0.093705773
+Dominica,1994,0.086603149
+Dominica,1995,0.108409006
+Dominica,1996,0.111575252
+Dominica,1997,0.099480105
+Dominica,1998,0.034351197
+Dominica,1999,0.039257222
+Dominica,2000,0.042524443
+Dominica,2001,0.052489371
+Dominica,2002,0.055800379
+Dominica,2003,0.079939059
+Dominica,2004,0.070734784
+Dominica,2005,0.062703824
+Dominica,2006,0.066969422
+Dominica,2007,0.089576193
+Dominica,2008,0.082892874
+Dominica,2009,0.078848266
+Dominica,2010,0.103341209
+Dominica,2011,0.090663547
+Dominica,2012,0.090879808
+Denmark,1993,0.819780553
+Denmark,1994,0.752673442
+Denmark,1995,0.697034717
+Denmark,1996,0.968853155
+Denmark,1997,1.088857722
+Denmark,1998,0.676410408
+Denmark,1999,0.994132463
+Denmark,2000,2.550526664
+Denmark,2001,2.070009009
+Denmark,2002,1.867711633
+Denmark,2003,1.965438428
+Denmark,2004,2.394928879
+Denmark,2005,3.430542152
+Denmark,2006,3.409412933
+Denmark,2007,2.903917045
+Denmark,2008,3.577622414
+Denmark,2009,1.884928901
+Denmark,2010,2.181482667
+Denmark,2011,2.370614671
+Denmark,2012,2.249133298
+Dominican Republic,1993,0.235590182
+Dominican Republic,1994,0.710895089
+Dominican Republic,1995,1.038926487
+Dominican Republic,1996,0.790900963
+Dominican Republic,1997,0.683865315
+Dominican Republic,1998,0.085102965
+Dominican Republic,1999,0.359830614
+Dominican Republic,2000,0.785701645
+Dominican Republic,2001,0.362189865
+Dominican Republic,2002,0.464763921
+Dominican Republic,2003,1.249531709
+Dominican Republic,2004,2.017102674
+Dominican Republic,2005,1.648374665
+Dominican Republic,2006,2.682166056
+Dominican Republic,2007,3.798842568
+Dominican Republic,2008,1.212315571
+Dominican Republic,2009,0.20603653
+Dominican Republic,2010,0.254852555
+Dominican Republic,2011,0.95837452
+Dominican Republic,2012,0.80491283
+Algeria,1993,14.54585283
+Algeria,1994,15.13238383
+Algeria,1995,17.68129994
+Algeria,1996,21.1336108
+Algeria,1997,20.28566105
+Algeria,1998,15.06106687
+Algeria,1999,17.67047476
+Algeria,2000,32.78375354
+Algeria,2001,28.43244949
+Algeria,2002,25.12963621
+Algeria,2003,32.90710819
+Algeria,2004,32.52389652
+Algeria,2005,42.96711892
+Algeria,2006,41.31352665
+Algeria,2007,37.83657657
+Algeria,2008,41.52424612
+Algeria,2009,25.89110145
+Algeria,2010,25.61306901
+Algeria,2011,25.70280645
+Algeria,2012,23.45597631
+East Asia & Pacific,1993,1.002285868
+East Asia & Pacific,1994,0.896806349
+East Asia & Pacific,1995,0.954213449
+East Asia & Pacific,1996,1.183830951
+East Asia & Pacific,1997,1.131956839
+East Asia & Pacific,1998,0.939876561
+East Asia & Pacific,1999,0.845433584
+East Asia & Pacific,2000,1.356406285
+East Asia & Pacific,2001,1.41702337
+East Asia & Pacific,2002,1.242794794
+East Asia & Pacific,2003,1.548046613
+East Asia & Pacific,2004,2.240331278
+East Asia & Pacific,2005,2.836510127
+East Asia & Pacific,2006,3.384102131
+East Asia & Pacific,2007,4.138454924
+East Asia & Pacific,2008,5.900417546
+East Asia & Pacific,2009,2.875160824
+East Asia & Pacific,2010,4.104324486
+East Asia & Pacific,2011,4.914974855
+East Asia & Pacific,2012,3.788194409
+East Asia & Pacific (all income levels),1993,5.912868597
+East Asia & Pacific (all income levels),1994,4.956751556
+East Asia & Pacific (all income levels),1995,4.95082116
+East Asia & Pacific (all income levels),1996,5.151118461
+East Asia & Pacific (all income levels),1997,4.514527557
+East Asia & Pacific (all income levels),1998,3.520173285
+East Asia & Pacific (all income levels),1999,3.21311117
+East Asia & Pacific (all income levels),2000,4.987109893
+East Asia & Pacific (all income levels),2001,4.593120875
+East Asia & Pacific (all income levels),2002,3.628151224
+East Asia & Pacific (all income levels),2003,4.49255546
+East Asia & Pacific (all income levels),2004,6.521543121
+East Asia & Pacific (all income levels),2005,7.437045583
+East Asia & Pacific (all income levels),2006,7.872083067
+East Asia & Pacific (all income levels),2007,8.488498363
+East Asia & Pacific (all income levels),2008,11.38173082
+East Asia & Pacific (all income levels),2009,5.22386306
+East Asia & Pacific (all income levels),2010,7.188054892
+East Asia & Pacific (all income levels),2011,8.282191814
+East Asia & Pacific (all income levels),2012,6.092886768
+Europe & Central Asia,1993,1.520462155
+Europe & Central Asia,1994,1.341128801
+Europe & Central Asia,1995,1.270316067
+Europe & Central Asia,1996,1.574242507
+Europe & Central Asia,1997,1.522525131
+Europe & Central Asia,1998,1.01149048
+Europe & Central Asia,1999,1.139113671
+Europe & Central Asia,2000,2.540954947
+Europe & Central Asia,2001,2.271194334
+Europe & Central Asia,2002,1.850448859
+Europe & Central Asia,2003,2.182150208
+Europe & Central Asia,2004,2.391032003
+Europe & Central Asia,2005,3.257439765
+Europe & Central Asia,2006,3.476428426
+Europe & Central Asia,2007,3.263992585
+Europe & Central Asia,2008,4.269448401
+Europe & Central Asia,2009,2.385315283
+Europe & Central Asia,2010,2.950682185
+Europe & Central Asia,2011,3.371238343
+Europe & Central Asia,2012,3.15557052
+Europe & Central Asia (all income levels),1993,3.687433351
+Europe & Central Asia (all income levels),1994,4.331820253
+Europe & Central Asia (all income levels),1995,4.323179361
+Europe & Central Asia (all income levels),1996,4.750386621
+Europe & Central Asia (all income levels),1997,4.276971089
+Europe & Central Asia (all income levels),1998,2.415168171
+Europe & Central Asia (all income levels),1999,3.038532358
+Europe & Central Asia (all income levels),2000,5.884788367
+Europe & Central Asia (all income levels),2001,6.100476887
+Europe & Central Asia (all income levels),2002,4.89488802
+Europe & Central Asia (all income levels),2003,5.559086136
+Europe & Central Asia (all income levels),2004,6.059572922
+Europe & Central Asia (all income levels),2005,6.085206911
+Europe & Central Asia (all income levels),2006,7.9988525
+Europe & Central Asia (all income levels),2007,7.353327658
+Europe & Central Asia (all income levels),2008,9.299211508
+Europe & Central Asia (all income levels),2009,6.42494501
+Europe & Central Asia (all income levels),2010,7.274150969
+Europe & Central Asia (all income levels),2011,8.486230308
+Europe & Central Asia (all income levels),2012,7.601601
+Ecuador,1993,9.946103248
+Ecuador,1994,9.973601406
+Ecuador,1995,11.00403258
+Ecuador,1996,12.51039023
+Ecuador,1997,10.62997311
+Ecuador,1998,6.386398711
+Ecuador,1999,9.861359495
+Ecuador,2000,20.01454207
+Ecuador,2001,12.68806504
+Ecuador,2002,10.81610595
+Ecuador,2003,12.30599409
+Ecuador,2004,18.14912034
+Ecuador,2005,23.37643674
+Ecuador,2006,25.3376502
+Ecuador,2007,24.58424011
+Ecuador,2008,27.52449297
+Ecuador,2009,15.81308182
+Ecuador,2010,18.63239691
+Ecuador,2011,22.2089643
+Ecuador,2012,19.96337492
+"Egypt, Arab Rep.",1993,12.27485607
+"Egypt, Arab Rep.",1994,10.22507836
+"Egypt, Arab Rep.",1995,10.0216114
+"Egypt, Arab Rep.",1996,10.65625047
+"Egypt, Arab Rep.",1997,8.070792665
+"Egypt, Arab Rep.",1998,4.744532247
+"Egypt, Arab Rep.",1999,5.764972101
+"Egypt, Arab Rep.",2000,8.471042063
+"Egypt, Arab Rep.",2001,8.071078001
+"Egypt, Arab Rep.",2002,8.618281394
+"Egypt, Arab Rep.",2003,12.77046973
+"Egypt, Arab Rep.",2004,16.43257274
+"Egypt, Arab Rep.",2005,26.35779386
+"Egypt, Arab Rep.",2006,24.50685181
+"Egypt, Arab Rep.",2007,22.14287784
+"Egypt, Arab Rep.",2008,27.23223219
+"Egypt, Arab Rep.",2009,11.99285615
+"Egypt, Arab Rep.",2010,12.05428144
+"Egypt, Arab Rep.",2011,14.32549152
+"Egypt, Arab Rep.",2012,11.8523795
+Euro area,1993,0.292827931
+Euro area,1994,0.271760209
+Euro area,1995,0.24133025
+Euro area,1996,0.266893686
+Euro area,1997,0.26478965
+Euro area,1998,0.230590691
+Euro area,1999,0.213141818
+Euro area,2000,0.382322057
+Euro area,2001,0.36422132
+Euro area,2002,0.280798482
+Euro area,2003,0.295946874
+Euro area,2004,0.280649084
+Euro area,2005,0.362242257
+Euro area,2006,0.374407137
+Euro area,2007,0.356270458
+Euro area,2008,0.460938106
+Euro area,2009,0.243047971
+Euro area,2010,0.30086584
+Euro area,2011,0.307003847
+Euro area,2012,0.308549464
+Eritrea,1993,4.98435597
+Eritrea,1994,5.424014996
+Eritrea,1995,7.676682284
+Eritrea,1996,6.897315503
+Eritrea,1997,7.04166174
+Eritrea,1998,6.388444323
+Eritrea,1999,4.988514081
+Eritrea,2000,4.267063633
+Eritrea,2001,4.093156126
+Eritrea,2002,2.904471945
+Eritrea,2003,3.171758116
+Eritrea,2004,2.441129165
+Eritrea,2005,2.489317754
+Eritrea,2006,2.92003951
+Eritrea,2007,3.762473561
+Eritrea,2008,4.496293571
+Eritrea,2009,3.11522486
+Eritrea,2010,3.628792229
+Eritrea,2011,20.51512216
+Eritrea,2012,15.48029448
+Spain,1993,0.172458975
+Spain,1994,0.174098311
+Spain,1995,0.151995194
+Spain,1996,0.12854374
+Spain,1997,0.130957159
+Spain,1998,0.133708516
+Spain,1999,0.11925432
+Spain,2000,0.127533795
+Spain,2001,0.145303766
+Spain,2002,0.127793149
+Spain,2003,0.097647963
+Spain,2004,0.08172005
+Spain,2005,0.075866084
+Spain,2006,0.101986869
+Spain,2007,0.098959309
+Spain,2008,0.150826514
+Spain,2009,0.095103222
+Spain,2010,0.15210896
+Spain,2011,0.153496878
+Spain,2012,0.194678798
+Estonia,1993,2.489927712
+Estonia,1994,4.349831005
+Estonia,1995,4.207990314
+Estonia,1996,3.583289239
+Estonia,1997,3.724377488
+Estonia,1998,4.152336472
+Estonia,1999,4.276447422
+Estonia,2000,5.426744305
+Estonia,2001,6.308288897
+Estonia,2002,5.27349219
+Estonia,2003,3.746617682
+Estonia,2004,2.004290329
+Estonia,2005,1.415336942
+Estonia,2006,1.493181074
+Estonia,2007,1.241883536
+Estonia,2008,1.995206663
+Estonia,2009,1.606720878
+Estonia,2010,2.735347018
+Estonia,2011,2.595013458
+Estonia,2012,2.593747821
+Ethiopia,1993,13.50909967
+Ethiopia,1994,20.50305714
+Ethiopia,1995,27.46783372
+Ethiopia,1996,26.09235152
+Ethiopia,1997,25.15971403
+Ethiopia,1998,26.9205204
+Ethiopia,1999,19.46077642
+Ethiopia,2000,15.9257805
+Ethiopia,2001,16.38685143
+Ethiopia,2002,21.71193856
+Ethiopia,2003,26.20513363
+Ethiopia,2004,21.30765327
+Ethiopia,2005,18.11985105
+Ethiopia,2006,19.43189244
+Ethiopia,2007,21.00917761
+Ethiopia,2008,19.39817563
+Ethiopia,2009,15.37034459
+Ethiopia,2010,18.60777847
+Ethiopia,2011,20.17050783
+Ethiopia,2012,13.80893313
+European Union,1993,0.518179871
+European Union,1994,0.494593164
+European Union,1995,0.461765415
+European Union,1996,0.539318806
+European Union,1997,0.524485252
+European Union,1998,0.395618593
+European Union,1999,0.428947361
+European Union,2000,0.824654051
+European Union,2001,0.732563605
+European Union,2002,0.578845812
+European Union,2003,0.613625895
+European Union,2004,0.615930827
+European Union,2005,0.797215032
+European Union,2006,0.796081486
+European Union,2007,0.735681978
+European Union,2008,0.953318185
+European Union,2009,0.512135259
+European Union,2010,0.632696735
+European Union,2011,0.657755868
+European Union,2012,0.604465447
+Fragile and conflict affected situations,1993,14.53638835
+Fragile and conflict affected situations,1994,16.60487158
+Fragile and conflict affected situations,1995,18.48988162
+Fragile and conflict affected situations,1996,20.78571254
+Fragile and conflict affected situations,1997,18.04206955
+Fragile and conflict affected situations,1998,12.71885677
+Fragile and conflict affected situations,1999,14.54089274
+Fragile and conflict affected situations,2000,20.66453596
+Fragile and conflict affected situations,2001,19.93072261
+Fragile and conflict affected situations,2002,21.62352154
+Fragile and conflict affected situations,2003,24.22421459
+Fragile and conflict affected situations,2004,35.38034164
+Fragile and conflict affected situations,2005,41.23628527
+Fragile and conflict affected situations,2006,42.36057999
+Fragile and conflict affected situations,2007,38.29694105
+Fragile and conflict affected situations,2008,43.92972769
+Fragile and conflict affected situations,2009,29.58817154
+Fragile and conflict affected situations,2010,32.67994043
+Fragile and conflict affected situations,2011,35.3615234
+Fragile and conflict affected situations,2012,34.55663504
+Finland,1993,2.224498248
+Finland,1994,2.135889927
+Finland,1995,1.556566633
+Finland,1996,1.41083501
+Finland,1997,1.531254574
+Finland,1998,1.694724642
+Finland,1999,1.697849305
+Finland,2000,1.734586816
+Finland,2001,1.859025186
+Finland,2002,1.509612175
+Finland,2003,1.219390188
+Finland,2004,0.884345517
+Finland,2005,0.911924758
+Finland,2006,1.037372828
+Finland,2007,1.113904312
+Finland,2008,1.300513345
+Finland,2009,0.935738424
+Finland,2010,1.397107121
+Finland,2011,1.278464535
+Finland,2012,1.401132889
+Fiji,1993,2.49653988
+Fiji,1994,2.501429493
+Fiji,1995,2.161072137
+Fiji,1996,2.356681536
+Fiji,1997,2.007690736
+Fiji,1998,1.980959934
+Fiji,1999,1.301229286
+Fiji,2000,1.617103743
+Fiji,2001,1.70135782
+Fiji,2002,1.494647344
+Fiji,2003,1.533686935
+Fiji,2004,1.358941851
+Fiji,2005,1.384796491
+Fiji,2006,1.460208176
+Fiji,2007,1.091253296
+Fiji,2008,1.313012731
+Fiji,2009,1.783370065
+Fiji,2010,2.707442111
+Fiji,2011,2.56829752
+Fiji,2012,2.930610788
+France,1993,0.212696797
+France,1994,0.203300304
+France,1995,0.194222616
+France,1996,0.159767542
+France,1997,0.174550894
+France,1998,0.164457477
+France,1999,0.144938828
+France,2000,0.206674818
+France,2001,0.191600605
+France,2002,0.158234919
+France,2003,0.128004488
+France,2004,0.099498166
+France,2005,0.108633853
+France,2006,0.131941852
+France,2007,0.147449744
+France,2008,0.17759886
+France,2009,0.138760382
+France,2010,0.170679624
+France,2011,0.159778006
+France,2012,0.193989948
+Faeroe Islands,1998,0
+Faeroe Islands,1999,0
+Faeroe Islands,2000,0
+Faeroe Islands,2001,0
+Faeroe Islands,2002,0
+Faeroe Islands,2003,0
+Faeroe Islands,2004,0
+Faeroe Islands,2005,0
+Faeroe Islands,2006,0
+Faeroe Islands,2007,0
+Faeroe Islands,2008,0
+Faeroe Islands,2009,0
+"Micronesia, Fed. Sts.",1993,0.011377255
+"Micronesia, Fed. Sts.",1994,0.014670467
+"Micronesia, Fed. Sts.",1995,0.022028831
+"Micronesia, Fed. Sts.",1996,0.028147914
+"Micronesia, Fed. Sts.",1997,0.027420117
+"Micronesia, Fed. Sts.",1998,0.020999703
+"Micronesia, Fed. Sts.",1999,0.0105182
+"Micronesia, Fed. Sts.",2000,0.011190236
+"Micronesia, Fed. Sts.",2001,0.011965024
+"Micronesia, Fed. Sts.",2002,0.01346819
+"Micronesia, Fed. Sts.",2003,0.022396829
+"Micronesia, Fed. Sts.",2004,0.025988436
+"Micronesia, Fed. Sts.",2005,0.015309249
+"Micronesia, Fed. Sts.",2006,0.018796132
+"Micronesia, Fed. Sts.",2007,0.022292829
+"Micronesia, Fed. Sts.",2008,0.040275545
+"Micronesia, Fed. Sts.",2009,0.03430216
+"Micronesia, Fed. Sts.",2010,0.041721607
+"Micronesia, Fed. Sts.",2011,0.051024638
+"Micronesia, Fed. Sts.",2012,0.059131664
+Gabon,1993,38.47110062
+Gabon,1994,41.5833468
+Gabon,1995,41.2241606
+Gabon,1996,44.16885592
+Gabon,1997,44.52469267
+Gabon,1998,31.86304894
+Gabon,1999,36.92405455
+Gabon,2000,51.05001765
+Gabon,2001,43.83043398
+Gabon,2002,41.12086399
+Gabon,2003,45.04298956
+Gabon,2004,48.37902898
+Gabon,2005,56.82035156
+Gabon,2006,56.80494143
+Gabon,2007,52.39693346
+Gabon,2008,51.7561278
+Gabon,2009,40.33324935
+Gabon,2010,45.67672611
+Gabon,2011,46.31693369
+Gabon,2012,46.65540617
+United Kingdom,1993,1.281107096
+United Kingdom,1994,1.309596421
+United Kingdom,1995,1.343604783
+United Kingdom,1996,1.714816238
+United Kingdom,1997,1.411235631
+United Kingdom,1998,0.865508189
+United Kingdom,1999,1.083971756
+United Kingdom,2000,2.223994803
+United Kingdom,2001,1.841053627
+United Kingdom,2002,1.459629574
+United Kingdom,2003,1.649468957
+United Kingdom,2004,1.589370909
+United Kingdom,2005,2.063303381
+United Kingdom,2006,1.915108804
+United Kingdom,2007,1.708735454
+United Kingdom,2008,2.454038133
+United Kingdom,2009,1.407461886
+United Kingdom,2010,1.539507351
+United Kingdom,2011,1.540132468
+United Kingdom,2012,1.245026671
+Georgia,1993,0.32932027
+Georgia,1994,0.232287173
+Georgia,1995,0.373311006
+Georgia,1996,0.642664537
+Georgia,1997,0.575170655
+Georgia,1998,0.442066042
+Georgia,1999,0.615756509
+Georgia,2000,1.244380825
+Georgia,2001,0.817124056
+Georgia,2002,0.701160645
+Georgia,2003,1.081536398
+Georgia,2004,1.102814297
+Georgia,2005,0.997787742
+Georgia,2006,1.294845078
+Georgia,2007,1.18848834
+Georgia,2008,1.169594441
+Georgia,2009,1.108915015
+Georgia,2010,1.06419341
+Georgia,2011,1.156104778
+Georgia,2012,0.897353254
+Ghana,1993,7.091608533
+Ghana,1994,9.945384796
+Ghana,1995,10.42694235
+Ghana,1996,10.69847699
+Ghana,1997,9.789876531
+Ghana,1998,8.652641404
+Ghana,1999,5.991175433
+Ghana,2000,8.252933026
+Ghana,2001,8.368746992
+Ghana,2002,10.36807584
+Ghana,2003,11.9578557
+Ghana,2004,10.3136513
+Ghana,2005,9.457799465
+Ghana,2006,8.033481124
+Ghana,2007,9.071477224
+Ghana,2008,10.61161538
+Ghana,2009,12.93190731
+Ghana,2010,13.03717264
+Ghana,2011,18.95970247
+Ghana,2012,18.70528907
+Guinea,1993,13.88589504
+Guinea,1994,12.42707335
+Guinea,1995,12.91886518
+Guinea,1996,14.12777803
+Guinea,1997,11.45609543
+Guinea,1998,11.34177138
+Guinea,1999,10.66749557
+Guinea,2000,12.14727788
+Guinea,2001,13.23496638
+Guinea,2002,13.59831677
+Guinea,2003,13.14028417
+Guinea,2004,12.8697166
+Guinea,2005,20.47217116
+Guinea,2006,28.65633216
+Guinea,2007,24.29142399
+Guinea,2008,25.93008278
+Guinea,2009,26.27895086
+Guinea,2010,28.16650097
+Guinea,2011,34.11629181
+Guinea,2012,30.12030993
+"Gambia, The",1993,1.875528522
+"Gambia, The",1994,1.957097675
+"Gambia, The",1995,2.396617056
+"Gambia, The",1996,2.353901057
+"Gambia, The",1997,2.317992839
+"Gambia, The",1998,2.21132881
+"Gambia, The",1999,1.628109198
+"Gambia, The",2000,1.747377283
+"Gambia, The",2001,2.084432797
+"Gambia, The",2002,3.104064357
+"Gambia, The",2003,4.52761716
+"Gambia, The",2004,3.227572655
+"Gambia, The",2005,3.216116565
+"Gambia, The",2006,4.128696495
+"Gambia, The",2007,4.397152503
+"Gambia, The",2008,4.643720266
+"Gambia, The",2009,4.533042528
+"Gambia, The",2010,4.83005925
+"Gambia, The",2011,5.56521991
+"Gambia, The",2012,5.21213847
+Guinea-Bissau,1993,14.35877383
+Guinea-Bissau,1994,16.46693623
+Guinea-Bissau,1995,21.72455368
+Guinea-Bissau,1996,21.4999824
+Guinea-Bissau,1997,20.75644449
+Guinea-Bissau,1998,26.95153533
+Guinea-Bissau,1999,17.97016553
+Guinea-Bissau,2000,10.07296636
+Guinea-Bissau,2001,9.861691914
+Guinea-Bissau,2002,11.73198581
+Guinea-Bissau,2003,13.10650351
+Guinea-Bissau,2004,10.81998232
+Guinea-Bissau,2005,10.31070455
+Guinea-Bissau,2006,13.57322433
+Guinea-Bissau,2007,15.6596086
+Guinea-Bissau,2008,16.22239517
+Guinea-Bissau,2009,15.29425484
+Guinea-Bissau,2010,17.00265619
+Guinea-Bissau,2011,16.30170265
+Guinea-Bissau,2012,17.84270277
+Equatorial Guinea,1993,30.42933945
+Equatorial Guinea,1994,41.98851879
+Equatorial Guinea,1995,45.94162498
+Equatorial Guinea,1996,64.04562143
+Equatorial Guinea,1997,90.06489045
+Equatorial Guinea,1998,85.71393966
+Equatorial Guinea,1999,88.1902525
+Equatorial Guinea,2000,100.3668862
+Equatorial Guinea,2001,95.87067753
+Equatorial Guinea,2002,93.90755145
+Equatorial Guinea,2003,91.95357728
+Equatorial Guinea,2004,90.37032749
+Equatorial Guinea,2005,83.3297217
+Equatorial Guinea,2006,81.80097509
+Equatorial Guinea,2007,72.88784558
+Equatorial Guinea,2008,66.86419093
+Equatorial Guinea,2009,56.68624545
+Equatorial Guinea,2010,53.74365543
+Equatorial Guinea,2011,48.69158729
+Equatorial Guinea,2012,51.87825809
+Greece,1993,0.144733874
+Greece,1994,0.121850342
+Greece,1995,0.096292348
+Greece,1996,0.100508028
+Greece,1997,0.085868734
+Greece,1998,0.05924588
+Greece,1999,0.051119693
+Greece,2000,0.104205187
+Greece,2001,0.066694611
+Greece,2002,0.053412821
+Greece,2003,0.063444151
+Greece,2004,0.091013466
+Greece,2005,0.113630858
+Greece,2006,0.202743329
+Greece,2007,0.301153574
+Greece,2008,0.228824987
+Greece,2009,0.086487349
+Greece,2010,0.212489788
+Greece,2011,0.304080354
+Greece,2012,0.208317373
+Grenada,1993,0
+Grenada,1994,0
+Grenada,1995,0
+Grenada,1996,0
+Grenada,1997,0
+Grenada,1998,0
+Grenada,1999,0
+Grenada,2000,0
+Grenada,2001,0
+Grenada,2002,0
+Grenada,2003,0
+Grenada,2004,0
+Grenada,2005,0
+Grenada,2006,0
+Grenada,2007,0
+Grenada,2008,0
+Grenada,2009,0
+Grenada,2010,0
+Grenada,2011,0
+Grenada,2012,0
+Greenland,1993,0
+Greenland,1994,0
+Greenland,1995,0
+Greenland,1996,0
+Greenland,1997,1.098084051
+Greenland,1998,0
+Greenland,1999,0
+Greenland,2000,0
+Greenland,2001,0
+Greenland,2002,0
+Greenland,2003,0
+Greenland,2004,0
+Greenland,2005,0
+Greenland,2006,0
+Greenland,2007,0
+Greenland,2008,0
+Greenland,2009,0
+Guatemala,1993,3.193914968
+Guatemala,1994,2.824443918
+Guatemala,1995,3.347512244
+Guatemala,1996,3.524140599
+Guatemala,1997,3.008155389
+Guatemala,1998,1.296239111
+Guatemala,1999,1.792105774
+Guatemala,2000,2.407191494
+Guatemala,2001,2.696456864
+Guatemala,2002,2.75533741
+Guatemala,2003,3.62457399
+Guatemala,2004,3.337736436
+Guatemala,2005,3.077059724
+Guatemala,2006,3.272311706
+Guatemala,2007,3.950744313
+Guatemala,2008,3.824532451
+Guatemala,2009,3.722748163
+Guatemala,2010,4.439055597
+Guatemala,2011,4.455457866
+Guatemala,2012,4.20262399
+Guyana,1993,21.59940656
+Guyana,1994,19.15633235
+Guyana,1995,16.63551617
+Guyana,1996,16.54372293
+Guyana,1997,15.7787114
+Guyana,1998,10.21231044
+Guyana,1999,10.98981996
+Guyana,2000,10.40087179
+Guyana,2001,9.973370348
+Guyana,2002,8.555030138
+Guyana,2003,11.23117798
+Guyana,2004,11.82716221
+Guyana,2005,12.44166309
+Guyana,2006,9.981873708
+Guyana,2007,12.04302711
+Guyana,2008,13.29355984
+Guyana,2009,14.63118148
+Guyana,2010,17.92967041
+Guyana,2011,20.11194234
+Guyana,2012,20.42909957
+High income,1993,1.363162111
+High income,1994,1.189293564
+High income,1995,1.165016294
+High income,1996,1.443079721
+High income,1997,1.355889831
+High income,1998,0.916953372
+High income,1999,0.973121235
+High income,2000,1.988102619
+High income,2001,1.764712826
+High income,2002,1.479370973
+High income,2003,1.886425743
+High income,2004,2.215096389
+High income,2005,3.122940906
+High income,2006,3.405707434
+High income,2007,3.395078115
+High income,2008,4.591748409
+High income,2009,2.347751586
+High income,2010,2.930870887
+High income,2011,3.600078232
+High income,2012,3.342905892
+"Hong Kong SAR, China",1993,0.001065015
+"Hong Kong SAR, China",1994,0.00101563
+"Hong Kong SAR, China",1995,0.00095945
+"Hong Kong SAR, China",1996,0.001138278
+"Hong Kong SAR, China",1997,0.00097429
+"Hong Kong SAR, China",1998,0.001037759
+"Hong Kong SAR, China",1999,0.000775744
+"Hong Kong SAR, China",2000,0.000719498
+"Hong Kong SAR, China",2001,0.000805829
+"Hong Kong SAR, China",2002,0.000986687
+"Hong Kong SAR, China",2003,0.001208666
+"Hong Kong SAR, China",2004,0.001166225
+"Hong Kong SAR, China",2005,0.001143086
+"Hong Kong SAR, China",2006,0.001319648
+"Hong Kong SAR, China",2007,0.001383233
+"Hong Kong SAR, China",2008,0.00138924
+"Hong Kong SAR, China",2009,0.001603293
+"Hong Kong SAR, China",2010,0.001370926
+"Hong Kong SAR, China",2011,0.001462274
+"Hong Kong SAR, China",2012,0.001296347
+Honduras,1993,6.475380467
+Honduras,1994,6.706974264
+Honduras,1995,7.480290086
+Honduras,1996,8.149014612
+Honduras,1997,6.643438945
+Honduras,1998,2.794870539
+Honduras,1999,2.985068257
+Honduras,2000,2.657903243
+Honduras,2001,3.030523033
+Honduras,2002,3.212370478
+Honduras,2003,4.200764597
+Honduras,2004,3.863473418
+Honduras,2005,3.40364286
+Honduras,2006,4.247958283
+Honduras,2007,4.766020021
+Honduras,2008,3.982115469
+Honduras,2009,3.771872209
+Honduras,2010,4.532538781
+Honduras,2011,3.925131183
+Honduras,2012,3.602678557
+Heavily indebted poor countries (HIPC),1993,8.242771799
+Heavily indebted poor countries (HIPC),1994,10.05855804
+Heavily indebted poor countries (HIPC),1995,11.60241963
+Heavily indebted poor countries (HIPC),1996,12.43352349
+Heavily indebted poor countries (HIPC),1997,11.4893744
+Heavily indebted poor countries (HIPC),1998,9.486694038
+Heavily indebted poor countries (HIPC),1999,8.310122056
+Heavily indebted poor countries (HIPC),2000,9.96128814
+Heavily indebted poor countries (HIPC),2001,9.997430825
+Heavily indebted poor countries (HIPC),2002,10.82991672
+Heavily indebted poor countries (HIPC),2003,12.33020204
+Heavily indebted poor countries (HIPC),2004,13.99804263
+Heavily indebted poor countries (HIPC),2005,17.2310199
+Heavily indebted poor countries (HIPC),2006,19.38945768
+Heavily indebted poor countries (HIPC),2007,19.96175612
+Heavily indebted poor countries (HIPC),2008,21.87869893
+Heavily indebted poor countries (HIPC),2009,15.89935499
+Heavily indebted poor countries (HIPC),2010,18.65288747
+Heavily indebted poor countries (HIPC),2011,21.55784177
+Heavily indebted poor countries (HIPC),2012,16.81805158
+Croatia,1993,3.580347085
+Croatia,1994,2.177823102
+Croatia,1995,1.606607564
+Croatia,1996,1.829003168
+Croatia,1997,1.721216521
+Croatia,1998,1.249171186
+Croatia,1999,1.311275662
+Croatia,2000,2.448997467
+Croatia,2001,2.138031745
+Croatia,2002,1.773190444
+Croatia,2003,1.875192001
+Croatia,2004,1.558559395
+Croatia,2005,2.086971426
+Croatia,2006,2.295298949
+Croatia,2007,2.029580735
+Croatia,2008,2.403843093
+Croatia,2009,1.346083371
+Croatia,2010,1.560187962
+Croatia,2011,1.693935112
+Croatia,2012,1.65336329
+Haiti,1993,3.398436066
+Haiti,1994,2.820411017
+Haiti,1995,2.912694589
+Haiti,1996,2.81095346
+Haiti,1997,2.337508205
+Haiti,1998,0.994993582
+Haiti,1999,0.991213566
+Haiti,2000,1.355441101
+Haiti,2001,1.624038025
+Haiti,2002,1.91475405
+Haiti,2003,2.959039829
+Haiti,2004,2.134128779
+Haiti,2005,1.722994258
+Haiti,2006,1.696925533
+Haiti,2007,1.979804833
+Haiti,2008,1.923195604
+Haiti,2009,1.879250023
+Haiti,2010,2.4312775
+Haiti,2011,1.972586656
+Haiti,2012,1.885598676
+Hungary,1993,1.57138607
+Hungary,1994,1.21886629
+Hungary,1995,1.221903065
+Hungary,1996,1.392051625
+Hungary,1997,1.122853217
+Hungary,1998,0.771786214
+Hungary,1999,0.797000736
+Hungary,2000,1.468289893
+Hungary,2001,1.128434444
+Hungary,2002,0.787480382
+Hungary,2003,0.919950833
+Hungary,2004,0.808566418
+Hungary,2005,1.013276116
+Hungary,2006,1.093072468
+Hungary,2007,0.859808286
+Hungary,2008,1.134570618
+Hungary,2009,0.777592069
+Hungary,2010,0.859338756
+Hungary,2011,0.939402486
+Hungary,2012,0.902392061
+Indonesia,1993,9.156130983
+Indonesia,1994,8.358985003
+Indonesia,1995,8.628626187
+Indonesia,1996,9.387250198
+Indonesia,1997,8.876665536
+Indonesia,1998,14.34358875
+Indonesia,1999,9.690864885
+Indonesia,2000,14.62013359
+Indonesia,2001,12.94887864
+Indonesia,2002,9.767022352
+Indonesia,2003,11.21048063
+Indonesia,2004,12.10494366
+Indonesia,2005,15.37260185
+Indonesia,2006,14.13000456
+Indonesia,2007,13.86749356
+Indonesia,2008,15.90910206
+Indonesia,2009,8.377395375
+Indonesia,2010,8.44613267
+Indonesia,2011,8.902160068
+Indonesia,2012,7.137988386
+Isle of Man,1995,0
+Isle of Man,1996,0
+Isle of Man,1997,0
+Isle of Man,1998,0
+Isle of Man,1999,0
+Isle of Man,2000,0
+Isle of Man,2001,0
+Isle of Man,2002,0
+Isle of Man,2003,0
+Isle of Man,2004,0
+Isle of Man,2005,0
+Isle of Man,2006,0
+Isle of Man,2007,0
+India,1993,4.369881721
+India,1994,3.78600021
+India,1995,4.251977964
+India,1996,6.067551727
+India,1997,3.371631632
+India,1998,3.042385364
+India,1999,2.974836286
+India,2000,3.56254406
+India,2001,3.591614743
+India,2002,2.769495879
+India,2003,3.454961561
+India,2004,4.485846395
+India,2005,4.940842817
+India,2006,5.550889829
+India,2007,5.951197638
+India,2008,9.078207966
+India,2009,4.682595248
+India,2010,6.211503327
+India,2011,6.794931256
+India,2012,5.628935689
+Ireland,1993,0.446079994
+Ireland,1994,0.389624773
+Ireland,1995,0.32486638
+Ireland,1996,0.375052743
+Ireland,1997,0.278413571
+Ireland,1998,0.19311677
+Ireland,1999,0.163932878
+Ireland,2000,0.23122354
+Ireland,2001,0.179632119
+Ireland,2002,0.121418247
+Ireland,2003,0.106638557
+Ireland,2004,0.109337683
+Ireland,2005,0.110899115
+Ireland,2006,0.455919658
+Ireland,2007,0.377117155
+Ireland,2008,0.147710422
+Ireland,2009,0.101328894
+Ireland,2010,0.196656632
+Ireland,2011,0.167570604
+Ireland,2012,0.135725707
+"Iran, Islamic Rep.",1993,37.0628328
+"Iran, Islamic Rep.",1994,31.36470997
+"Iran, Islamic Rep.",1995,25.86508021
+"Iran, Islamic Rep.",1996,25.8472939
+"Iran, Islamic Rep.",1997,25.38508766
+"Iran, Islamic Rep.",1998,16.809845
+"Iran, Islamic Rep.",1999,21.82130454
+"Iran, Islamic Rep.",2000,42.11956927
+"Iran, Islamic Rep.",2001,30.69588883
+"Iran, Islamic Rep.",2002,29.47979352
+"Iran, Islamic Rep.",2003,35.33644334
+"Iran, Islamic Rep.",2004,38.89130785
+"Iran, Islamic Rep.",2005,51.73718643
+"Iran, Islamic Rep.",2006,53.30921104
+"Iran, Islamic Rep.",2007,47.06244646
+"Iran, Islamic Rep.",2008,52.24519688
+"Iran, Islamic Rep.",2009,28.52527156
+"Iran, Islamic Rep.",2010,30.8488994
+"Iran, Islamic Rep.",2011,31.70442791
+"Iran, Islamic Rep.",2012,27.90975395
+Iraq,2004,68.37212261
+Iraq,2005,67.32587182
+Iraq,2006,64.98675526
+Iraq,2007,54.5085366
+Iraq,2008,57.03487343
+Iraq,2009,41.31915069
+Iraq,2010,42.39841952
+Iraq,2011,47.39932262
+Iraq,2012,45.95556103
+Iceland,1993,0
+Iceland,1994,0
+Iceland,1995,0
+Iceland,1996,0
+Iceland,1997,0
+Iceland,1998,0
+Iceland,1999,0
+Iceland,2000,0
+Iceland,2001,0
+Iceland,2002,0
+Iceland,2003,0
+Iceland,2004,0
+Iceland,2005,0
+Iceland,2006,0
+Iceland,2007,0
+Iceland,2008,0
+Iceland,2009,0
+Iceland,2010,0
+Iceland,2011,0
+Iceland,2012,0
+Israel,1993,0.013242839
+Israel,1994,0.010294886
+Israel,1995,0.007980788
+Israel,1996,0.005962716
+Israel,1997,0.006073132
+Israel,1998,0.005919156
+Israel,1999,0.005599441
+Israel,2000,0.004302404
+Israel,2001,0.002383947
+Israel,2002,0.002223086
+Israel,2003,0.002295951
+Israel,2004,0.141558157
+Israel,2005,0.289368399
+Israel,2006,0.354054449
+Israel,2007,0.367660103
+Israel,2008,0.955719222
+Israel,2009,0.287576587
+Israel,2010,0.295241416
+Israel,2011,0.420309165
+Israel,2012,0.286167245
+Italy,1993,0.188661169
+Italy,1994,0.173595265
+Italy,1995,0.177232663
+Italy,1996,0.192953048
+Italy,1997,0.189619683
+Italy,1998,0.138835117
+Italy,1999,0.126123237
+Italy,2000,0.264424582
+Italy,2001,0.215447766
+Italy,2002,0.174034276
+Italy,2003,0.197011363
+Italy,2004,0.190398676
+Italy,2005,0.280840954
+Italy,2006,0.270504933
+Italy,2007,0.243603572
+Italy,2008,0.296977132
+Italy,2009,0.150181834
+Italy,2010,0.192327496
+Italy,2011,0.22484743
+Italy,2012,0.240412891
+Jamaica,1993,5.443683482
+Jamaica,1994,5.426478221
+Jamaica,1995,3.006930464
+Jamaica,1996,3.575330115
+Jamaica,1997,2.912947759
+Jamaica,1998,2.3713734
+Jamaica,1999,1.973362339
+Jamaica,2000,2.067978922
+Jamaica,2001,2.282586892
+Jamaica,2002,1.794819133
+Jamaica,2003,1.743188704
+Jamaica,2004,2.003609777
+Jamaica,2005,2.081504379
+Jamaica,2006,2.415231704
+Jamaica,2007,2.551303937
+Jamaica,2008,1.801806138
+Jamaica,2009,1.705755061
+Jamaica,2010,1.844675867
+Jamaica,2011,2.791702342
+Jamaica,2012,2.709357114
+Jordan,1993,0.239762997
+Jordan,1994,0.29973009
+Jordan,1995,0.331222968
+Jordan,1996,0.398209397
+Jordan,1997,0.321613266
+Jordan,1998,0.24768177
+Jordan,1999,0.196066635
+Jordan,2000,0.402025474
+Jordan,2001,0.367173118
+Jordan,2002,0.256444852
+Jordan,2003,0.426833683
+Jordan,2004,0.412280135
+Jordan,2005,0.469299676
+Jordan,2006,0.395414173
+Jordan,2007,0.875234094
+Jordan,2008,8.534457208
+Jordan,2009,1.663875323
+Jordan,2010,1.816074472
+Jordan,2011,3.005625698
+Jordan,2012,2.804101731
+Japan,1993,0.030731296
+Japan,1994,0.024718775
+Japan,1995,0.019273156
+Japan,1996,0.02234619
+Japan,1997,0.02193372
+Japan,1998,0.022551825
+Japan,1999,0.018945682
+Japan,2000,0.021420665
+Japan,2001,0.023394918
+Japan,2002,0.020547988
+Japan,2003,0.023048443
+Japan,2004,0.021037162
+Japan,2005,0.031199421
+Japan,2006,0.037779305
+Japan,2007,0.041789147
+Japan,2008,0.053407718
+Japan,2009,0.029645357
+Japan,2010,0.029657238
+Japan,2011,0.030066866
+Japan,2012,0.029164393
+Kazakhstan,1993,14.27019862
+Kazakhstan,1994,13.57314954
+Kazakhstan,1995,16.97523787
+Kazakhstan,1996,20.15138847
+Kazakhstan,1997,20.1623363
+Kazakhstan,1998,12.12271258
+Kazakhstan,1999,22.89161726
+Kazakhstan,2000,43.52603634
+Kazakhstan,2001,35.29522859
+Kazakhstan,2002,34.88663059
+Kazakhstan,2003,38.18218245
+Kazakhstan,2004,45.38935904
+Kazakhstan,2005,50.15291861
+Kazakhstan,2006,46.48171426
+Kazakhstan,2007,40.81301448
+Kazakhstan,2008,48.47528721
+Kazakhstan,2009,33.13728064
+Kazakhstan,2010,35.17839089
+Kazakhstan,2011,36.9515944
+Kazakhstan,2012,32.14735153
+Kenya,1993,5.981874332
+Kenya,1994,5.407574181
+Kenya,1995,6.116623858
+Kenya,1996,4.878435518
+Kenya,1997,4.310081129
+Kenya,1998,3.866528075
+Kenya,1999,3.05879786
+Kenya,2000,2.744490452
+Kenya,2001,2.724651278
+Kenya,2002,3.335918106
+Kenya,2003,3.694731429
+Kenya,2004,3.139467128
+Kenya,2005,3.138033545
+Kenya,2006,3.48649026
+Kenya,2007,4.110430405
+Kenya,2008,4.452788878
+Kenya,2009,4.123959562
+Kenya,2010,4.375238017
+Kenya,2011,4.606627311
+Kenya,2012,3.549321101
+Kyrgyz Republic,1993,0.962250102
+Kyrgyz Republic,1994,1.431152431
+Kyrgyz Republic,1995,0.867098032
+Kyrgyz Republic,1996,0.939947788
+Kyrgyz Republic,1997,2.131635752
+Kyrgyz Republic,1998,1.234634033
+Kyrgyz Republic,1999,1.224211562
+Kyrgyz Republic,2000,2.096208837
+Kyrgyz Republic,2001,2.104034183
+Kyrgyz Republic,2002,2.972818561
+Kyrgyz Republic,2003,4.553684699
+Kyrgyz Republic,2004,5.100471736
+Kyrgyz Republic,2005,4.667271292
+Kyrgyz Republic,2006,4.977871866
+Kyrgyz Republic,2007,4.398073183
+Kyrgyz Republic,2008,7.210592995
+Kyrgyz Republic,2009,8.335229066
+Kyrgyz Republic,2010,12.04131112
+Kyrgyz Republic,2011,12.90158483
+Kyrgyz Republic,2012,14.72860981
+Cambodia,1993,8.177237343
+Cambodia,1994,9.756309531
+Cambodia,1995,11.67173034
+Cambodia,1996,13.20676991
+Cambodia,1997,11.50994097
+Cambodia,1998,10.51929456
+Cambodia,1999,5.153292701
+Cambodia,2000,3.702536644
+Cambodia,2001,3.551739979
+Cambodia,2002,3.587395217
+Cambodia,2003,5.310275513
+Cambodia,2004,5.006697171
+Cambodia,2005,2.58078245
+Cambodia,2006,2.721869625
+Cambodia,2007,2.672733241
+Cambodia,2008,3.883318738
+Cambodia,2009,3.392191133
+Cambodia,2010,3.853023647
+Cambodia,2011,4.289144647
+Cambodia,2012,4.583674689
+Kiribati,1993,0.06278769
+Kiribati,1994,0.067336435
+Kiribati,1995,0.107135177
+Kiribati,1996,0.113804117
+Kiribati,1997,0.096767964
+Kiribati,1998,0.08297399
+Kiribati,1999,0.039713923
+Kiribati,2000,0.044174488
+Kiribati,2001,0.052285611
+Kiribati,2002,0.051972571
+Kiribati,2003,0.070571818
+Kiribati,2004,0.070970495
+Kiribati,2005,0.04218885
+Kiribati,2006,0.053468631
+Kiribati,2007,0.054871752
+Kiribati,2008,0.092687444
+Kiribati,2009,0.089508232
+Kiribati,2010,0.098027193
+Kiribati,2011,0.110844652
+Kiribati,2012,0.133421803
+St. Kitts and Nevis,1993,0
+St. Kitts and Nevis,1994,0
+St. Kitts and Nevis,1995,0
+St. Kitts and Nevis,1996,0
+St. Kitts and Nevis,1997,0
+St. Kitts and Nevis,1998,0
+St. Kitts and Nevis,1999,0
+St. Kitts and Nevis,2000,0
+St. Kitts and Nevis,2001,0
+St. Kitts and Nevis,2002,0
+St. Kitts and Nevis,2003,0
+St. Kitts and Nevis,2004,0
+St. Kitts and Nevis,2005,0
+St. Kitts and Nevis,2006,0
+St. Kitts and Nevis,2007,0
+St. Kitts and Nevis,2008,0
+St. Kitts and Nevis,2009,0
+St. Kitts and Nevis,2010,0
+St. Kitts and Nevis,2011,0
+St. Kitts and Nevis,2012,0
+"Korea, Rep.",1993,0.024249691
+"Korea, Rep.",1994,0.020591868
+"Korea, Rep.",1995,0.024914301
+"Korea, Rep.",1996,0.018858147
+"Korea, Rep.",1997,0.017139073
+"Korea, Rep.",1998,0.027023485
+"Korea, Rep.",1999,0.019492923
+"Korea, Rep.",2000,0.015873562
+"Korea, Rep.",2001,0.024386244
+"Korea, Rep.",2002,0.02214366
+"Korea, Rep.",2003,0.025140868
+"Korea, Rep.",2004,0.022109639
+"Korea, Rep.",2005,0.034918657
+"Korea, Rep.",2006,0.034223642
+"Korea, Rep.",2007,0.037477295
+"Korea, Rep.",2008,0.061127298
+"Korea, Rep.",2009,0.051303781
+"Korea, Rep.",2010,0.056165684
+"Korea, Rep.",2011,0.05326441
+"Korea, Rep.",2012,0.053564288
+Kosovo,2000,0
+Kosovo,2001,0.06768726
+Kosovo,2002,0
+Kosovo,2003,0
+Kosovo,2004,0.409780137
+Kosovo,2005,0.14822727
+Kosovo,2006,0.346880528
+Kosovo,2007,1.663497981
+Kosovo,2008,1.999825937
+Kosovo,2009,1.840880979
+Kosovo,2010,3.090768259
+Kosovo,2011,2.916089007
+Kosovo,2012,2.446774726
+Kuwait,1993,44.72326829
+Kuwait,1994,43.04440455
+Kuwait,1995,42.82836088
+Kuwait,1996,45.23661849
+Kuwait,1997,43.59480804
+Kuwait,1998,32.96752894
+Kuwait,1999,36.12212294
+Kuwait,2000,52.65226477
+Kuwait,2001,47.07007121
+Kuwait,2002,38.77142288
+Kuwait,2003,44.61587337
+Kuwait,2004,51.70849571
+Kuwait,2005,61.82098145
+Kuwait,2006,60.32004643
+Kuwait,2007,57.08278233
+Kuwait,2008,63.7097449
+Kuwait,2009,44.49375263
+Kuwait,2010,51.74433657
+Kuwait,2011,58.77131734
+Kuwait,2012,55.14110438
+Latin America & Caribbean,1993,4.382429246
+Latin America & Caribbean,1994,3.647863371
+Latin America & Caribbean,1995,4.066066234
+Latin America & Caribbean,1996,4.598466375
+Latin America & Caribbean,1997,4.117383291
+Latin America & Caribbean,1998,2.753647077
+Latin America & Caribbean,1999,3.691163757
+Latin America & Caribbean,2000,5.741685797
+Latin America & Caribbean,2001,5.107989116
+Latin America & Caribbean,2002,5.725526114
+Latin America & Caribbean,2003,7.042659413
+Latin America & Caribbean,2004,8.466175407
+Latin America & Caribbean,2005,10.44334362
+Latin America & Caribbean,2006,11.2565038
+Latin America & Caribbean,2007,10.83504844
+Latin America & Caribbean,2008,12.04078781
+Latin America & Caribbean,2009,7.355727123
+Latin America & Caribbean,2010,8.478666449
+Latin America & Caribbean,2011,9.647349312
+Latin America & Caribbean,2012,9.154749038
+Lao PDR,1993,9.126843591
+Lao PDR,1994,9.320578703
+Lao PDR,1995,12.69839287
+Lao PDR,1996,13.57804516
+Lao PDR,1997,12.33668146
+Lao PDR,1998,13.75580845
+Lao PDR,1999,7.808965911
+Lao PDR,2000,5.976757556
+Lao PDR,2001,6.4938319
+Lao PDR,2002,6.632847674
+Lao PDR,2003,8.682719584
+Lao PDR,2004,8.096185744
+Lao PDR,2005,8.615568292
+Lao PDR,2006,16.28439463
+Lao PDR,2007,15.13441587
+Lao PDR,2008,16.90634885
+Lao PDR,2009,14.61972148
+Lao PDR,2010,18.54714844
+Lao PDR,2011,20.78338418
+Lao PDR,2012,19.56721578
+Lebanon,1993,0.022756546
+Lebanon,1994,0.02052377
+Lebanon,1995,0.028321727
+Lebanon,1996,0.025602499
+Lebanon,1997,0.013161789
+Lebanon,1998,0.009337517
+Lebanon,1999,0.002286846
+Lebanon,2000,0.002382893
+Lebanon,2001,0.003080719
+Lebanon,2002,0.003234901
+Lebanon,2003,0.004073156
+Lebanon,2004,0.003668464
+Lebanon,2005,0.003329573
+Lebanon,2006,0.003540867
+Lebanon,2007,0.003131792
+Lebanon,2008,0.003150131
+Lebanon,2009,0.002171526
+Lebanon,2010,0.003329771
+Lebanon,2011,0.005370876
+Lebanon,2012,0.003686558
+Liberia,1993,71.07939152
+Liberia,1994,69.39646248
+Liberia,1995,68.3002586
+Liberia,1996,62.50813859
+Liberia,1997,36.72906213
+Liberia,1998,29.33808609
+Liberia,1999,20.50903778
+Liberia,2000,22.45700383
+Liberia,2001,25.10217205
+Liberia,2002,35.45170222
+Liberia,2003,46.26287463
+Liberia,2004,28.64487125
+Liberia,2005,26.3796509
+Liberia,2006,32.35954704
+Liberia,2007,37.41516042
+Liberia,2008,43.62221
+Liberia,2009,30.50256926
+Liberia,2010,32.03804033
+Liberia,2011,30.17100767
+Liberia,2012,26.17767458
+Libya,1993,22.65212746
+Libya,1994,22.90188187
+Libya,1995,28.54367433
+Libya,1996,32.23515961
+Libya,1997,27.11182757
+Libya,1998,19.14707114
+Libya,1999,21.38281872
+Libya,2000,36.00546871
+Libya,2001,35.24115453
+Libya,2002,50.27212822
+Libya,2003,54.30870518
+Libya,2004,58.39507125
+Libya,2005,70.58070373
+Libya,2006,69.26274725
+Libya,2007,60.98380689
+Libya,2008,63.98304426
+Libya,2009,46.28848932
+Libya,2010,50.33450559
+Libya,2011,45.36741469
+Libya,2012,54.51858844
+St. Lucia,1993,0.039859101
+St. Lucia,1994,0.038270135
+St. Lucia,1995,0.047828975
+St. Lucia,1996,0.052294259
+St. Lucia,1997,0.044394727
+St. Lucia,1998,0.014936934
+St. Lucia,1999,0.016941264
+St. Lucia,2000,0.021031043
+St. Lucia,2001,0.028895095
+St. Lucia,2002,0.030062589
+St. Lucia,2003,0.041996749
+St. Lucia,2004,0.036838122
+St. Lucia,2005,0.030734887
+St. Lucia,2006,0.031356559
+St. Lucia,2007,0.040731707
+St. Lucia,2008,0.040467236
+St. Lucia,2009,0.041735806
+St. Lucia,2010,0.051386224
+St. Lucia,2011,0.045080468
+St. Lucia,2012,0.044818885
+Least developed countries: UN classification,1993,9.289961735
+Least developed countries: UN classification,1994,11.29208874
+Least developed countries: UN classification,1995,12.88685279
+Least developed countries: UN classification,1996,14.99256816
+Least developed countries: UN classification,1997,12.72912308
+Least developed countries: UN classification,1998,10.25885099
+Least developed countries: UN classification,1999,10.26340064
+Least developed countries: UN classification,2000,13.19723009
+Least developed countries: UN classification,2001,12.9557677
+Least developed countries: UN classification,2002,13.76271619
+Least developed countries: UN classification,2003,15.86984562
+Least developed countries: UN classification,2004,18.81625478
+Least developed countries: UN classification,2005,24.12697458
+Least developed countries: UN classification,2006,26.90067444
+Least developed countries: UN classification,2007,27.48711333
+Least developed countries: UN classification,2008,30.88141815
+Least developed countries: UN classification,2009,19.20422745
+Least developed countries: UN classification,2010,22.3305118
+Least developed countries: UN classification,2011,24.35198977
+Least developed countries: UN classification,2012,20.32939428
+Low income,1993,7.117320751
+Low income,1994,8.453878925
+Low income,1995,9.873232272
+Low income,1996,10.53169763
+Low income,1997,8.633884618
+Low income,1998,7.992926826
+Low income,1999,6.135094027
+Low income,2000,5.496978294
+Low income,2001,6.045059743
+Low income,2002,6.481429401
+Low income,2003,8.256799675
+Low income,2004,8.960908803
+Low income,2005,10.16315187
+Low income,2006,11.94094385
+Low income,2007,12.40197921
+Low income,2008,13.77905297
+Low income,2009,10.19661536
+Low income,2010,11.60433013
+Low income,2011,12.49952981
+Low income,2012,10.70077711
+Liechtenstein,1993,0.027871558
+Liechtenstein,1994,0.044996671
+Liechtenstein,1995,0.031505602
+Liechtenstein,1996,0.021794289
+Liechtenstein,1997,0.022230835
+Liechtenstein,1998,0.018416983
+Liechtenstein,1999,0.00709924
+Liechtenstein,2000,0.032593185
+Liechtenstein,2001,0.027833822
+Liechtenstein,2002,0.028268966
+Liechtenstein,2003,0.026134633
+Liechtenstein,2004,0.018388912
+Liechtenstein,2005,0.01847386
+Liechtenstein,2006,0.026200858
+Liechtenstein,2007,0.02593434
+Liechtenstein,2008,0.03275569
+Liechtenstein,2009,0.02344749
+Sri Lanka,1993,2.040732699
+Sri Lanka,1994,1.807940996
+Sri Lanka,1995,1.92259485
+Sri Lanka,1996,3.852050143
+Sri Lanka,1997,0.882053012
+Sri Lanka,1998,0.939305462
+Sri Lanka,1999,1.06297994
+Sri Lanka,2000,0.72995762
+Sri Lanka,2001,0.708166529
+Sri Lanka,2002,0.490555085
+Sri Lanka,2003,0.794967357
+Sri Lanka,2004,0.719800469
+Sri Lanka,2005,0.592401641
+Sri Lanka,2006,0.834506989
+Sri Lanka,2007,0.880102586
+Sri Lanka,2008,0.716677314
+Sri Lanka,2009,0.649148435
+Sri Lanka,2010,0.936541634
+Sri Lanka,2011,0.757649686
+Sri Lanka,2012,0.683795946
+Lower middle income,1993,7.281516465
+Lower middle income,1994,6.725817019
+Lower middle income,1995,7.111176289
+Lower middle income,1996,8.507456675
+Lower middle income,1997,6.878764199
+Lower middle income,1998,5.57146357
+Lower middle income,1999,5.632196122
+Lower middle income,2000,8.903906325
+Lower middle income,2001,8.116984989
+Lower middle income,2002,6.871115532
+Lower middle income,2003,8.442176307
+Lower middle income,2004,9.642115162
+Lower middle income,2005,11.36677393
+Lower middle income,2006,12.01478673
+Lower middle income,2007,11.41566935
+Lower middle income,2008,14.26279636
+Lower middle income,2009,7.857765919
+Lower middle income,2010,8.80856752
+Lower middle income,2011,9.761876266
+Lower middle income,2012,8.133152488
+Low & middle income,1993,5.977014851
+Low & middle income,1994,5.269999645
+Low & middle income,1995,5.541158503
+Low & middle income,1996,6.299107391
+Low & middle income,1997,5.397405815
+Low & middle income,1998,3.794404385
+Low & middle income,1999,4.365775827
+Low & middle income,2000,6.933164427
+Low & middle income,2001,6.278355854
+Low & middle income,2002,5.871476932
+Low & middle income,2003,7.107823453
+Low & middle income,2004,8.984713149
+Low & middle income,2005,10.84383953
+Low & middle income,2006,11.51376752
+Low & middle income,2007,11.27266523
+Low & middle income,2008,13.98774593
+Low & middle income,2009,7.615120818
+Low & middle income,2010,9.102045452
+Low & middle income,2011,10.22546175
+Low & middle income,2012,8.714517837
+Lesotho,1993,2.62079734
+Lesotho,1994,3.065345728
+Lesotho,1995,4.116522016
+Lesotho,1996,4.626129058
+Lesotho,1997,4.30532594
+Lesotho,1998,4.423040558
+Lesotho,1999,3.952948257
+Lesotho,2000,3.493456256
+Lesotho,2001,3.847958028
+Lesotho,2002,5.154201679
+Lesotho,2003,4.570198675
+Lesotho,2004,3.521669678
+Lesotho,2005,3.221409517
+Lesotho,2006,3.992528521
+Lesotho,2007,5.033663199
+Lesotho,2008,6.188655518
+Lesotho,2009,5.511631349
+Lesotho,2010,4.746159257
+Lesotho,2011,4.618288824
+Lesotho,2012,4.472230264
+Lithuania,1993,1.704622342
+Lithuania,1994,1.64302016
+Lithuania,1995,2.908227355
+Lithuania,1996,2.71744108
+Lithuania,1997,2.155512803
+Lithuania,1998,1.761994869
+Lithuania,1999,1.777167282
+Lithuania,2000,2.05664771
+Lithuania,2001,2.019017727
+Lithuania,2002,2.004097607
+Lithuania,2003,1.707014454
+Lithuania,2004,1.082239527
+Lithuania,2005,0.990875921
+Lithuania,2006,1.074705984
+Lithuania,2007,0.891057601
+Lithuania,2008,0.886807914
+Lithuania,2009,0.760211528
+Lithuania,2010,1.09520763
+Lithuania,2011,0.970969416
+Lithuania,2012,0.973553491
+Luxembourg,1993,0
+Luxembourg,1994,0
+Luxembourg,1995,0
+Luxembourg,1996,0
+Luxembourg,1997,0
+Luxembourg,1998,0.012117544
+Luxembourg,1999,0.012215208
+Luxembourg,2000,0.081417788
+Luxembourg,2001,0.089527678
+Luxembourg,2002,0.077960719
+Luxembourg,2003,0.052772528
+Luxembourg,2004,0.041904023
+Luxembourg,2005,0.035068319
+Luxembourg,2006,0.044972905
+Luxembourg,2007,0.062429226
+Luxembourg,2008,0.333294111
+Luxembourg,2009,0.107210055
+Luxembourg,2010,0.111667967
+Luxembourg,2011,0.140857697
+Luxembourg,2012,0.161537025
+Latvia,1993,3.470044471
+Latvia,1994,3.771647649
+Latvia,1995,5.814457579
+Latvia,1996,5.940782326
+Latvia,1997,4.821898749
+Latvia,1998,5.064711555
+Latvia,1999,6.45472923
+Latvia,2000,6.38018469
+Latvia,2001,4.920089658
+Latvia,2002,5.436046086
+Latvia,2003,5.277301174
+Latvia,2004,2.91330938
+Latvia,2005,2.429632717
+Latvia,2006,2.606770902
+Latvia,2007,1.937283441
+Latvia,2008,1.429056352
+Latvia,2009,1.525421202
+Latvia,2010,2.42266783
+Latvia,2011,2.010367185
+Latvia,2012,2.600870815
+"Macao SAR, China",1993,0.001946158
+"Macao SAR, China",1994,0.002200246
+"Macao SAR, China",1995,0.002007166
+"Macao SAR, China",1996,0.002271558
+"Macao SAR, China",1997,0.00225062
+"Macao SAR, China",1998,0.002427445
+"Macao SAR, China",1999,0.001859605
+"Macao SAR, China",2000,0.001753657
+"Macao SAR, China",2001,0.001820408
+"Macao SAR, China",2002,0.002040383
+"Macao SAR, China",2003,0.002149773
+"Macao SAR, China",2004,0.0016842
+"Macao SAR, China",2005,0.001546386
+"Macao SAR, China",2006,0.001543972
+"Macao SAR, China",2007,0.001431078
+"Macao SAR, China",2008,0.001300627
+"Macao SAR, China",2009,0.001428554
+"Macao SAR, China",2010,0.000983021
+"Macao SAR, China",2011,0.000884759
+"Macao SAR, China",2012,0.000708447
+Morocco,1993,0.725545975
+Morocco,1994,0.804528473
+Morocco,1995,1.04509525
+Morocco,1996,0.952985673
+Morocco,1997,0.970554614
+Morocco,1998,0.950324665
+Morocco,1999,0.865619746
+Morocco,2000,0.963610485
+Morocco,2001,1.000649831
+Morocco,2002,0.95931932
+Morocco,2003,0.721330691
+Morocco,2004,0.64815513
+Morocco,2005,0.699071108
+Morocco,2006,1.02701584
+Morocco,2007,1.764249788
+Morocco,2008,8.801307062
+Morocco,2009,2.018550357
+Morocco,2010,3.032409556
+Morocco,2011,4.976136801
+Morocco,2012,4.954141184
+Monaco,1993,18.09147157
+Monaco,1994,15.82674047
+Monaco,1995,13.59587063
+Monaco,1996,15.1472474
+Monaco,1997,13.2699321
+Monaco,1998,7.734592894
+Monaco,1999,8.167251937
+Monaco,2000,16.65972303
+Monaco,2001,0
+Monaco,2002,0
+Monaco,2003,0
+Monaco,2004,0
+Monaco,2005,0
+Monaco,2006,0
+Monaco,2007,0
+Monaco,2008,0
+Monaco,2009,0
+Monaco,2010,0
+Monaco,2011,0
+Moldova,1993,0
+Moldova,1994,0
+Moldova,1995,0.564080211
+Moldova,1996,0.672631621
+Moldova,1997,0.384608382
+Moldova,1998,0.390042711
+Moldova,1999,0.551635276
+Moldova,2000,0.489396427
+Moldova,2001,0.352416285
+Moldova,2002,0.438219622
+Moldova,2003,0.505147149
+Moldova,2004,0.419569981
+Moldova,2005,0.302993356
+Moldova,2006,0.397931532
+Moldova,2007,0.342362399
+Moldova,2008,0.503614059
+Moldova,2009,0.510021381
+Moldova,2010,0.461919304
+Moldova,2011,0.492978446
+Moldova,2012,0.492944188
+Madagascar,1993,4.611557091
+Madagascar,1994,5.63030775
+Madagascar,1995,7.910650125
+Madagascar,1996,6.728117153
+Madagascar,1997,6.557475625
+Madagascar,1998,5.682081473
+Madagascar,1999,4.136514641
+Madagascar,2000,3.432940758
+Madagascar,2001,3.038783991
+Madagascar,2002,3.97217295
+Madagascar,2003,4.289079485
+Madagascar,2004,5.368444369
+Madagascar,2005,4.83602737
+Madagascar,2006,6.730405754
+Madagascar,2007,7.086616779
+Madagascar,2008,6.917723565
+Madagascar,2009,7.079783545
+Madagascar,2010,7.949768149
+Madagascar,2011,8.336657527
+Madagascar,2012,8.918775953
+Maldives,1993,0.06259302
+Maldives,1994,0.05942936
+Maldives,1995,0.062876086
+Maldives,1996,0.135178874
+Maldives,1997,0.039583148
+Maldives,1998,0.049301655
+Maldives,1999,0.04994755
+Maldives,2000,0.037343595
+Maldives,2001,0.027728031
+Maldives,2002,0.016171541
+Maldives,2003,0.027805658
+Maldives,2004,0.028430214
+Maldives,2005,0.030984172
+Maldives,2006,0.037696451
+Maldives,2007,0.035548921
+Maldives,2008,0.030862785
+Maldives,2009,0.028614379
+Maldives,2010,0.054304048
+Maldives,2011,0.049972567
+Maldives,2012,0.044902291
+Middle East & North Africa (all income levels),1993,17.92005823
+Middle East & North Africa (all income levels),1994,16.67748686
+Middle East & North Africa (all income levels),1995,16.49722745
+Middle East & North Africa (all income levels),1996,17.6627856
+Middle East & North Africa (all income levels),1997,16.00587395
+Middle East & North Africa (all income levels),1998,10.26274432
+Middle East & North Africa (all income levels),1999,12.72035127
+Middle East & North Africa (all income levels),2000,22.79469191
+Middle East & North Africa (all income levels),2001,18.86523141
+Middle East & North Africa (all income levels),2002,18.65567675
+Middle East & North Africa (all income levels),2003,23.28455976
+Middle East & North Africa (all income levels),2004,28.98052349
+Middle East & North Africa (all income levels),2005,38.38848215
+Middle East & North Africa (all income levels),2006,38.85111272
+Middle East & North Africa (all income levels),2007,35.1334592
+Middle East & North Africa (all income levels),2008,40.72760984
+Middle East & North Africa (all income levels),2009,22.72695888
+Middle East & North Africa (all income levels),2010,24.73394888
+Middle East & North Africa (all income levels),2011,26.24064665
+Middle East & North Africa (all income levels),2012,24.94731756
+Mexico,1993,3.32442953
+Mexico,1994,2.994927469
+Mexico,1995,5.056418514
+Mexico,1996,5.615234177
+Mexico,1997,4.530209229
+Mexico,1998,2.595881713
+Mexico,1999,2.944598985
+Mexico,2000,4.635366752
+Mexico,2001,3.792079548
+Mexico,2002,3.691564093
+Mexico,2003,5.060438874
+Mexico,2004,6.305551494
+Mexico,2005,8.189981935
+Mexico,2006,8.753909628
+Mexico,2007,8.61458352
+Mexico,2008,10.2881603
+Mexico,2009,6.696702503
+Mexico,2010,7.560614832
+Mexico,2011,9.015305645
+Mexico,2012,8.50126939
+Marshall Islands,1993,0
+Marshall Islands,1994,0
+Marshall Islands,1995,0
+Marshall Islands,1996,0
+Marshall Islands,1997,0
+Marshall Islands,1998,0
+Marshall Islands,1999,0
+Marshall Islands,2000,0
+Marshall Islands,2001,0
+Marshall Islands,2002,0
+Marshall Islands,2003,0
+Marshall Islands,2004,0
+Marshall Islands,2005,0
+Marshall Islands,2006,0
+Marshall Islands,2007,0
+Marshall Islands,2008,0
+Marshall Islands,2009,0
+Marshall Islands,2010,0
+Marshall Islands,2011,0
+Marshall Islands,2012,0
+Middle income,1993,5.912271498
+Middle income,1994,5.168368144
+Middle income,1995,5.407410322
+Middle income,1996,6.16256358
+Middle income,1997,5.292927523
+Middle income,1998,3.668219188
+Middle income,1999,4.301422256
+Middle income,2000,6.948778889
+Middle income,2001,6.261531107
+Middle income,2002,5.82955158
+Middle income,2003,7.050543041
+Middle income,2004,8.959520466
+Middle income,2005,10.83491727
+Middle income,2006,11.47999638
+Middle income,2007,11.22659164
+Middle income,2008,13.96311392
+Middle income,2009,7.538628005
+Middle income,2010,9.033517016
+Middle income,2011,10.16200442
+Middle income,2012,8.654241163
+"Macedonia, FYR",1993,1.289142221
+"Macedonia, FYR",1994,0.935475409
+"Macedonia, FYR",1995,1.067768992
+"Macedonia, FYR",1996,1.062960255
+"Macedonia, FYR",1997,1.150581415
+"Macedonia, FYR",1998,0.482022
+"Macedonia, FYR",1999,0.563764308
+"Macedonia, FYR",2000,0.801364715
+"Macedonia, FYR",2001,0.798221413
+"Macedonia, FYR",2002,0.787334727
+"Macedonia, FYR",2003,1.046245998
+"Macedonia, FYR",2004,1.860165206
+"Macedonia, FYR",2005,1.640660645
+"Macedonia, FYR",2006,4.737057597
+"Macedonia, FYR",2007,8.103883519
+"Macedonia, FYR",2008,4.367196451
+"Macedonia, FYR",2009,2.568327584
+"Macedonia, FYR",2010,4.544204799
+"Macedonia, FYR",2011,5.174573806
+"Macedonia, FYR",2012,3.926746125
+Mali,1993,3.058346636
+Mali,1994,5.264512256
+Mali,1995,5.245256542
+Mali,1996,5.291301345
+Mali,1997,6.239999888
+Mali,1998,5.517285032
+Mali,1999,3.91243607
+Mali,2000,4.029790089
+Mali,2001,4.344469339
+Mali,2002,6.526343721
+Mali,2003,6.40017675
+Mali,2004,5.604545476
+Mali,2005,6.463562948
+Mali,2006,11.08054607
+Mali,2007,11.53385763
+Mali,2008,11.36081767
+Mali,2009,12.93125233
+Mali,2010,14.29852421
+Mali,2011,16.23585877
+Mali,2012,16.12376893
+Malta,1993,0
+Malta,1994,0
+Malta,1995,0
+Malta,1996,0
+Malta,1997,0
+Malta,1998,0
+Malta,1999,0
+Malta,2000,0
+Malta,2001,0
+Malta,2002,0
+Malta,2003,0
+Malta,2004,0
+Malta,2005,0
+Malta,2006,0
+Malta,2007,0
+Malta,2008,0
+Malta,2009,0
+Malta,2010,0
+Malta,2011,0
+Malta,2012,0
+Middle East & North Africa,1993,21.87093031
+Middle East & North Africa,1994,19.79271689
+Middle East & North Africa,1995,19.3565825
+Middle East & North Africa,1996,21.22700379
+Middle East & North Africa,1997,19.21097124
+Middle East & North Africa,1998,12.92021378
+Middle East & North Africa,1999,15.59137468
+Middle East & North Africa,2000,26.1530588
+Middle East & North Africa,2001,21.9954966
+Middle East & North Africa,2002,20.68737174
+Middle East & North Africa,2003,25.77944315
+Middle East & North Africa,2004,31.04004451
+Middle East & North Africa,2005,39.77818442
+Middle East & North Africa,2006,40.20312682
+Middle East & North Africa,2007,36.88879582
+Middle East & North Africa,2008,42.68451232
+Middle East & North Africa,2009,25.33380023
+Middle East & North Africa,2010,27.65681894
+Middle East & North Africa,2011,31.44513037
+Middle East & North Africa,2012,29.91489442
+Montenegro,2000,0
+Montenegro,2001,0
+Montenegro,2002,0
+Montenegro,2003,0.189802612
+Montenegro,2004,0.26487686
+Montenegro,2005,0.371871122
+Montenegro,2006,1.032265096
+Montenegro,2007,0.88321805
+Montenegro,2008,0.993428224
+Montenegro,2009,0.457754012
+Montenegro,2010,1.405915723
+Montenegro,2011,1.758374787
+Montenegro,2012,1.723518029
+Mongolia,1993,13.87357628
+Mongolia,1994,16.58046853
+Mongolia,1995,15.69670342
+Mongolia,1996,12.3420657
+Mongolia,1997,13.88565014
+Mongolia,1998,6.974861344
+Mongolia,1999,5.936224978
+Mongolia,2000,8.347027997
+Mongolia,2001,6.944756025
+Mongolia,2002,6.928232074
+Mongolia,2003,8.842032844
+Mongolia,2004,17.25569304
+Mongolia,2005,19.64405668
+Mongolia,2006,33.7224772
+Mongolia,2007,31.93846394
+Mongolia,2008,31.74289647
+Mongolia,2009,26.03804582
+Mongolia,2010,41.59323957
+Mongolia,2011,44.93539367
+Mongolia,2012,28.57897181
+Mozambique,1993,13.81896518
+Mozambique,1994,15.00616159
+Mozambique,1995,20.97073875
+Mozambique,1996,15.3010698
+Mozambique,1997,12.41100837
+Mozambique,1998,10.67184605
+Mozambique,1999,7.181512045
+Mozambique,2000,6.686348313
+Mozambique,2001,7.242734398
+Mozambique,2002,8.709444295
+Mozambique,2003,9.847515082
+Mozambique,2004,10.95266739
+Mozambique,2005,14.82978562
+Mozambique,2006,16.8811276
+Mozambique,2007,17.3803344
+Mozambique,2008,20.25811168
+Mozambique,2009,14.02481823
+Mozambique,2010,15.83256818
+Mozambique,2011,13.63009137
+Mozambique,2012,12.05855425
+Mauritania,1993,6.308301119
+Mauritania,1994,5.181785151
+Mauritania,1995,6.752209513
+Mauritania,1996,8.133585056
+Mauritania,1997,9.19569849
+Mauritania,1998,14.2723451
+Mauritania,1999,10.03707291
+Mauritania,2000,12.83172469
+Mauritania,2001,13.44205769
+Mauritania,2002,12.26127594
+Mauritania,2003,12.46558412
+Mauritania,2004,13.68026709
+Mauritania,2005,25.68034519
+Mauritania,2006,20.44533812
+Mauritania,2007,44.6418909
+Mauritania,2008,48.74888014
+Mauritania,2009,32.95099891
+Mauritania,2010,56.62034935
+Mauritania,2011,58.62301019
+Mauritania,2012,52.41717833
+Mauritius,1993,0.02009593
+Mauritius,1994,0.014416101
+Mauritius,1995,0.010537657
+Mauritius,1996,0.0122197
+Mauritius,1997,0.01263736
+Mauritius,1998,0.018153946
+Mauritius,1999,0.0170446
+Mauritius,2000,0.009751466
+Mauritius,2001,0.009922575
+Mauritius,2002,0.009350751
+Mauritius,2003,0.009227067
+Mauritius,2004,0.006101749
+Mauritius,2005,0.005862789
+Mauritius,2006,0.008476744
+Mauritius,2007,0.008715384
+Mauritius,2008,0.008363293
+Mauritius,2009,0.00952317
+Mauritius,2010,0.007386127
+Mauritius,2011,0.004905398
+Mauritius,2012,0.003196306
+Malawi,1993,6.064954172
+Malawi,1994,11.3655647
+Malawi,1995,14.36632925
+Malawi,1996,9.232985429
+Malawi,1997,7.356768704
+Malawi,1998,11.20296989
+Malawi,1999,7.993848309
+Malawi,2000,7.668898632
+Malawi,2001,8.147894979
+Malawi,2002,6.484765548
+Malawi,2003,8.550311769
+Malawi,2004,6.472490408
+Malawi,2005,6.66014712
+Malawi,2006,7.923948956
+Malawi,2007,8.588777449
+Malawi,2008,9.360437661
+Malawi,2009,7.110467627
+Malawi,2010,7.481929719
+Malawi,2011,7.721571835
+Malawi,2012,9.786943924
+Malaysia,1993,11.02312631
+Malaysia,1994,9.505993333
+Malaysia,1995,8.893187504
+Malaysia,1996,9.378706259
+Malaysia,1997,8.937333625
+Malaysia,1998,8.612590561
+Malaysia,1999,8.464649927
+Malaysia,2000,13.13608642
+Malaysia,2001,12.14295746
+Malaysia,2002,10.19572595
+Malaysia,2003,13.50094387
+Malaysia,2004,14.76523923
+Malaysia,2005,19.63016084
+Malaysia,2006,18.53167267
+Malaysia,2007,16.60790969
+Malaysia,2008,19.67838807
+Malaysia,2009,11.60891308
+Malaysia,2010,10.77045699
+Malaysia,2011,10.81919574
+Malaysia,2012,9.802052803
+North America,1993,1.096162406
+North America,1994,0.970907158
+North America,1995,0.977013483
+North America,1996,1.152723
+North America,1997,0.995826046
+North America,1998,0.609458204
+North America,1999,0.555931344
+North America,2000,1.268049348
+North America,2001,1.091780153
+North America,2002,0.832414359
+North America,2003,1.175063046
+North America,2004,1.380227461
+North America,2005,1.895680958
+North America,2006,1.997422596
+North America,2007,2.051098741
+North America,2008,3.057063663
+North America,2009,1.215224611
+North America,2010,1.510237179
+North America,2011,1.916508824
+North America,2012,1.575737117
+Namibia,1993,0.814134723
+Namibia,1994,1.027164894
+Namibia,1995,1.294326743
+Namibia,1996,0.886678295
+Namibia,1997,1.192597313
+Namibia,1998,0.583688144
+Namibia,1999,0.440657614
+Namibia,2000,0.530124901
+Namibia,2001,0.502737963
+Namibia,2002,0.755290054
+Namibia,2003,0.730942793
+Namibia,2004,0.730753306
+Namibia,2005,1.123445824
+Namibia,2006,2.648758182
+Namibia,2007,5.914465986
+Namibia,2008,2.88127016
+Namibia,2009,2.084890915
+Namibia,2010,2.895361679
+Namibia,2011,2.770532057
+Namibia,2012,2.246036062
+New Caledonia,1993,0.01107198
+New Caledonia,1994,0.011794836
+New Caledonia,1995,0.012012953
+New Caledonia,1996,0.014188653
+New Caledonia,1997,0.013209976
+New Caledonia,1998,0.023730107
+New Caledonia,1999,0.022170077
+New Caledonia,2000,0.026297209
+Niger,1993,6.776657918
+Niger,1994,8.133848005
+Niger,1995,9.874353513
+Niger,1996,10.08859369
+Niger,1997,10.6799985
+Niger,1998,9.385416193
+Niger,1999,6.917095057
+Niger,2000,7.397838784
+Niger,2001,7.168613493
+Niger,2002,8.088626322
+Niger,2003,8.251619872
+Niger,2004,7.087928319
+Niger,2005,7.447748591
+Niger,2006,9.120731031
+Niger,2007,10.75483126
+Niger,2008,10.84588309
+Niger,2009,10.09390411
+Niger,2010,10.77678114
+Niger,2011,10.84097826
+Niger,2012,9.136997538
+Nigeria,1993,67.6859833
+Nigeria,1994,55.99160866
+Nigeria,1995,40.66267203
+Nigeria,1996,43.83278823
+Nigeria,1997,43.0024427
+Nigeria,1998,29.62696159
+Nigeria,1999,32.99159502
+Nigeria,2000,47.35716809
+Nigeria,2001,44.17058595
+Nigeria,2002,29.14135201
+Nigeria,2003,35.97169827
+Nigeria,2004,38.306857
+Nigeria,2005,43.861635
+Nigeria,2006,39.33152092
+Nigeria,2007,35.82699352
+Nigeria,2008,38.08976349
+Nigeria,2009,26.62617477
+Nigeria,2010,18.05310444
+Nigeria,2011,20.35092212
+Nigeria,2012,17.30219706
+Nicaragua,1993,8.05645685
+Nicaragua,1994,3.568188132
+Nicaragua,1995,4.439381879
+Nicaragua,1996,4.859270766
+Nicaragua,1997,4.1178945
+Nicaragua,1998,1.622812697
+Nicaragua,1999,1.76064239
+Nicaragua,2000,2.14766936
+Nicaragua,2001,2.457936779
+Nicaragua,2002,2.793838674
+Nicaragua,2003,4.057548483
+Nicaragua,2004,3.657822501
+Nicaragua,2005,3.025624939
+Nicaragua,2006,3.458825631
+Nicaragua,2007,4.453573526
+Nicaragua,2008,4.159198543
+Nicaragua,2009,4.295319701
+Nicaragua,2010,5.585392643
+Nicaragua,2011,5.553886007
+Nicaragua,2012,5.079714905
+Netherlands,1993,1.450204921
+Netherlands,1994,1.156236367
+Netherlands,1995,0.994373349
+Netherlands,1996,1.516960751
+Netherlands,1997,1.330666307
+Netherlands,1998,0.912900922
+Netherlands,1999,0.710301623
+Netherlands,2000,1.912880721
+Netherlands,2001,1.85722374
+Netherlands,2002,1.213009429
+Netherlands,2003,1.591305768
+Netherlands,2004,1.797226922
+Netherlands,2005,2.48693904
+Netherlands,2006,2.227218912
+Netherlands,2007,1.924444513
+Netherlands,2008,2.771182137
+Netherlands,2009,1.202862393
+Netherlands,2010,1.260305024
+Netherlands,2011,1.182025362
+Netherlands,2012,1.026563671
+High income: nonOECD,1993,16.12534363
+High income: nonOECD,1994,14.28177518
+High income: nonOECD,1995,14.51459933
+High income: nonOECD,1996,17.47305911
+High income: nonOECD,1997,15.29126154
+High income: nonOECD,1998,11.98700364
+High income: nonOECD,1999,15.03301339
+High income: nonOECD,2000,26.77538618
+High income: nonOECD,2001,22.71552881
+High income: nonOECD,2002,19.520395
+High income: nonOECD,2003,25.09944458
+High income: nonOECD,2004,27.27925007
+High income: nonOECD,2005,34.10214401
+High income: nonOECD,2006,32.64951933
+High income: nonOECD,2007,28.74685197
+High income: nonOECD,2008,33.54538505
+High income: nonOECD,2009,20.88343184
+High income: nonOECD,2010,22.47837264
+High income: nonOECD,2011,25.31356914
+High income: nonOECD,2012,23.23735092
+Norway,1993,10.56002824
+Norway,1994,10.27116235
+Norway,1995,9.986942379
+Norway,1996,13.44807614
+Norway,1997,12.73778491
+Norway,1998,7.753748335
+Norway,1999,9.919884154
+Norway,2000,19.53432231
+Norway,2001,16.44348331
+Norway,2002,13.91451934
+Norway,2003,15.55829666
+Norway,2004,16.62984795
+Norway,2005,20.51157927
+Norway,2006,19.66708247
+Norway,2007,17.80912908
+Norway,2008,21.90695585
+Norway,2009,13.18225308
+Norway,2010,13.27906404
+Norway,2011,13.64962595
+Norway,2012,11.95241166
+Nepal,1993,7.232773754
+Nepal,1994,6.436566665
+Nepal,1995,6.95287212
+Nepal,1996,14.88270995
+Nepal,1997,4.786321621
+Nepal,1998,6.351825205
+Nepal,1999,6.959421519
+Nepal,2000,4.599412198
+Nepal,2001,3.953473286
+Nepal,2002,2.869782887
+Nepal,2003,5.030664543
+Nepal,2004,4.448534861
+Nepal,2005,3.905427631
+Nepal,2006,5.696111012
+Nepal,2007,6.024972996
+Nepal,2008,5.11792517
+Nepal,2009,4.844436348
+Nepal,2010,6.811439783
+Nepal,2011,5.564991951
+Nepal,2012,4.948178655
+New Zealand,1993,2.413950891
+New Zealand,1994,1.880144216
+New Zealand,1995,1.499900529
+New Zealand,1996,1.719738656
+New Zealand,1997,1.847058698
+New Zealand,1998,1.720283817
+New Zealand,1999,1.91176365
+New Zealand,2000,3.201582998
+New Zealand,2001,3.259223728
+New Zealand,2002,2.104483945
+New Zealand,2003,1.681299739
+New Zealand,2004,1.414477663
+New Zealand,2005,1.667735214
+New Zealand,2006,1.841790519
+New Zealand,2007,2.082392192
+New Zealand,2008,3.53236241
+New Zealand,2009,2.25532802
+New Zealand,2010,2.407799524
+New Zealand,2011,2.398510531
+New Zealand,2012,2.099940782
+High income: OECD,1993,0.702184247
+High income: OECD,1994,0.640835298
+High income: OECD,1995,0.626049631
+High income: OECD,1996,0.764623731
+High income: OECD,1997,0.723419012
+High income: OECD,1998,0.500666947
+High income: OECD,1999,0.495697924
+High income: OECD,2000,1.02086608
+High income: OECD,2001,0.91858947
+High income: OECD,2002,0.74098299
+High income: OECD,2003,0.913847677
+High income: OECD,2004,1.042595598
+High income: OECD,2005,1.42375777
+High income: OECD,2006,1.54976567
+High income: OECD,2007,1.59130699
+High income: OECD,2008,2.179837503
+High income: OECD,2009,1.037738276
+High income: OECD,2010,1.346681738
+High income: OECD,2011,1.584499054
+High income: OECD,2012,1.368315781
+OECD members,1993,0.764576992
+OECD members,1994,0.696550604
+OECD members,1995,0.688073994
+OECD members,1996,0.841635432
+OECD members,1997,0.796080174
+OECD members,1998,0.540864455
+OECD members,1999,0.548493175
+OECD members,2000,1.107415931
+OECD members,2001,0.993577476
+OECD members,2002,0.8170358
+OECD members,2003,1.00390937
+OECD members,2004,1.151031878
+OECD members,2005,1.569179835
+OECD members,2006,1.71482105
+OECD members,2007,1.746457777
+OECD members,2008,2.351636213
+OECD members,2009,1.150387594
+OECD members,2010,1.48245124
+OECD members,2011,1.754537497
+OECD members,2012,1.536002934
+Oman,1993,31.35570779
+Oman,1994,29.40544179
+Oman,1995,31.76320834
+Oman,1996,37.26502288
+Oman,1997,33.98371031
+Oman,1998,22.08092665
+Oman,1999,29.30507643
+Oman,2000,48.88307036
+Oman,2001,40.21141201
+Oman,2002,37.56800047
+Oman,2003,42.4927032
+Oman,2004,47.90441396
+Oman,2005,57.72983687
+Oman,2006,58.4365068
+Oman,2007,53.55495002
+Oman,2008,54.71093164
+Oman,2009,38.59270304
+Oman,2010,41.966424
+Oman,2011,46.89788984
+Oman,2012,41.82980154
+Other small states,1993,1.874286316
+Other small states,1994,2.004930652
+Other small states,1995,2.31012995
+Other small states,1996,2.729215741
+Other small states,1997,2.236678615
+Other small states,1998,2.147106916
+Other small states,1999,1.67843928
+Other small states,2000,1.709175502
+Other small states,2001,1.493570725
+Other small states,2002,1.453755072
+Other small states,2003,2.074132903
+Other small states,2004,1.780280283
+Other small states,2005,31.58634024
+Other small states,2006,33.41994237
+Other small states,2007,32.58145069
+Other small states,2008,34.80156742
+Other small states,2009,2.222916546
+Other small states,2010,25.21890312
+Other small states,2011,26.20447921
+Other small states,2012,26.85475057
+Pakistan,1993,3.348649917
+Pakistan,1994,3.020107381
+Pakistan,1995,2.867238486
+Pakistan,1996,4.887027422
+Pakistan,1997,3.244988428
+Pakistan,1998,2.880172453
+Pakistan,1999,3.064507948
+Pakistan,2000,4.628012196
+Pakistan,2001,4.625121929
+Pakistan,2002,3.56352
+Pakistan,2003,5.789662456
+Pakistan,2004,5.816637773
+Pakistan,2005,8.189574513
+Pakistan,2006,6.89519038
+Pakistan,2007,6.813631274
+Pakistan,2008,8.342087899
+Pakistan,2009,4.376670096
+Pakistan,2010,4.806848275
+Pakistan,2011,4.415737678
+Pakistan,2012,3.727231866
+Panama,1993,0.609500947
+Panama,1994,0.541383086
+Panama,1995,0.670877044
+Panama,1996,0.570195098
+Panama,1997,0.479975551
+Panama,1998,0.132379811
+Panama,1999,0.17743729
+Panama,2000,0.222547528
+Panama,2001,0.275778001
+Panama,2002,0.37381112
+Panama,2003,0.499350785
+Panama,2004,0.451637843
+Panama,2005,0.432897748
+Panama,2006,0.555320228
+Panama,2007,0.541530456
+Panama,2008,0.51497413
+Panama,2009,0.734785622
+Panama,2010,0.774426627
+Panama,2011,0.811906834
+Panama,2012,0.824705274
+Peru,1993,3.011252756
+Peru,1994,2.65004555
+Peru,1995,2.832243179
+Peru,1996,2.618841906
+Peru,1997,2.689804177
+Peru,1998,1.252852367
+Peru,1999,1.729445646
+Peru,2000,2.928915654
+Peru,2001,2.17165354
+Peru,2002,2.066022692
+Peru,2003,2.748632923
+Peru,2004,4.815182161
+Peru,2005,7.421704277
+Peru,2006,14.39561157
+Peru,2007,15.24939926
+Peru,2008,13.40889874
+Peru,2009,9.802774412
+Peru,2010,12.70839979
+Peru,2011,14.79664537
+Peru,2012,12.00429436
+Philippines,1993,1.253673258
+Philippines,1994,1.195344194
+Philippines,1995,1.394249031
+Philippines,1996,1.205773406
+Philippines,1997,1.010251731
+Philippines,1998,0.916365281
+Philippines,1999,0.57580685
+Philippines,2000,0.678929824
+Philippines,2001,0.719121984
+Philippines,2002,1.059931306
+Philippines,2003,1.610052842
+Philippines,2004,1.628800802
+Philippines,2005,2.013001528
+Philippines,2006,2.783719791
+Philippines,2007,5.060444498
+Philippines,2008,3.08244655
+Philippines,2009,2.762816045
+Philippines,2010,3.899883334
+Philippines,2011,4.424016014
+Philippines,2012,3.498140965
+Palau,1993,0
+Palau,1994,0
+Palau,1995,0
+Palau,1996,0
+Palau,1997,0
+Palau,1998,0
+Palau,1999,0
+Palau,2000,0
+Palau,2001,0
+Palau,2002,0
+Palau,2003,0
+Palau,2004,0
+Palau,2005,0
+Palau,2006,0
+Palau,2007,0
+Palau,2008,0
+Palau,2009,0
+Palau,2010,0
+Palau,2011,0
+Palau,2012,0
+Papua New Guinea,1993,29.91643233
+Papua New Guinea,1994,29.86474585
+Papua New Guinea,1995,37.75050856
+Papua New Guinea,1996,30.73174503
+Papua New Guinea,1997,25.0322964
+Papua New Guinea,1998,26.44677058
+Papua New Guinea,1999,30.87334233
+Papua New Guinea,2000,40.53660886
+Papua New Guinea,2001,35.23725345
+Papua New Guinea,2002,37.05702606
+Papua New Guinea,2003,38.87432986
+Papua New Guinea,2004,43.92313456
+Papua New Guinea,2005,45.08569309
+Papua New Guinea,2006,60.39545797
+Papua New Guinea,2007,57.84190902
+Papua New Guinea,2008,37.5443159
+Papua New Guinea,2009,37.49201566
+Papua New Guinea,2010,43.27219785
+Papua New Guinea,2011,38.65757094
+Papua New Guinea,2012,30.1727964
+Poland,1993,1.27523504
+Poland,1994,1.186826483
+Poland,1995,1.086697927
+Poland,1996,0.879963972
+Poland,1997,0.879318544
+Poland,1998,0.712452848
+Poland,1999,0.72112665
+Poland,2000,1.004974877
+Poland,2001,1.133009723
+Poland,2002,0.802672521
+Poland,2003,0.922207651
+Poland,2004,1.803813685
+Poland,2005,1.545655664
+Poland,2006,2.00179237
+Poland,2007,1.829455702
+Poland,2008,2.424421796
+Poland,2009,1.37221748
+Poland,2010,1.883567732
+Poland,2011,2.262561963
+Poland,2012,1.942891833
+Puerto Rico,1993,0
+Puerto Rico,1994,0
+Puerto Rico,1995,0
+Puerto Rico,1996,0
+Puerto Rico,1997,0
+Puerto Rico,1998,0
+Puerto Rico,1999,0
+Puerto Rico,2000,0
+Puerto Rico,2001,0
+Puerto Rico,2002,0
+Puerto Rico,2003,0
+Puerto Rico,2004,0
+Puerto Rico,2005,0
+Puerto Rico,2006,0
+Puerto Rico,2007,0
+Puerto Rico,2008,0
+Puerto Rico,2009,0
+Puerto Rico,2010,0
+Puerto Rico,2011,0
+Puerto Rico,2012,0
+Portugal,1993,0.696954446
+Portugal,1994,0.619962179
+Portugal,1995,0.504944448
+Portugal,1996,0.376855577
+Portugal,1997,0.387903595
+Portugal,1998,0.379588843
+Portugal,1999,0.360950937
+Portugal,2000,0.501405114
+Portugal,2001,0.432985153
+Portugal,2002,0.424921254
+Portugal,2003,0.371834272
+Portugal,2004,0.299951163
+Portugal,2005,0.372205557
+Portugal,2006,0.596038667
+Portugal,2007,0.577442285
+Portugal,2008,0.672924428
+Portugal,2009,0.436903432
+Portugal,2010,0.59996827
+Portugal,2011,0.669497721
+Portugal,2012,0.816646172
+Paraguay,1993,7.663701444
+Paraguay,1994,6.403143462
+Paraguay,1995,6.451917126
+Paraguay,1996,5.911694556
+Paraguay,1997,5.545293953
+Paraguay,1998,4.107064923
+Paraguay,1999,4.654996836
+Paraguay,2000,5.541880364
+Paraguay,2001,5.516524449
+Paraguay,2002,7.595231873
+Paraguay,2003,8.292626442
+Paraguay,2004,5.830025043
+Paraguay,2005,5.384884893
+Paraguay,2006,5.385652492
+Paraguay,2007,5.386370662
+Paraguay,2008,5.190273241
+Paraguay,2009,5.178885102
+Paraguay,2010,5.524127056
+Paraguay,2011,4.179018932
+Paraguay,2012,4.2158422
+West Bank and Gaza,1994,0
+West Bank and Gaza,1995,0
+West Bank and Gaza,1996,0
+West Bank and Gaza,1997,0
+West Bank and Gaza,1998,0
+West Bank and Gaza,1999,0
+West Bank and Gaza,2000,0
+West Bank and Gaza,2001,0
+West Bank and Gaza,2002,0
+West Bank and Gaza,2003,0
+West Bank and Gaza,2004,0
+West Bank and Gaza,2005,0
+West Bank and Gaza,2006,0
+West Bank and Gaza,2007,0
+West Bank and Gaza,2008,0
+West Bank and Gaza,2009,0
+West Bank and Gaza,2010,0
+West Bank and Gaza,2011,0
+West Bank and Gaza,2012,0
+Pacific island small states,1993,3.222731663
+Pacific island small states,1994,3.17587497
+Pacific island small states,1995,3.220905316
+Pacific island small states,1996,3.41305375
+Pacific island small states,1997,2.591256115
+Pacific island small states,1998,2.639435614
+Pacific island small states,1999,2.08879078
+Pacific island small states,2000,2.046598086
+Pacific island small states,2001,2.275264422
+Pacific island small states,2002,2.106828583
+Pacific island small states,2003,2.499566011
+Pacific island small states,2004,1.971032374
+Pacific island small states,2005,2.313915077
+Pacific island small states,2006,3.039387883
+Pacific island small states,2007,3.905331656
+Pacific island small states,2008,4.051584504
+Pacific island small states,2009,3.544336944
+Pacific island small states,2010,4.574722233
+Pacific island small states,2011,5.988017957
+Pacific island small states,2012,6.04146428
+French Polynesia,1993,0.001158501
+French Polynesia,1994,0.001525428
+French Polynesia,1995,0.001365197
+French Polynesia,1996,0.001623201
+French Polynesia,1997,0.001740917
+French Polynesia,1998,0.001731181
+French Polynesia,1999,0.001285958
+French Polynesia,2000,0.001384715
+Qatar,1993,33.64946662
+Qatar,1994,29.60953238
+Qatar,1995,29.47842932
+Qatar,1996,33.72732717
+Qatar,1997,35.0509377
+Qatar,1998,28.28867151
+Qatar,1999,32.6971814
+Qatar,2000,48.38648999
+Qatar,2001,45.1297776
+Qatar,2002,39.24361978
+Qatar,2003,43.8538893
+Qatar,2004,48.45265335
+Qatar,2005,54.66871117
+Qatar,2006,48.34895453
+Qatar,2007,41.5405723
+Qatar,2008,47.34314006
+Qatar,2009,28.72326695
+Qatar,2010,28.93042304
+Qatar,2011,29.02738185
+Qatar,2012,24.54436193
+Romania,1993,8.60189044
+Romania,1994,6.438344591
+Romania,1995,5.865069985
+Romania,1996,7.117922526
+Romania,1997,5.744701435
+Romania,1998,3.287336854
+Romania,1999,4.134197689
+Romania,2000,7.656646715
+Romania,2001,6.163139876
+Romania,2002,4.894718602
+Romania,2003,5.467716307
+Romania,2004,4.631710512
+Romania,2005,4.922219061
+Romania,2006,4.220738164
+Romania,2007,3.063936504
+Romania,2008,3.716251776
+Romania,2009,2.270075874
+Romania,2010,2.519257639
+Romania,2011,2.780518466
+Romania,2012,2.751107259
+Russian Federation,1993,15.66021819
+Russian Federation,1994,14.38778315
+Russian Federation,1995,15.2544138
+Russian Federation,1996,20.0925411
+Russian Federation,1997,17.3712978
+Russian Federation,1998,16.75732627
+Russian Federation,1999,24.69240665
+Russian Federation,2000,44.52592548
+Russian Federation,2001,34.44463032
+Russian Federation,2002,27.05302398
+Russian Federation,2003,33.83011488
+Russian Federation,2004,32.34019201
+Russian Federation,2005,38.78273262
+Russian Federation,2006,33.87461179
+Russian Federation,2007,28.32641635
+Russian Federation,2008,31.79237706
+Russian Federation,2009,20.14840036
+Russian Federation,2010,21.08982773
+Russian Federation,2011,21.87588999
+Russian Federation,2012,18.7046806
+Rwanda,1993,4.562216652
+Rwanda,1994,14.46998022
+Rwanda,1995,10.62882726
+Rwanda,1996,11.21486321
+Rwanda,1997,10.14421275
+Rwanda,1998,9.247256434
+Rwanda,1999,7.38055466
+Rwanda,2000,4.954488346
+Rwanda,2001,5.47306594
+Rwanda,2002,6.738630836
+Rwanda,2003,7.633104138
+Rwanda,2004,6.062469539
+Rwanda,2005,5.106269497
+Rwanda,2006,5.545501539
+Rwanda,2007,6.238921908
+Rwanda,2008,7.91047805
+Rwanda,2009,6.290678599
+Rwanda,2010,6.665872368
+Rwanda,2011,6.334086959
+Rwanda,2012,5.547020439
+South Asia,1993,4.076644701
+South Asia,1994,3.597540917
+South Asia,1995,3.93492146
+South Asia,1996,5.890414733
+South Asia,1997,3.233513179
+South Asia,1998,2.955801912
+South Asia,1999,2.939476414
+South Asia,2000,3.620793624
+South Asia,2001,3.646493175
+South Asia,2002,2.790683368
+South Asia,2003,3.70763347
+South Asia,2004,4.53994754
+South Asia,2005,5.247047848
+South Asia,2006,5.682589207
+South Asia,2007,5.973347416
+South Asia,2008,8.708001892
+South Asia,2009,4.541286502
+South Asia,2010,5.905571821
+South Asia,2011,6.293380481
+South Asia,2012,5.232396089
+Saudi Arabia,1993,35.50560439
+Saudi Arabia,1994,31.95647951
+Saudi Arabia,1995,32.8385523
+Saudi Arabia,1996,36.29465052
+Saudi Arabia,1997,31.99495334
+Saudi Arabia,1998,24.04345656
+Saudi Arabia,1999,27.74395531
+Saudi Arabia,2000,43.20823421
+Saudi Arabia,2001,36.95930884
+Saudi Arabia,2002,33.03146476
+Saudi Arabia,2003,41.21444022
+Saudi Arabia,2004,47.59218881
+Saudi Arabia,2005,56.9506643
+Saudi Arabia,2006,58.34529145
+Saudi Arabia,2007,55.54731381
+Saudi Arabia,2008,64.07019314
+Saudi Arabia,2009,41.5100338
+Saudi Arabia,2010,43.17097731
+Saudi Arabia,2011,50.6880519
+Saudi Arabia,2012,48.18117996
+Sudan,1993,0
+Sudan,1994,0
+Sudan,1995,0.029198176
+Sudan,1996,0.219438874
+Sudan,1997,0.269261625
+Sudan,1998,0.312756591
+Sudan,1999,3.251059348
+Sudan,2000,12.75704742
+Sudan,2001,11.48688542
+Sudan,2002,12.13069637
+Sudan,2003,13.33437013
+Sudan,2004,16.89281153
+Sudan,2005,20.05709756
+Sudan,2006,20.73989588
+Sudan,2007,24.43221662
+Sudan,2008,27.44848022
+Sudan,2009,17.25199362
+Sudan,2010,18.27935499
+Sudan,2011,24.51603379
+Sudan,2012,8.240471416
+Senegal,1993,1.977121588
+Senegal,1994,3.161071997
+Senegal,1995,3.393704279
+Senegal,1996,3.509846909
+Senegal,1997,3.587742425
+Senegal,1998,3.41804097
+Senegal,1999,2.49603539
+Senegal,2000,2.540318817
+Senegal,2001,2.517911966
+Senegal,2002,2.789990701
+Senegal,2003,2.563039522
+Senegal,2004,1.895783729
+Senegal,2005,1.878672632
+Senegal,2006,2.338115954
+Senegal,2007,2.659237451
+Senegal,2008,4.113505099
+Senegal,2009,3.852016756
+Senegal,2010,4.265177969
+Senegal,2011,4.65858023
+Senegal,2012,5.380257704
+Singapore,1993,0
+Singapore,1994,0
+Singapore,1995,0
+Singapore,1996,0
+Singapore,1997,0
+Singapore,1998,0
+Singapore,1999,0
+Singapore,2000,0
+Singapore,2001,0
+Singapore,2002,0
+Singapore,2003,0
+Singapore,2004,0
+Singapore,2005,0
+Singapore,2006,0
+Singapore,2007,0
+Singapore,2008,0
+Singapore,2009,0
+Singapore,2010,0
+Singapore,2011,0.00050178
+Singapore,2012,0
+Solomon Islands,1993,9.766917695
+Solomon Islands,1994,10.13843484
+Solomon Islands,1995,11.15592238
+Solomon Islands,1996,11.63913574
+Solomon Islands,1997,7.891320524
+Solomon Islands,1998,8.825686253
+Solomon Islands,1999,8.029363874
+Solomon Islands,2000,7.405717486
+Solomon Islands,2001,9.070939216
+Solomon Islands,2002,10.46759673
+Solomon Islands,2003,16.19410462
+Solomon Islands,2004,12.13250108
+Solomon Islands,2005,16.15291635
+Solomon Islands,2006,22.93336584
+Solomon Islands,2007,33.87676868
+Solomon Islands,2008,31.46868954
+Solomon Islands,2009,21.5208932
+Solomon Islands,2010,26.10252545
+Solomon Islands,2011,35.930427
+Solomon Islands,2012,32.4659441
+Sierra Leone,1993,11.05888077
+Sierra Leone,1994,10.23874929
+Sierra Leone,1995,13.55093718
+Sierra Leone,1996,13.08818266
+Sierra Leone,1997,14.85731765
+Sierra Leone,1998,18.35749057
+Sierra Leone,1999,13.18312803
+Sierra Leone,2000,12.20117176
+Sierra Leone,2001,7.283403037
+Sierra Leone,2002,7.892939414
+Sierra Leone,2003,9.198071808
+Sierra Leone,2004,8.418191003
+Sierra Leone,2005,7.58518333
+Sierra Leone,2006,9.297473711
+Sierra Leone,2007,11.2845327
+Sierra Leone,2008,11.69383927
+Sierra Leone,2009,11.22447945
+Sierra Leone,2010,12.02221968
+Sierra Leone,2011,12.1922386
+Sierra Leone,2012,8.551519497
+El Salvador,1993,1.400593221
+El Salvador,1994,1.187196524
+El Salvador,1995,1.633337264
+El Salvador,1996,1.493776252
+El Salvador,1997,1.784880293
+El Salvador,1998,0.803954462
+El Salvador,1999,0.879009809
+El Salvador,2000,1.048572108
+El Salvador,2001,1.0740322
+El Salvador,2002,1.132905077
+El Salvador,2003,1.333051825
+El Salvador,2004,1.15977167
+El Salvador,2005,1.001322363
+El Salvador,2006,1.083805804
+El Salvador,2007,1.375294086
+El Salvador,2008,1.474920204
+El Salvador,2009,1.434201204
+El Salvador,2010,1.821771816
+El Salvador,2011,1.55485998
+El Salvador,2012,1.506706678
+San Marino,1999,0
+San Marino,2000,0
+San Marino,2001,0
+San Marino,2002,0
+San Marino,2003,0
+San Marino,2004,0
+San Marino,2005,0
+San Marino,2006,0
+San Marino,2007,0
+San Marino,2008,0
+Serbia,1997,0.901012793
+Serbia,1998,0.573050264
+Serbia,1999,0.725629217
+Serbia,2000,4.503088506
+Serbia,2001,2.329056332
+Serbia,2002,1.388826207
+Serbia,2003,1.524319382
+Serbia,2004,2.069139963
+Serbia,2005,2.220627601
+Serbia,2006,2.119045145
+Serbia,2007,1.905313885
+Serbia,2008,2.619755301
+Serbia,2009,1.666107187
+Serbia,2010,3.388771752
+Serbia,2011,4.354581685
+Serbia,2012,4.193468547
+Sub-Saharan Africa,1993,9.795198724
+Sub-Saharan Africa,1994,10.388772
+Sub-Saharan Africa,1995,11.00479754
+Sub-Saharan Africa,1996,12.90712937
+Sub-Saharan Africa,1997,12.15245942
+Sub-Saharan Africa,1998,9.073491537
+Sub-Saharan Africa,1999,9.554115631
+Sub-Saharan Africa,2000,14.2600216
+Sub-Saharan Africa,2001,14.53213038
+Sub-Saharan Africa,2002,13.75491765
+Sub-Saharan Africa,2003,14.2914813
+Sub-Saharan Africa,2004,16.60359173
+Sub-Saharan Africa,2005,20.05152383
+Sub-Saharan Africa,2006,21.72820191
+Sub-Saharan Africa,2007,22.2868564
+Sub-Saharan Africa,2008,27.7548606
+Sub-Saharan Africa,2009,17.46614806
+Sub-Saharan Africa,2010,17.69802287
+Sub-Saharan Africa,2011,19.9833922
+Sub-Saharan Africa,2012,17.43676453
+South Sudan,2008,0
+South Sudan,2009,0
+South Sudan,2010,0
+South Sudan,2011,1.153821432
+South Sudan,2012,2.050496289
+Sub-Saharan Africa (all income levels),1993,9.784605184
+Sub-Saharan Africa (all income levels),1994,10.37659784
+Sub-Saharan Africa (all income levels),1995,10.98830109
+Sub-Saharan Africa (all income levels),1996,12.8680806
+Sub-Saharan Africa (all income levels),1997,12.04168915
+Sub-Saharan Africa (all income levels),1998,8.975890942
+Sub-Saharan Africa (all income levels),1999,9.387768683
+Sub-Saharan Africa (all income levels),2000,13.97404697
+Sub-Saharan Africa (all income levels),2001,14.11433777
+Sub-Saharan Africa (all income levels),2002,13.27942227
+Sub-Saharan Africa (all income levels),2003,13.79984065
+Sub-Saharan Africa (all income levels),2004,15.9341495
+Sub-Saharan Africa (all income levels),2005,19.28332146
+Sub-Saharan Africa (all income levels),2006,20.9974785
+Sub-Saharan Africa (all income levels),2007,21.60773665
+Sub-Saharan Africa (all income levels),2008,27.01424653
+Sub-Saharan Africa (all income levels),2009,17.01754406
+Sub-Saharan Africa (all income levels),2010,17.32669572
+Sub-Saharan Africa (all income levels),2011,19.61734944
+Sub-Saharan Africa (all income levels),2012,17.01140191
+Small states,1993,2.265151379
+Small states,1994,2.311327758
+Small states,1995,2.125603332
+Small states,1996,2.467809711
+Small states,1997,2.015492922
+Small states,1998,1.736456371
+Small states,1999,1.387019017
+Small states,2000,1.396051904
+Small states,2001,1.328289012
+Small states,2002,1.190168025
+Small states,2003,1.5163462
+Small states,2004,1.412157808
+Small states,2005,1.477858562
+Small states,2006,2.236530552
+Small states,2007,2.613014808
+Small states,2008,1.950273499
+Small states,2009,2.047036321
+Small states,2010,2.630961818
+Small states,2011,2.789364501
+Small states,2012,2.826105503
+Sao Tome and Principe,2000,2.456141238
+Sao Tome and Principe,2001,2.541471382
+Sao Tome and Principe,2002,2.849063863
+Sao Tome and Principe,2003,2.960465506
+Sao Tome and Principe,2004,2.418525803
+Sao Tome and Principe,2005,2.297298919
+Sao Tome and Principe,2006,2.762729344
+Sao Tome and Principe,2007,3.461760213
+Sao Tome and Principe,2008,3.438696766
+Sao Tome and Principe,2009,2.947336023
+Sao Tome and Principe,2010,3.207791962
+Sao Tome and Principe,2011,2.837082419
+Sao Tome and Principe,2012,2.499710112
+Suriname,1993,20.92361769
+Suriname,1994,15.44099385
+Suriname,1995,9.451472545
+Suriname,1996,10.87043139
+Suriname,1997,9.174515034
+Suriname,1998,6.987795947
+Suriname,1999,6.959342745
+Suriname,2000,17.11194876
+Suriname,2001,7.565859648
+Suriname,2002,4.039116697
+Suriname,2003,2.922443261
+Suriname,2004,3.784448125
+Suriname,2005,4.611289831
+Suriname,2006,5.527060498
+Suriname,2007,6.085284309
+Suriname,2008,5.92117337
+Suriname,2009,10.18585828
+Suriname,2010,13.93996451
+Suriname,2011,20.32949115
+Suriname,2012,22.89440299
+Slovak Republic,1993,1.667057222
+Slovak Republic,1994,1.293688414
+Slovak Republic,1995,0.966963219
+Slovak Republic,1996,0.855774611
+Slovak Republic,1997,0.700223538
+Slovak Republic,1998,0.856484993
+Slovak Republic,1999,0.830207201
+Slovak Republic,2000,1.013825993
+Slovak Republic,2001,0.974607493
+Slovak Republic,2002,0.843835556
+Slovak Republic,2003,0.676385806
+Slovak Republic,2004,0.470121633
+Slovak Republic,2005,0.571740268
+Slovak Republic,2006,0.610919001
+Slovak Republic,2007,0.513536728
+Slovak Republic,2008,0.678768211
+Slovak Republic,2009,0.504171042
+Slovak Republic,2010,0.673202327
+Slovak Republic,2011,0.615561182
+Slovak Republic,2012,0.744420769
+Slovenia,1993,0.355550764
+Slovenia,1994,0.547664296
+Slovenia,1995,0.362122264
+Slovenia,1996,0.304721217
+Slovenia,1997,0.344789333
+Slovenia,1998,0.327124319
+Slovenia,1999,0.290796138
+Slovenia,2000,0.362994998
+Slovenia,2001,0.45595395
+Slovenia,2002,0.389053384
+Slovenia,2003,0.313590143
+Slovenia,2004,0.2209182
+Slovenia,2005,0.203365864
+Slovenia,2006,0.276324837
+Slovenia,2007,0.267173495
+Slovenia,2008,0.421506909
+Slovenia,2009,0.290202412
+Slovenia,2010,0.381814857
+Slovenia,2011,0.45551009
+Slovenia,2012,0.441485044
+Sweden,1993,1.230363819
+Sweden,1994,1.123986161
+Sweden,1995,0.988111643
+Sweden,1996,0.793401473
+Sweden,1997,0.865384714
+Sweden,1998,0.917892628
+Sweden,1999,0.890745283
+Sweden,2000,0.93725572
+Sweden,2001,1.175161373
+Sweden,2002,0.927362099
+Sweden,2003,0.724483651
+Sweden,2004,0.569444384
+Sweden,2005,1.033662143
+Sweden,2006,0.964030212
+Sweden,2007,1.256238762
+Sweden,2008,1.339694166
+Sweden,2009,0.870493083
+Sweden,2010,1.425300125
+Sweden,2011,1.319896173
+Sweden,2012,1.115411828
+Swaziland,1993,3.23485088
+Swaziland,1994,2.854789464
+Swaziland,1995,3.480018949
+Swaziland,1996,3.851729589
+Swaziland,1997,3.576701033
+Swaziland,1998,2.077714902
+Swaziland,1999,1.720961476
+Swaziland,2000,1.565290994
+Swaziland,2001,2.059815151
+Swaziland,2002,2.372215994
+Swaziland,2003,1.862220206
+Swaziland,2004,1.691831143
+Swaziland,2005,1.537407661
+Swaziland,2006,1.653395921
+Swaziland,2007,2.234606147
+Swaziland,2008,3.479182508
+Swaziland,2009,2.434268453
+Swaziland,2010,2.388375261
+Swaziland,2011,2.621449134
+Swaziland,2012,1.691986833
+Seychelles,1993,0.086322598
+Seychelles,1994,0.080208805
+Seychelles,1995,0.086941013
+Seychelles,1996,0.095360906
+Seychelles,1997,0.076304384
+Seychelles,1998,0.073156626
+Seychelles,1999,0.051562676
+Seychelles,2000,0.073049184
+Seychelles,2001,0.078174429
+Seychelles,2002,0.085258409
+Seychelles,2003,0.094950428
+Seychelles,2004,0.052108261
+Seychelles,2005,0.065079316
+Seychelles,2006,0.083606721
+Seychelles,2007,0.088783557
+Seychelles,2008,0.12281588
+Seychelles,2009,0.117107636
+Seychelles,2010,0.11927764
+Seychelles,2011,0.109640327
+Seychelles,2012,0.118653705
+Syrian Arab Republic,1993,20.28053606
+Syrian Arab Republic,1994,27.77284732
+Syrian Arab Republic,1995,28.63495747
+Syrian Arab Republic,1996,28.01370586
+Syrian Arab Republic,1997,25.05421274
+Syrian Arab Republic,1998,15.10473386
+Syrian Arab Republic,1999,19.95063871
+Syrian Arab Republic,2000,28.62664094
+Syrian Arab Republic,2001,22.91507322
+Syrian Arab Republic,2002,24.07042393
+Syrian Arab Republic,2003,28.56572285
+Syrian Arab Republic,2004,25.27608757
+Syrian Arab Republic,2005,29.7873395
+Syrian Arab Republic,2006,28.6158324
+Syrian Arab Republic,2007,24.62643068
+Chad,1993,7.514318411
+Chad,1994,10.31926703
+Chad,1995,11.54662448
+Chad,1996,11.21417381
+Chad,1997,11.18417179
+Chad,1998,10.01138085
+Chad,1999,8.23427486
+Chad,2000,8.416110001
+Chad,2001,7.12911112
+Chad,2002,7.715427537
+Chad,2003,15.01254365
+Chad,2004,51.71103924
+Chad,2005,50.41313261
+Chad,2006,48.92488166
+Chad,2007,44.24735525
+Chad,2008,45.21540614
+Chad,2009,28.98067367
+Chad,2010,33.35240441
+Chad,2011,35.89694671
+Chad,2012,29.85619209
+Togo,1993,6.680392436
+Togo,1994,9.755046918
+Togo,1995,10.65742426
+Togo,1996,10.03945513
+Togo,1997,9.697773622
+Togo,1998,9.374347022
+Togo,1999,6.951525084
+Togo,2000,7.491679232
+Togo,2001,7.023837294
+Togo,2002,7.692796171
+Togo,2003,8.373953914
+Togo,2004,5.449436347
+Togo,2005,4.921423263
+Togo,2006,6.238933249
+Togo,2007,8.1037485
+Togo,2008,15.24337
+Togo,2009,8.515996922
+Togo,2010,9.137069431
+Togo,2011,9.48504189
+Togo,2012,9.038925183
+Thailand,1993,1.14208663
+Thailand,1994,1.045812508
+Thailand,1995,1.075250527
+Thailand,1996,1.325082149
+Thailand,1997,1.610727256
+Thailand,1998,1.763234369
+Thailand,1999,1.474813645
+Thailand,2000,3.167683227
+Thailand,2001,3.228681798
+Thailand,2002,2.730696266
+Thailand,2003,4.092265561
+Thailand,2004,3.950909332
+Thailand,2005,5.591992618
+Thailand,2006,5.639740724
+Thailand,2007,5.379063351
+Thailand,2008,7.418548658
+Thailand,2009,4.283176552
+Thailand,2010,4.286918343
+Thailand,2011,4.496916074
+Thailand,2012,4.312902793
+Tajikistan,1993,0.512593678
+Tajikistan,1994,0.441793339
+Tajikistan,1995,0.547132192
+Tajikistan,1996,0.914919203
+Tajikistan,1997,0.962305488
+Tajikistan,1998,0.342773698
+Tajikistan,1999,0.369356251
+Tajikistan,2000,1.005734721
+Tajikistan,2001,0.866790808
+Tajikistan,2002,0.817669008
+Tajikistan,2003,0.986891737
+Tajikistan,2004,1.203632362
+Tajikistan,2005,1.119010706
+Tajikistan,2006,1.296301106
+Tajikistan,2007,1.0971612
+Tajikistan,2008,1.278869688
+Tajikistan,2009,1.075534374
+Tajikistan,2010,1.593899645
+Tajikistan,2011,2.25474002
+Tajikistan,2012,1.781436153
+Turkmenistan,1993,11.25904257
+Turkmenistan,1994,73.83660374
+Turkmenistan,1995,78.99213435
+Turkmenistan,1996,19.94035554
+Turkmenistan,1997,65.23175062
+Turkmenistan,1998,37.56317637
+Turkmenistan,1999,57.38762794
+Turkmenistan,2000,41.29137911
+Turkmenistan,2001,29.34974699
+Turkmenistan,2002,27.87466849
+Turkmenistan,2003,27.7363304
+Turkmenistan,2004,33.43534387
+Turkmenistan,2005,39.27334285
+Turkmenistan,2006,32.82083909
+Turkmenistan,2007,32.00073391
+Turkmenistan,2008,31.37106694
+Turkmenistan,2009,37.20904553
+Turkmenistan,2010,39.86677508
+Turkmenistan,2011,44.95189565
+Turkmenistan,2012,34.39283762
+Timor-Leste,2000,0.634357889
+Timor-Leste,2001,0.540196097
+Timor-Leste,2002,0.584945738
+Timor-Leste,2003,0.915315307
+Timor-Leste,2004,0.944623385
+Timor-Leste,2005,0.523502379
+Timor-Leste,2006,0.636745743
+Timor-Leste,2007,0.597220917
+Timor-Leste,2008,0.837560038
+Timor-Leste,2009,0.599761217
+Timor-Leste,2010,0.64539575
+Timor-Leste,2011,0.652646792
+Timor-Leste,2012,0.626519585
+Tonga,1993,0.118021851
+Tonga,1994,0.087414114
+Tonga,1995,0.097900624
+Tonga,1996,0.09544306
+Tonga,1997,0.077571493
+Tonga,1998,0.087026429
+Tonga,1999,0.047914096
+Tonga,2000,0.047803353
+Tonga,2001,0.057172932
+Tonga,2002,0.051075451
+Tonga,2003,0.05876569
+Tonga,2004,0.044184311
+Tonga,2005,0.032678156
+Tonga,2006,0.054830592
+Tonga,2007,0.066980149
+Tonga,2008,0.073023036
+Tonga,2009,0.072638642
+Tonga,2010,0.069958102
+Tonga,2011,0.067645856
+Tonga,2012,0.065105742
+Trinidad and Tobago,1993,20.73843966
+Trinidad and Tobago,1994,18.66916285
+Trinidad and Tobago,1995,18.54939271
+Trinidad and Tobago,1996,22.91981581
+Trinidad and Tobago,1997,21.01334553
+Trinidad and Tobago,1998,14.02272089
+Trinidad and Tobago,1999,15.91901629
+Trinidad and Tobago,2000,34.78462764
+Trinidad and Tobago,2001,29.8417638
+Trinidad and Tobago,2002,27.46920505
+Trinidad and Tobago,2003,42.43154214
+Trinidad and Tobago,2004,45.166646
+Trinidad and Tobago,2005,63.13390837
+Trinidad and Tobago,2006,64.79795434
+Trinidad and Tobago,2007,55.5555202
+Trinidad and Tobago,2008,61.48395577
+Trinidad and Tobago,2009,41.47919676
+Trinidad and Tobago,2010,39.12565529
+Trinidad and Tobago,2011,37.92520359
+Trinidad and Tobago,2012,31.67778936
+Tunisia,1993,3.657173968
+Tunisia,1994,3.06955691
+Tunisia,1995,2.971520073
+Tunisia,1996,3.524468703
+Tunisia,1997,3.081410638
+Tunisia,1998,2.04432216
+Tunisia,1999,2.356997742
+Tunisia,2000,4.478298897
+Tunisia,2001,3.784961795
+Tunisia,2002,3.392016743
+Tunisia,2003,3.591159057
+Tunisia,2004,4.075364465
+Tunisia,2005,5.688323143
+Tunisia,2006,5.901488289
+Tunisia,2007,7.366742509
+Tunisia,2008,12.78203206
+Tunisia,2009,5.645870331
+Tunisia,2010,6.635329482
+Tunisia,2011,7.618427593
+Tunisia,2012,7.44783656
+Turkey,1993,0.541890033
+Turkey,1994,0.641194094
+Turkey,1995,0.588544663
+Turkey,1996,0.626601786
+Turkey,1997,0.456668373
+Turkey,1998,0.271177769
+Turkey,1999,0.303984197
+Turkey,2000,0.373503703
+Turkey,2001,0.397123815
+Turkey,2002,0.380976477
+Turkey,2003,0.373623235
+Turkey,2004,0.31001279
+Turkey,2005,0.359446495
+Turkey,2006,0.482592351
+Turkey,2007,0.496112966
+Turkey,2008,0.655412728
+Turkey,2009,0.472630425
+Turkey,2010,0.597630338
+Turkey,2011,0.760304896
+Turkey,2012,0.670451724
+Tuvalu,1993,0
+Tuvalu,1994,0
+Tuvalu,1995,0
+Tuvalu,1996,0
+Tuvalu,1997,0
+Tuvalu,1998,0
+Tuvalu,1999,0
+Tuvalu,2000,0
+Tuvalu,2001,0
+Tuvalu,2002,0
+Tuvalu,2003,0
+Tuvalu,2004,0
+Tuvalu,2005,0
+Tuvalu,2006,0
+Tuvalu,2007,0
+Tuvalu,2008,0
+Tuvalu,2009,0
+Tuvalu,2010,0
+Tuvalu,2011,0
+Tuvalu,2012,0
+Tanzania,1993,9.313850126
+Tanzania,1994,9.637689377
+Tanzania,1995,11.66376876
+Tanzania,1996,9.999308259
+Tanzania,1997,8.042099607
+Tanzania,1998,6.428839274
+Tanzania,1999,4.449105436
+Tanzania,2000,3.770127593
+Tanzania,2001,3.81498735
+Tanzania,2002,4.929194332
+Tanzania,2003,6.146764288
+Tanzania,2004,5.626774081
+Tanzania,2005,6.258979123
+Tanzania,2006,9.119371571
+Tanzania,2007,9.596670037
+Tanzania,2008,10.07268313
+Tanzania,2009,9.758313507
+Tanzania,2010,11.21164092
+Tanzania,2011,13.84998633
+Tanzania,2012,11.64781631
+Uganda,1993,17.48427525
+Uganda,1994,16.40227496
+Uganda,1995,16.21216055
+Uganda,1996,16.49006045
+Uganda,1997,15.26208495
+Uganda,1998,14.3667695
+Uganda,1999,11.32595807
+Uganda,2000,9.828407395
+Uganda,2001,10.79395588
+Uganda,2002,12.78042904
+Uganda,2003,15.76129947
+Uganda,2004,11.47579076
+Uganda,2005,10.69143616
+Uganda,2006,12.92400326
+Uganda,2007,14.35735872
+Uganda,2008,15.83168774
+Uganda,2009,14.08605898
+Uganda,2010,14.63579939
+Uganda,2011,16.71610176
+Uganda,2012,12.19412079
+Ukraine,1993,2.844965234
+Ukraine,1994,3.172021193
+Ukraine,1995,4.485393125
+Ukraine,1996,5.420365743
+Ukraine,1997,4.282614334
+Ukraine,1998,3.779323808
+Ukraine,1999,4.310050721
+Ukraine,2000,9.4120253
+Ukraine,2001,8.665609812
+Ukraine,2002,5.752708941
+Ukraine,2003,7.632344987
+Ukraine,2004,8.894174015
+Ukraine,2005,8.683865208
+Ukraine,2006,7.592492753
+Ukraine,2007,6.327503382
+Ukraine,2008,8.025059683
+Ukraine,2009,5.40923818
+Ukraine,2010,5.490747646
+Ukraine,2011,6.159307349
+Ukraine,2012,4.566365399
+Upper middle income,1993,5.468009414
+Upper middle income,1994,4.684311529
+Upper middle income,1995,4.880405833
+Upper middle income,1996,5.441483238
+Upper middle income,1997,4.825239057
+Upper middle income,1998,3.172527457
+Upper middle income,1999,3.908522504
+Upper middle income,2000,6.387247113
+Upper middle income,2001,5.724496747
+Upper middle income,2002,5.502059463
+Upper middle income,2003,6.601259467
+Upper middle income,2004,8.747207001
+Upper middle income,2005,10.67657105
+Upper middle income,2006,11.31679057
+Upper middle income,2007,11.16851014
+Upper middle income,2008,13.87866111
+Upper middle income,2009,7.445581256
+Upper middle income,2010,9.099396251
+Upper middle income,2011,10.27655089
+Upper middle income,2012,8.800608813
+Uruguay,1993,0.904427152
+Uruguay,1994,0.792066221
+Uruguay,1995,0.823302377
+Uruguay,1996,0.949590935
+Uruguay,1997,0.808359166
+Uruguay,1998,0.791065948
+Uruguay,1999,0.65172193
+Uruguay,2000,0.631509483
+Uruguay,2001,0.668842383
+Uruguay,2002,1.39011539
+Uruguay,2003,2.172939879
+Uruguay,2004,1.913511023
+Uruguay,2005,1.838224477
+Uruguay,2006,2.62199778
+Uruguay,2007,2.73979569
+Uruguay,2008,4.160526115
+Uruguay,2009,2.585779038
+Uruguay,2010,3.458746004
+Uruguay,2011,2.488376741
+Uruguay,2012,2.523523252
+United States,1993,0.920177443
+United States,1994,0.798843451
+United States,1995,0.798408519
+United States,1996,0.940328072
+United States,1997,0.805769976
+United States,1998,0.481868305
+United States,1999,0.431172828
+United States,2000,1.002191364
+United States,2001,0.862665761
+United States,2002,0.645488113
+United States,2003,0.921927172
+United States,2004,1.093334669
+United States,2005,1.472796037
+United States,2006,1.545668318
+United States,2007,1.607603596
+United States,2008,2.538975119
+United States,2009,0.992424307
+United States,2010,1.228367021
+United States,2011,1.572249013
+United States,2012,1.261363568
+Uzbekistan,1993,21.90938011
+Uzbekistan,1994,21.86836663
+Uzbekistan,1995,23.38032314
+Uzbekistan,1996,30.95684855
+Uzbekistan,1997,27.4157358
+Uzbekistan,1998,19.30771255
+Uzbekistan,1999,15.36501509
+Uzbekistan,2000,51.79812963
+Uzbekistan,2001,57.93280171
+Uzbekistan,2002,51.98993517
+Uzbekistan,2003,83.41281017
+Uzbekistan,2004,82.71284798
+Uzbekistan,2005,17.50128655
+Uzbekistan,2006,94.64029721
+Uzbekistan,2007,74.14915575
+Uzbekistan,2008,89.35708166
+Uzbekistan,2009,32.35113106
+Uzbekistan,2010,27.15827259
+Uzbekistan,2011,28.57640761
+Uzbekistan,2012,20.83368137
+St. Vincent and the Grenadines,1993,0.083876789
+St. Vincent and the Grenadines,1994,0.078482524
+St. Vincent and the Grenadines,1995,0.095904747
+St. Vincent and the Grenadines,1996,0.098520783
+St. Vincent and the Grenadines,1997,0.086901972
+St. Vincent and the Grenadines,1998,0.028744236
+St. Vincent and the Grenadines,1999,0.032292032
+St. Vincent and the Grenadines,2000,0.035278105
+St. Vincent and the Grenadines,2001,0.040699189
+St. Vincent and the Grenadines,2002,0.039588154
+St. Vincent and the Grenadines,2003,0.056347373
+St. Vincent and the Grenadines,2004,0.049286076
+St. Vincent and the Grenadines,2005,0.040569546
+St. Vincent and the Grenadines,2006,0.041361139
+St. Vincent and the Grenadines,2007,0.053368652
+St. Vincent and the Grenadines,2008,0.053280542
+St. Vincent and the Grenadines,2009,0.055793225
+St. Vincent and the Grenadines,2010,0.071358249
+St. Vincent and the Grenadines,2011,0.064738742
+St. Vincent and the Grenadines,2012,0.063773985
+"Venezuela, RB",1993,26.52812579
+"Venezuela, RB",1994,26.27980824
+"Venezuela, RB",1995,23.29635739
+"Venezuela, RB",1996,35.83667344
+"Venezuela, RB",1997,27.88893189
+"Venezuela, RB",1998,16.17841248
+"Venezuela, RB",1999,18.31596618
+"Venezuela, RB",2000,28.16480131
+"Venezuela, RB",2001,22.39649342
+"Venezuela, RB",2002,27.03788735
+"Venezuela, RB",2003,32.95700619
+"Venezuela, RB",2004,39.65291116
+"Venezuela, RB",2005,47.70613881
+"Venezuela, RB",2006,44.12885791
+"Venezuela, RB",2007,34.60222649
+"Venezuela, RB",2008,35.10740087
+"Venezuela, RB",2009,18.93254764
+"Venezuela, RB",2010,20.46446887
+"Venezuela, RB",2011,33.84441294
+"Venezuela, RB",2012,28.78000123
+Virgin Islands (U.S.),1993,0
+Vietnam,1993,10.0189262
+Vietnam,1994,9.033075872
+Vietnam,1995,9.46689137
+Vietnam,1996,9.990220407
+Vietnam,1997,8.781353965
+Vietnam,1998,6.899483947
+Vietnam,1999,7.499036422
+Vietnam,2000,10.77791129
+Vietnam,2001,9.414342967
+Vietnam,2002,8.916442355
+Vietnam,2003,10.09373628
+Vietnam,2004,14.56920957
+Vietnam,2005,16.4351053
+Vietnam,2006,15.97170661
+Vietnam,2007,15.33479513
+Vietnam,2008,18.20893008
+Vietnam,2009,10.08762318
+Vietnam,2010,11.72622248
+Vietnam,2011,13.37164946
+Vietnam,2012,11.78348936
+Vanuatu,1993,1.547000622
+Vanuatu,1994,1.378528175
+Vanuatu,1995,1.44503069
+Vanuatu,1996,1.402747742
+Vanuatu,1997,1.150223115
+Vanuatu,1998,1.005474957
+Vanuatu,1999,1.292621066
+Vanuatu,2000,1.208012583
+Vanuatu,2001,1.150695513
+Vanuatu,2002,1.138368702
+Vanuatu,2003,1.324270159
+Vanuatu,2004,0.994572642
+Vanuatu,2005,0.7881569
+Vanuatu,2006,1.022643575
+Vanuatu,2007,1.042246369
+Vanuatu,2008,1.216382884
+Vanuatu,2009,1.117918675
+Vanuatu,2010,1.1218296
+Vanuatu,2011,1.174989626
+Vanuatu,2012,1.321347759
+World,1993,2.026049981
+World,1994,1.798619319
+World,1995,1.830253199
+World,1996,2.236357561
+World,1997,2.060298359
+World,1998,1.415848955
+World,1999,1.534063372
+World,2000,2.846362741
+World,2001,2.553686552
+World,2002,2.227088054
+World,2003,2.774391406
+World,2004,3.418573151
+World,2005,4.621307253
+World,2006,5.114993276
+World,2007,5.210473548
+World,2008,6.938008267
+World,2009,3.734095339
+World,2010,4.727223167
+World,2011,5.622236514
+World,2012,5.03415135
+Samoa,1993,4.43188857
+Samoa,1994,2.85205635
+Samoa,1995,3.267224252
+Samoa,1996,3.061527235
+Samoa,1997,2.283602955
+Samoa,1998,2.263034791
+Samoa,1999,1.880294398
+Samoa,2000,0.765119522
+Samoa,2001,0.916832989
+Samoa,2002,0.888252582
+Samoa,2003,0.908182106
+Samoa,2004,0.659260338
+Samoa,2005,0.501334684
+Samoa,2006,0.436226669
+Samoa,2007,0.484123909
+Samoa,2008,0.660962513
+Samoa,2009,0.683537152
+Samoa,2010,0.730392863
+Samoa,2011,0.818454247
+Samoa,2012,0.887830379
+"Yemen, Rep.",1993,19.16610019
+"Yemen, Rep.",1994,36.03098469
+"Yemen, Rep.",1995,39.53374858
+"Yemen, Rep.",1996,36.06489296
+"Yemen, Rep.",1997,29.514503
+"Yemen, Rep.",1998,19.29670381
+"Yemen, Rep.",1999,24.65016193
+"Yemen, Rep.",2000,38.31455105
+"Yemen, Rep.",2001,30.96654433
+"Yemen, Rep.",2002,29.11647769
+"Yemen, Rep.",2003,30.93591504
+"Yemen, Rep.",2004,33.34180415
+"Yemen, Rep.",2005,39.77905416
+"Yemen, Rep.",2006,38.5775736
+"Yemen, Rep.",2007,27.6730352
+"Yemen, Rep.",2008,28.63315802
+"Yemen, Rep.",2009,18.21995909
+"Yemen, Rep.",2010,22.55982087
+"Yemen, Rep.",2011,26.80082165
+"Yemen, Rep.",2012,18.16255717
+South Africa,1993,1.875333502
+South Africa,1994,2.283351211
+South Africa,1995,2.399404335
+South Africa,1996,2.641530701
+South Africa,1997,2.136432241
+South Africa,1998,1.589844117
+South Africa,1999,1.144287769
+South Africa,2000,1.566713114
+South Africa,2001,3.244438908
+South Africa,2002,2.806427559
+South Africa,2003,2.608113068
+South Africa,2004,4.644474039
+South Africa,2005,4.031576273
+South Africa,2006,5.021652098
+South Africa,2007,6.500017244
+South Africa,2008,12.69872844
+South Africa,2009,6.27565446
+South Africa,2010,8.01559396
+South Africa,2011,9.328593056
+South Africa,2012,7.895943234
+Zambia,1993,6.385895767
+Zambia,1994,11.03603449
+Zambia,1995,15.69477255
+Zambia,1996,11.54890693
+Zambia,1997,10.42395784
+Zambia,1998,6.737992865
+Zambia,1999,5.063159606
+Zambia,2000,5.705572146
+Zambia,2001,3.875844394
+Zambia,2002,4.838410816
+Zambia,2003,6.333100263
+Zambia,2004,12.32670901
+Zambia,2005,14.66046379
+Zambia,2006,24.88118567
+Zambia,2007,26.76267046
+Zambia,2008,21.83148407
+Zambia,2009,21.91322734
+Zambia,2010,27.75068137
+Zambia,2011,27.27283426
+Zambia,2012,23.00972345
+Zimbabwe,1993,7.176589329
+Zimbabwe,1994,7.489086774
+Zimbabwe,1995,6.651999771
+Zimbabwe,1996,6.572271951
+Zimbabwe,1997,6.001963165
+Zimbabwe,1998,3.59345831
+Zimbabwe,1999,2.75361716
+Zimbabwe,2000,2.691083914
+Zimbabwe,2001,2.943189751
+Zimbabwe,2002,3.420903661
+Zimbabwe,2003,5.261810378
+Zimbabwe,2004,7.748059699
+Zimbabwe,2005,7.489343258
+Zimbabwe,2006,11.26712642
+Zimbabwe,2007,15.83246778
+Zimbabwe,2008,19.31341702
+Zimbabwe,2009,8.089758892
+Zimbabwe,2010,10.53616025
+Zimbabwe,2011,12.88315509
+Zimbabwe,2012,10.09406927

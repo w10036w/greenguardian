@@ -1,0 +1,12740 @@
+<!doctype HTML>
+<meta charset = 'utf-8'>
+
+<script src="./js/d3.v3.js"></script>
+<script src="./js/topojson.v1.js"></script>
+<script src="./js/datamaps.all.js"></script>
+<script src="./js/handlebars.js"></script>
+<script src="./js/angular.js"></script>
+
+<style>
+    .rChart {
+        display: block;
+        margin-left: auto; 
+        margin-right: auto;
+        width: 950px;
+        height: 550px;
+    }  
+    .datamaps {
+        position: relative;
+    }
+</style>
+
+<body ng-app ng-controller='rChartsCtrl'>
+    <div class='container'>
+        <input id='slider' type='range' min=1993 max=2012 ng-model='year' width=200>
+        <span ng-bind='year'></span>
+        <div id='chart_1' class='rChart datamaps'></div>  
+    </div>
+    
+    <script>
+        var yearSelected = '1993';
+        function rChartsCtrl($scope) {
+            $scope.year = 1993;
+            $scope.$watch('year', function (newYear) {
+                mapchart_1.updateChoropleth(chartParams.data[newYear]);
+                yearSelected = newYear;
+            });
+        };
+    </script>    
+        <script id='popup-template' type='text/x-handlebars-template'></script>
+    <script>
+var co2csvdataarray  = new Array();
+d3.csv("./data/CO2 emissions (kt).csv", function(data){
+    data.forEach(function(d){
+        for (var i = 1993; i < 2014; i++) {
+            if (d[i] == "") {
+                d[i] = "data not collected";
+            }
+        }
+        co2csvdataarray [d["Country Code"]]=d;
+    })
+});
+
+var co2metriccsvdataarray  = new Array();
+d3.csv("./data/CO2 emissions (metric tons per capita).csv", function(data){
+    data.forEach(function(d){
+        for (var i = 1993; i < 2014; i++) {
+            if (d[i] == "") {
+                            d[i] = "data not collected";
+                        }
+                    }
+                    co2metriccsvdataarray [d["Country Code"]] = d;
+                })
+            });
+
+            var electricityproductiondataarray = new Array();
+            d3.csv("./data/Electricity production.csv", function (data) {
+                data.forEach(function (d) {
+                    for (var i = 1993; i < 2014; i++) {
+                        if (d[i] == "") {
+                            d[i] = "data not collected";
+                        }
+                    }
+                    electricityproductiondataarray [d["Country Code"]] = d;
+                })
+            });
+
+            var electricityexcludehydroelectric = new Array();
+            d3.csv("./data/Electricity production exclude.csv", function (data) {
+                data.forEach(function (d) {
+                    for (var i = 1993; i < 2014; i++) {
+                        if (d[i] == "") {
+                            d[i] = "data not collected";
+                        }
+                    }
+                    electricityexcludehydroelectric [d["Country Code"]] = d;
+                })
+            });
+
+            var forestareadataarray = new Array();
+            d3.csv("./data/Forest area.csv", function (data) {
+                data.forEach(function (d) {
+                    for (var i = 1993; i < 2014; i++) {
+                        if (d[i] == "") {
+                            d[i] = "data not collected";
+                        }
+                    }
+                    forestareadataarray [d["Country Code"]] = d;
+                })
+            });
+
+            var terrestrialandmarineprotecteddataarray = new Array();
+            d3.csv("./data/Terrestrial and marine protected areas.csv", function (data) {
+                data.forEach(function (d) {
+                    for (var i = 1993; i < 2014; i++) {
+                        if (d[i] == "") {
+                            d[i] = "data not collected";
+                        }
+                    }
+                    terrestrialandmarineprotecteddataarray [d["Country Code"]] = d;
+                })
+            });
+
+            var naturalresourcesrentsdataarray = new Array();
+            d3.csv("./data/Total natural resources rents.csv", function (data) {
+                data.forEach(function (d) {
+                    for (var i = 1993; i < 2014; i++) {
+                        if (d[i] == "") {
+                            d[i] = "data not collected";
+                        }
+                    }
+                    naturalresourcesrentsdataarray[d["Country Code"]] = d;
+                })
+            });
+
+var chartParams = {
+"dom": "chart_1",
+"width": 950,
+"height": 550,
+"scope": "world",
+
+geographyConfig: {
+    highlightBorderColor: '#000000',
+    highlightBorderWidth: 1,
+    popupTemplate: function(geography, data) {
+        return '<div class="hoverinfo">' + geography.properties.name + ': <br/>CO2 emissions (kt): ' + co2csvdataarray[geography.id][yearSelected]+"<br/>CO2 emissions (metric tons per capita): " + co2metriccsvdataarray[geography.id][yearSelected]+"<br/>Electricity production from oil, gas and coal sources (% of total): " + electricityproductiondataarray[geography.id][yearSelected]+"<br/><b>Electricity production from renewable sources, excluding hydroelectric (% of total): " + electricityexcludehydroelectric[geography.id][yearSelected]+"</b><br/>Forest area (% of land area): " + forestareadataarray[geography.id][yearSelected]+"<br/>Terrestrial and marine protected areas (% of total territorial area): " + terrestrialandmarineprotecteddataarray[geography.id][yearSelected]+"<br/>Total natural resources rents (% of GDP): " + naturalresourcesrentsdataarray[geography.id][yearSelected];
+    }
+},
+
+"fills": {
+"A (<=0)": "#FFFFB2",
+"B (<0.03)": "#FECC5C",
+"C (<0.73)": "#FD8D3C",
+"D (<2.484)": "#F03B20",
+"E (<47.63)": "#BD0026",
+"defaultFill": "lightYellow" 
+},
+"legend": true,
+"labels": false,
+"id": "chart_1",
+"bodyattrs": "ng-app ng-controller='rChartsCtrl'",
+"data": {
+"1993": {		
+	"AGO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ALB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ARB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ARE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ARG": {	
+		"x": 0.17,
+		"fillKey": "C (<0.73)"
+	},	
+	"ARM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"AUS": {	
+		"x": 0.42,
+		"fillKey": "C (<0.73)"
+	},	
+	"AUT": {	
+		"x": 2.61,
+		"fillKey": "E (<47.63)"
+	},	
+	"AZE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BEL": {	
+		"x": 0.36,
+		"fillKey": "C (<0.73)"
+	},	
+	"BEN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BGD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BGR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BHR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BIH": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BLR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BOL": {	
+		"x": 1.62,
+		"fillKey": "D (<2.484)"
+	},	
+	"BRA": {	
+		"x": 1.97,
+		"fillKey": "D (<2.484)"
+	},	
+	"BRN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BWA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"CAN": {	
+		"x": 0.92,
+		"fillKey": "D (<2.484)"
+	},	
+	"CEB": {	
+		"x": 0.07,
+		"fillKey": "C (<0.73)"
+	},	
+	"CHE": {	
+		"x": 0.79,
+		"fillKey": "D (<2.484)"
+	},	
+	"CHL": {	
+		"x": 7.29,
+		"fillKey": "E (<47.63)"
+	},	
+	"CHN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"CIV": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"CMR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COL": {	
+		"x": 1.01,
+		"fillKey": "D (<2.484)"
+	},	
+	"CRI": {	
+		"x": 9.59,
+		"fillKey": "E (<47.63)"
+	},	
+	"CUB": {	
+		"x": 8.06,
+		"fillKey": "E (<47.63)"
+	},	
+	"CYP": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"CZE": {	
+		"x": 0.27,
+		"fillKey": "C (<0.73)"
+	},	
+	"DEU": {	
+		"x": 0.51,
+		"fillKey": "C (<0.73)"
+	},	
+	"DNK": {	
+		"x": 4.65,
+		"fillKey": "E (<47.63)"
+	},	
+	"DOM": {	
+		"x": 0.65,
+		"fillKey": "C (<0.73)"
+	},	
+	"DZA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EAP": {	
+		"x": 0.91,
+		"fillKey": "D (<2.484)"
+	},	
+	"EAS": {	
+		"x": 0.65,
+		"fillKey": "C (<0.73)"
+	},	
+	"ECA": {	
+		"x": 0.58,
+		"fillKey": "C (<0.73)"
+	},	
+	"ECS": {	
+		"x": 0.02,
+		"fillKey": "B (<0.03)"
+	},	
+	"ECU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EGY": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EMU": {	
+		"x": 1.06,
+		"fillKey": "D (<2.484)"
+	},	
+	"ERI": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ESP": {	
+		"x": 0.45,
+		"fillKey": "C (<0.73)"
+	},	
+	"EST": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ETH": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EUU": {	
+		"x": 0.93,
+		"fillKey": "D (<2.484)"
+	},	
+	"FCS": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"FIN": {	
+		"x": 9.76,
+		"fillKey": "E (<47.63)"
+	},	
+	"FRA": {	
+		"x": 0.43,
+		"fillKey": "C (<0.73)"
+	},	
+	"GAB": {	
+		"x": 0.8,
+		"fillKey": "D (<2.484)"
+	},	
+	"GBR": {	
+		"x": 0.44,
+		"fillKey": "C (<0.73)"
+	},	
+	"GEO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"GHA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"GRC": {	
+		"x": 0.13,
+		"fillKey": "C (<0.73)"
+	},	
+	"GTM": {	
+		"x": 12.8,
+		"fillKey": "E (<47.63)"
+	},	
+	"HIC": {	
+		"x": 1.3,
+		"fillKey": "D (<2.484)"
+	},	
+	"HKG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HND": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HPC": {	
+		"x": 1.1,
+		"fillKey": "D (<2.484)"
+	},	
+	"HRV": {	
+		"x": 0.2,
+		"fillKey": "C (<0.73)"
+	},	
+	"HTI": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HUN": {	
+		"x": 0.12,
+		"fillKey": "C (<0.73)"
+	},	
+	"IDN": {	
+		"x": 2.41,
+		"fillKey": "D (<2.484)"
+	},	
+	"IND": {	
+		"x": 0.03,
+		"fillKey": "C (<0.73)"
+	},	
+	"IRL": {	
+		"x": 0.09,
+		"fillKey": "C (<0.73)"
+	},	
+	"IRN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"IRQ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ISL": {	
+		"x": 5.42,
+		"fillKey": "E (<47.63)"
+	},	
+	"ISR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ITA": {	
+		"x": 1.73,
+		"fillKey": "D (<2.484)"
+	},	
+	"JAM": {	
+		"x": 3.32,
+		"fillKey": "E (<47.63)"
+	},	
+	"JOR": {	
+		"x": 0.02,
+		"fillKey": "B (<0.03)"
+	},	
+	"JPN": {	
+		"x": 1.33,
+		"fillKey": "D (<2.484)"
+	},	
+	"KAZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KEN": {	
+		"x": 13.61,
+		"fillKey": "E (<47.63)"
+	},	
+	"KGZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KOR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KWT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LAC": {	
+		"x": 2.6,
+		"fillKey": "E (<47.63)"
+	},	
+	"LBN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LBY": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LDC": {	
+		"x": 0.09,
+		"fillKey": "C (<0.73)"
+	},	
+	"LIC": {	
+		"x": 0.44,
+		"fillKey": "C (<0.73)"
+	},	
+	"LKA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LMC": {	
+		"x": 0.85,
+		"fillKey": "D (<2.484)"
+	},	
+	"LMY": {	
+		"x": 0.73,
+		"fillKey": "D (<2.484)"
+	},	
+	"LTU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LUX": {	
+		"x": 2.24,
+		"fillKey": "D (<2.484)"
+	},	
+	"LVA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MAR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MDA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MEA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MEX": {	
+		"x": 6.06,
+		"fillKey": "E (<47.63)"
+	},	
+	"MIC": {	
+		"x": 0.74,
+		"fillKey": "D (<2.484)"
+	},	
+	"MKD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MLT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MMR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MNA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MNG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MOZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MYS": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NAC": {	
+		"x": 1.97,
+		"fillKey": "D (<2.484)"
+	},	
+	"NAM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NGA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NIC": {	
+		"x": 29.16,
+		"fillKey": "E (<47.63)"
+	},	
+	"NLD": {	
+		"x": 1.32,
+		"fillKey": "D (<2.484)"
+	},	
+	"NOC": {	
+		"x": 0.03,
+		"fillKey": "C (<0.73)"
+	},	
+	"NOR": {	
+		"x": 0.21,
+		"fillKey": "C (<0.73)"
+	},	
+	"NPL": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NZL": {	
+		"x": 8.49,
+		"fillKey": "E (<47.63)"
+	},	
+	"OEC": {	
+		"x": 1.52,
+		"fillKey": "D (<2.484)"
+	},	
+	"OED": {	
+		"x": 1.58,
+		"fillKey": "D (<2.484)"
+	},	
+	"OMN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PAK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PAN": {	
+		"x": 1.33,
+		"fillKey": "D (<2.484)"
+	},	
+	"PER": {	
+		"x": 0.74,
+		"fillKey": "D (<2.484)"
+	},	
+	"PHL": {	
+		"x": 21.32,
+		"fillKey": "E (<47.63)"
+	},	
+	"POL": {	
+		"x": 0.05,
+		"fillKey": "C (<0.73)"
+	},	
+	"PRK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PRT": {	
+		"x": 2.96,
+		"fillKey": "E (<47.63)"
+	},	
+	"PRY": {	
+		"x": 0.09,
+		"fillKey": "C (<0.73)"
+	},	
+	"QAT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ROU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"RUS": {	
+		"x": 0.01,
+		"fillKey": "B (<0.03)"
+	},	
+	"SAS": {	
+		"x": 0.02,
+		"fillKey": "B (<0.03)"
+	},	
+	"SAU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SDN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SEN": {	
+		"x": 4.34,
+		"fillKey": "E (<47.63)"
+	},	
+	"SGP": {	
+		"x": 1.29,
+		"fillKey": "D (<2.484)"
+	},	
+	"SLV": {	
+		"x": 13.65,
+		"fillKey": "E (<47.63)"
+	},	
+	"SRB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SSA": {	
+		"x": 0.2,
+		"fillKey": "C (<0.73)"
+	},	
+	"SSF": {	
+		"x": 0.21,
+		"fillKey": "C (<0.73)"
+	},	
+	"SVK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SVN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SWE": {	
+		"x": 1.53,
+		"fillKey": "D (<2.484)"
+	},	
+	"SYR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TGO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"THA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TJK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TKM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TTO": {	
+		"x": 0.73,
+		"fillKey": "D (<2.484)"
+	},	
+	"TUN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TUR": {	
+		"x": 0.18,
+		"fillKey": "C (<0.73)"
+	},	
+	"TZA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"UKR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"UMC": {	
+		"x": 0.69,
+		"fillKey": "C (<0.73)"
+	},	
+	"URY": {	
+		"x": 0.74,
+		"fillKey": "D (<2.484)"
+	},	
+	"USA": {	
+		"x": 2.13,
+		"fillKey": "D (<2.484)"
+	},	
+	"UZB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"VEN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"VNM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"WLD": {	
+		"x": 1.15,
+		"fillKey": "D (<2.484)"
+	},	
+	"YEM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ZAF": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ZMB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ZWE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	}	
+},		
+"1994": {		
+	"AGO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ALB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ARB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ARE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ARG": {	
+		"x": 0.19,
+		"fillKey": "C (<0.73)"
+	},	
+	"ARM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"AUS": {	
+		"x": 0.41,
+		"fillKey": "C (<0.73)"
+	},	
+	"AUT": {	
+		"x": 2.28,
+		"fillKey": "D (<2.484)"
+	},	
+	"AZE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BEL": {	
+		"x": 0.36,
+		"fillKey": "C (<0.73)"
+	},	
+	"BEN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BGD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BGR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BHR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BIH": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BLR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BOL": {	
+		"x": 1.56,
+		"fillKey": "D (<2.484)"
+	},	
+	"BRA": {	
+		"x": 2.07,
+		"fillKey": "D (<2.484)"
+	},	
+	"BRN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BWA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"CAN": {	
+		"x": 1.04,
+		"fillKey": "D (<2.484)"
+	},	
+	"CEB": {	
+		"x": 0.11,
+		"fillKey": "C (<0.73)"
+	},	
+	"CHE": {	
+		"x": 0.85,
+		"fillKey": "D (<2.484)"
+	},	
+	"CHL": {	
+		"x": 7.07,
+		"fillKey": "E (<47.63)"
+	},	
+	"CHN": {	
+		"x": 0.04,
+		"fillKey": "C (<0.73)"
+	},	
+	"CIV": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"CMR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COL": {	
+		"x": 1.07,
+		"fillKey": "D (<2.484)"
+	},	
+	"CRI": {	
+		"x": 9.59,
+		"fillKey": "E (<47.63)"
+	},	
+	"CUB": {	
+		"x": 7.5,
+		"fillKey": "E (<47.63)"
+	},	
+	"CYP": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"CZE": {	
+		"x": 0.55,
+		"fillKey": "C (<0.73)"
+	},	
+	"DEU": {	
+		"x": 0.67,
+		"fillKey": "C (<0.73)"
+	},	
+	"DNK": {	
+		"x": 4.21,
+		"fillKey": "E (<47.63)"
+	},	
+	"DOM": {	
+		"x": 0.8,
+		"fillKey": "D (<2.484)"
+	},	
+	"DZA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EAP": {	
+		"x": 0.94,
+		"fillKey": "D (<2.484)"
+	},	
+	"EAS": {	
+		"x": 0.74,
+		"fillKey": "D (<2.484)"
+	},	
+	"ECA": {	
+		"x": 0.65,
+		"fillKey": "C (<0.73)"
+	},	
+	"ECS": {	
+		"x": 0.03,
+		"fillKey": "C (<0.73)"
+	},	
+	"ECU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EGY": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EMU": {	
+		"x": 1.13,
+		"fillKey": "D (<2.484)"
+	},	
+	"ERI": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ESP": {	
+		"x": 0.51,
+		"fillKey": "C (<0.73)"
+	},	
+	"EST": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ETH": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EUU": {	
+		"x": 1,
+		"fillKey": "D (<2.484)"
+	},	
+	"FCS": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"FIN": {	
+		"x": 9.86,
+		"fillKey": "E (<47.63)"
+	},	
+	"FRA": {	
+		"x": 0.47,
+		"fillKey": "C (<0.73)"
+	},	
+	"GAB": {	
+		"x": 0.84,
+		"fillKey": "D (<2.484)"
+	},	
+	"GBR": {	
+		"x": 0.57,
+		"fillKey": "C (<0.73)"
+	},	
+	"GEO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"GHA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"GRC": {	
+		"x": 0.09,
+		"fillKey": "C (<0.73)"
+	},	
+	"GTM": {	
+		"x": 12.47,
+		"fillKey": "E (<47.63)"
+	},	
+	"HIC": {	
+		"x": 1.34,
+		"fillKey": "D (<2.484)"
+	},	
+	"HKG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HND": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HPC": {	
+		"x": 1.03,
+		"fillKey": "D (<2.484)"
+	},	
+	"HRV": {	
+		"x": 0.07,
+		"fillKey": "C (<0.73)"
+	},	
+	"HTI": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HUN": {	
+		"x": 0.13,
+		"fillKey": "C (<0.73)"
+	},	
+	"IDN": {	
+		"x": 3.78,
+		"fillKey": "E (<47.63)"
+	},	
+	"IND": {	
+		"x": 0.05,
+		"fillKey": "C (<0.73)"
+	},	
+	"IRL": {	
+		"x": 0.11,
+		"fillKey": "C (<0.73)"
+	},	
+	"IRN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"IRQ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ISL": {	
+		"x": 5.44,
+		"fillKey": "E (<47.63)"
+	},	
+	"ISR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ITA": {	
+		"x": 1.57,
+		"fillKey": "D (<2.484)"
+	},	
+	"JAM": {	
+		"x": 3.64,
+		"fillKey": "E (<47.63)"
+	},	
+	"JOR": {	
+		"x": 0.02,
+		"fillKey": "B (<0.03)"
+	},	
+	"JPN": {	
+		"x": 1.34,
+		"fillKey": "D (<2.484)"
+	},	
+	"KAZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KEN": {	
+		"x": 10.46,
+		"fillKey": "E (<47.63)"
+	},	
+	"KGZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KOR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KWT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LAC": {	
+		"x": 2.51,
+		"fillKey": "E (<47.63)"
+	},	
+	"LBN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LBY": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LDC": {	
+		"x": 0.09,
+		"fillKey": "C (<0.73)"
+	},	
+	"LIC": {	
+		"x": 0.33,
+		"fillKey": "C (<0.73)"
+	},	
+	"LKA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LMC": {	
+		"x": 0.98,
+		"fillKey": "D (<2.484)"
+	},	
+	"LMY": {	
+		"x": 0.75,
+		"fillKey": "D (<2.484)"
+	},	
+	"LTU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LUX": {	
+		"x": 2.6,
+		"fillKey": "E (<47.63)"
+	},	
+	"LVA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MAR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MDA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MEA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MEX": {	
+		"x": 5.4,
+		"fillKey": "E (<47.63)"
+	},	
+	"MIC": {	
+		"x": 0.77,
+		"fillKey": "D (<2.484)"
+	},	
+	"MKD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MLT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MMR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MNA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MNG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MOZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MYS": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NAC": {	
+		"x": 1.98,
+		"fillKey": "D (<2.484)"
+	},	
+	"NAM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NGA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NIC": {	
+		"x": 26.52,
+		"fillKey": "E (<47.63)"
+	},	
+	"NLD": {	
+		"x": 1.45,
+		"fillKey": "D (<2.484)"
+	},	
+	"NOC": {	
+		"x": 0.03,
+		"fillKey": "C (<0.73)"
+	},	
+	"NOR": {	
+		"x": 0.25,
+		"fillKey": "C (<0.73)"
+	},	
+	"NPL": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NZL": {	
+		"x": 7.93,
+		"fillKey": "E (<47.63)"
+	},	
+	"OEC": {	
+		"x": 1.55,
+		"fillKey": "D (<2.484)"
+	},	
+	"OED": {	
+		"x": 1.6,
+		"fillKey": "D (<2.484)"
+	},	
+	"OMN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PAK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PAN": {	
+		"x": 0.83,
+		"fillKey": "D (<2.484)"
+	},	
+	"PER": {	
+		"x": 0.78,
+		"fillKey": "D (<2.484)"
+	},	
+	"PHL": {	
+		"x": 20.74,
+		"fillKey": "E (<47.63)"
+	},	
+	"POL": {	
+		"x": 0.04,
+		"fillKey": "C (<0.73)"
+	},	
+	"PRK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PRT": {	
+		"x": 3.14,
+		"fillKey": "E (<47.63)"
+	},	
+	"PRY": {	
+		"x": 0.04,
+		"fillKey": "C (<0.73)"
+	},	
+	"QAT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ROU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"RUS": {	
+		"x": 0.01,
+		"fillKey": "B (<0.03)"
+	},	
+	"SAS": {	
+		"x": 0.04,
+		"fillKey": "C (<0.73)"
+	},	
+	"SAU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SDN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SEN": {	
+		"x": 4.21,
+		"fillKey": "E (<47.63)"
+	},	
+	"SGP": {	
+		"x": 1.18,
+		"fillKey": "D (<2.484)"
+	},	
+	"SLV": {	
+		"x": 12.93,
+		"fillKey": "E (<47.63)"
+	},	
+	"SRB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SSA": {	
+		"x": 0.16,
+		"fillKey": "C (<0.73)"
+	},	
+	"SSF": {	
+		"x": 0.16,
+		"fillKey": "C (<0.73)"
+	},	
+	"SVK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SVN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SWE": {	
+		"x": 1.61,
+		"fillKey": "D (<2.484)"
+	},	
+	"SYR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TGO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"THA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TJK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TKM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TTO": {	
+		"x": 0.79,
+		"fillKey": "D (<2.484)"
+	},	
+	"TUN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TUR": {	
+		"x": 0.17,
+		"fillKey": "C (<0.73)"
+	},	
+	"TZA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"UKR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"UMC": {	
+		"x": 0.67,
+		"fillKey": "C (<0.73)"
+	},	
+	"URY": {	
+		"x": 0.77,
+		"fillKey": "D (<2.484)"
+	},	
+	"USA": {	
+		"x": 2.13,
+		"fillKey": "D (<2.484)"
+	},	
+	"UZB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"VEN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"VNM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"WLD": {	
+		"x": 1.18,
+		"fillKey": "D (<2.484)"
+	},	
+	"YEM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ZAF": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ZMB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ZWE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	}	
+},		
+"1995": {		
+	"AGO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ALB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ARB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ARE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ARG": {	
+		"x": 0.17,
+		"fillKey": "C (<0.73)"
+	},	
+	"ARM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"AUS": {	
+		"x": 0.43,
+		"fillKey": "C (<0.73)"
+	},	
+	"AUT": {	
+		"x": 3.33,
+		"fillKey": "E (<47.63)"
+	},	
+	"AZE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BEL": {	
+		"x": 0.45,
+		"fillKey": "C (<0.73)"
+	},	
+	"BEN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BGD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BGR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BHR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BIH": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BLR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BOL": {	
+		"x": 1.49,
+		"fillKey": "D (<2.484)"
+	},	
+	"BRA": {	
+		"x": 2.03,
+		"fillKey": "D (<2.484)"
+	},	
+	"BRN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BWA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"CAN": {	
+		"x": 1.02,
+		"fillKey": "D (<2.484)"
+	},	
+	"CEB": {	
+		"x": 0.13,
+		"fillKey": "C (<0.73)"
+	},	
+	"CHE": {	
+		"x": 0.93,
+		"fillKey": "D (<2.484)"
+	},	
+	"CHL": {	
+		"x": 6.7,
+		"fillKey": "E (<47.63)"
+	},	
+	"CHN": {	
+		"x": 0.29,
+		"fillKey": "C (<0.73)"
+	},	
+	"CIV": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"CMR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COL": {	
+		"x": 1.12,
+		"fillKey": "D (<2.484)"
+	},	
+	"CRI": {	
+		"x": 9.97,
+		"fillKey": "E (<47.63)"
+	},	
+	"CUB": {	
+		"x": 5.54,
+		"fillKey": "E (<47.63)"
+	},	
+	"CYP": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"CZE": {	
+		"x": 0.67,
+		"fillKey": "C (<0.73)"
+	},	
+	"DEU": {	
+		"x": 0.78,
+		"fillKey": "D (<2.484)"
+	},	
+	"DNK": {	
+		"x": 4.95,
+		"fillKey": "E (<47.63)"
+	},	
+	"DOM": {	
+		"x": 0.75,
+		"fillKey": "D (<2.484)"
+	},	
+	"DZA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EAP": {	
+		"x": 1.07,
+		"fillKey": "D (<2.484)"
+	},	
+	"EAS": {	
+		"x": 0.91,
+		"fillKey": "D (<2.484)"
+	},	
+	"ECA": {	
+		"x": 0.72,
+		"fillKey": "C (<0.73)"
+	},	
+	"ECS": {	
+		"x": 0.05,
+		"fillKey": "C (<0.73)"
+	},	
+	"ECU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EGY": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EMU": {	
+		"x": 1.23,
+		"fillKey": "D (<2.484)"
+	},	
+	"ERI": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ESP": {	
+		"x": 0.78,
+		"fillKey": "D (<2.484)"
+	},	
+	"EST": {	
+		"x": 0.07,
+		"fillKey": "C (<0.73)"
+	},	
+	"ETH": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EUU": {	
+		"x": 1.09,
+		"fillKey": "D (<2.484)"
+	},	
+	"FCS": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"FIN": {	
+		"x": 10.34,
+		"fillKey": "E (<47.63)"
+	},	
+	"FRA": {	
+		"x": 0.49,
+		"fillKey": "C (<0.73)"
+	},	
+	"GAB": {	
+		"x": 0.79,
+		"fillKey": "D (<2.484)"
+	},	
+	"GBR": {	
+		"x": 0.61,
+		"fillKey": "C (<0.73)"
+	},	
+	"GEO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"GHA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"GRC": {	
+		"x": 0.08,
+		"fillKey": "C (<0.73)"
+	},	
+	"GTM": {	
+		"x": 12.61,
+		"fillKey": "E (<47.63)"
+	},	
+	"HIC": {	
+		"x": 1.33,
+		"fillKey": "D (<2.484)"
+	},	
+	"HKG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HND": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HPC": {	
+		"x": 0.93,
+		"fillKey": "D (<2.484)"
+	},	
+	"HRV": {	
+		"x": 0.1,
+		"fillKey": "C (<0.73)"
+	},	
+	"HTI": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HUN": {	
+		"x": 0.16,
+		"fillKey": "C (<0.73)"
+	},	
+	"IDN": {	
+		"x": 3.74,
+		"fillKey": "E (<47.63)"
+	},	
+	"IND": {	
+		"x": 0.13,
+		"fillKey": "C (<0.73)"
+	},	
+	"IRL": {	
+		"x": 0.09,
+		"fillKey": "C (<0.73)"
+	},	
+	"IRN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"IRQ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ISL": {	
+		"x": 5.82,
+		"fillKey": "E (<47.63)"
+	},	
+	"ISR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ITA": {	
+		"x": 1.55,
+		"fillKey": "D (<2.484)"
+	},	
+	"JAM": {	
+		"x": 3.52,
+		"fillKey": "E (<47.63)"
+	},	
+	"JOR": {	
+		"x": 0.02,
+		"fillKey": "B (<0.03)"
+	},	
+	"JPN": {	
+		"x": 1.5,
+		"fillKey": "D (<2.484)"
+	},	
+	"KAZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KEN": {	
+		"x": 12.52,
+		"fillKey": "E (<47.63)"
+	},	
+	"KGZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KHM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KOR": {	
+		"x": 0.14,
+		"fillKey": "C (<0.73)"
+	},	
+	"KWT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LAC": {	
+		"x": 2.48,
+		"fillKey": "D (<2.484)"
+	},	
+	"LBN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LBY": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LDC": {	
+		"x": 0.08,
+		"fillKey": "C (<0.73)"
+	},	
+	"LIC": {	
+		"x": 0.43,
+		"fillKey": "C (<0.73)"
+	},	
+	"LKA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LMC": {	
+		"x": 0.99,
+		"fillKey": "D (<2.484)"
+	},	
+	"LMY": {	
+		"x": 0.83,
+		"fillKey": "D (<2.484)"
+	},	
+	"LTU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LUX": {	
+		"x": 3.9,
+		"fillKey": "E (<47.63)"
+	},	
+	"LVA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MAR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MDA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MEA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MEX": {	
+		"x": 5.57,
+		"fillKey": "E (<47.63)"
+	},	
+	"MIC": {	
+		"x": 0.84,
+		"fillKey": "D (<2.484)"
+	},	
+	"MKD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MLT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MMR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MNA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MNG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MOZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MYS": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NAC": {	
+		"x": 1.84,
+		"fillKey": "D (<2.484)"
+	},	
+	"NAM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NGA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NIC": {	
+		"x": 23.5,
+		"fillKey": "E (<47.63)"
+	},	
+	"NLD": {	
+		"x": 1.63,
+		"fillKey": "D (<2.484)"
+	},	
+	"NOC": {	
+		"x": 0.03,
+		"fillKey": "C (<0.73)"
+	},	
+	"NOR": {	
+		"x": 0.24,
+		"fillKey": "C (<0.73)"
+	},	
+	"NPL": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NZL": {	
+		"x": 7.51,
+		"fillKey": "E (<47.63)"
+	},	
+	"OEC": {	
+		"x": 1.53,
+		"fillKey": "D (<2.484)"
+	},	
+	"OED": {	
+		"x": 1.59,
+		"fillKey": "D (<2.484)"
+	},	
+	"OMN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PAK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PAN": {	
+		"x": 0.43,
+		"fillKey": "C (<0.73)"
+	},	
+	"PER": {	
+		"x": 0.92,
+		"fillKey": "D (<2.484)"
+	},	
+	"PHL": {	
+		"x": 18.28,
+		"fillKey": "E (<47.63)"
+	},	
+	"POL": {	
+		"x": 0.05,
+		"fillKey": "C (<0.73)"
+	},	
+	"PRK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PRT": {	
+		"x": 3.16,
+		"fillKey": "E (<47.63)"
+	},	
+	"PRY": {	
+		"x": 0.08,
+		"fillKey": "C (<0.73)"
+	},	
+	"QAT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ROU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"RUS": {	
+		"x": 0.01,
+		"fillKey": "B (<0.03)"
+	},	
+	"SAS": {	
+		"x": 0.11,
+		"fillKey": "C (<0.73)"
+	},	
+	"SAU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SDN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SEN": {	
+		"x": 4.06,
+		"fillKey": "E (<47.63)"
+	},	
+	"SGP": {	
+		"x": 1.1,
+		"fillKey": "D (<2.484)"
+	},	
+	"SLV": {	
+		"x": 13.38,
+		"fillKey": "E (<47.63)"
+	},	
+	"SRB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SSA": {	
+		"x": 0.2,
+		"fillKey": "C (<0.73)"
+	},	
+	"SSF": {	
+		"x": 0.2,
+		"fillKey": "C (<0.73)"
+	},	
+	"SVK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SVN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SWE": {	
+		"x": 1.65,
+		"fillKey": "D (<2.484)"
+	},	
+	"SYR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TGO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"THA": {	
+		"x": 0.36,
+		"fillKey": "C (<0.73)"
+	},	
+	"TJK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TKM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TTO": {	
+		"x": 0.77,
+		"fillKey": "D (<2.484)"
+	},	
+	"TUN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TUR": {	
+		"x": 0.36,
+		"fillKey": "C (<0.73)"
+	},	
+	"TZA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"UKR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"UMC": {	
+		"x": 0.78,
+		"fillKey": "D (<2.484)"
+	},	
+	"URY": {	
+		"x": 0.7,
+		"fillKey": "C (<0.73)"
+	},	
+	"USA": {	
+		"x": 1.97,
+		"fillKey": "D (<2.484)"
+	},	
+	"UZB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"VEN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"VNM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"WLD": {	
+		"x": 1.19,
+		"fillKey": "D (<2.484)"
+	},	
+	"YEM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ZAF": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ZMB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ZWE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	}	
+},		
+"1996": {		
+	"AGO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ALB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ARB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ARE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ARG": {	
+		"x": 0.52,
+		"fillKey": "C (<0.73)"
+	},	
+	"ARM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"AUS": {	
+		"x": 0.54,
+		"fillKey": "C (<0.73)"
+	},	
+	"AUT": {	
+		"x": 2.94,
+		"fillKey": "E (<47.63)"
+	},	
+	"AZE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BEL": {	
+		"x": 0.43,
+		"fillKey": "C (<0.73)"
+	},	
+	"BEN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BGD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BGR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BHR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BIH": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BLR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BOL": {	
+		"x": 1.45,
+		"fillKey": "D (<2.484)"
+	},	
+	"BRA": {	
+		"x": 2.32,
+		"fillKey": "D (<2.484)"
+	},	
+	"BRN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BWA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"CAN": {	
+		"x": 1.03,
+		"fillKey": "D (<2.484)"
+	},	
+	"CEB": {	
+		"x": 0.12,
+		"fillKey": "C (<0.73)"
+	},	
+	"CHE": {	
+		"x": 1.11,
+		"fillKey": "D (<2.484)"
+	},	
+	"CHL": {	
+		"x": 5.66,
+		"fillKey": "E (<47.63)"
+	},	
+	"CHN": {	
+		"x": 0.14,
+		"fillKey": "C (<0.73)"
+	},	
+	"CIV": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"CMR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COL": {	
+		"x": 1.14,
+		"fillKey": "D (<2.484)"
+	},	
+	"CRI": {	
+		"x": 11.33,
+		"fillKey": "E (<47.63)"
+	},	
+	"CUB": {	
+		"x": 6.97,
+		"fillKey": "E (<47.63)"
+	},	
+	"CYP": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"CZE": {	
+		"x": 0.46,
+		"fillKey": "C (<0.73)"
+	},	
+	"DEU": {	
+		"x": 0.83,
+		"fillKey": "D (<2.484)"
+	},	
+	"DNK": {	
+		"x": 3.84,
+		"fillKey": "E (<47.63)"
+	},	
+	"DOM": {	
+		"x": 0.6,
+		"fillKey": "C (<0.73)"
+	},	
+	"DZA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EAP": {	
+		"x": 1.04,
+		"fillKey": "D (<2.484)"
+	},	
+	"EAS": {	
+		"x": 0.82,
+		"fillKey": "D (<2.484)"
+	},	
+	"ECA": {	
+		"x": 0.73,
+		"fillKey": "D (<2.484)"
+	},	
+	"ECS": {	
+		"x": 0.05,
+		"fillKey": "C (<0.73)"
+	},	
+	"ECU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EGY": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EMU": {	
+		"x": 1.23,
+		"fillKey": "D (<2.484)"
+	},	
+	"ERI": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ESP": {	
+		"x": 0.84,
+		"fillKey": "D (<2.484)"
+	},	
+	"EST": {	
+		"x": 0.05,
+		"fillKey": "C (<0.73)"
+	},	
+	"ETH": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EUU": {	
+		"x": 1.08,
+		"fillKey": "D (<2.484)"
+	},	
+	"FCS": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"FIN": {	
+		"x": 8.51,
+		"fillKey": "E (<47.63)"
+	},	
+	"FRA": {	
+		"x": 0.49,
+		"fillKey": "C (<0.73)"
+	},	
+	"GAB": {	
+		"x": 0.58,
+		"fillKey": "C (<0.73)"
+	},	
+	"GBR": {	
+		"x": 0.66,
+		"fillKey": "C (<0.73)"
+	},	
+	"GEO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"GHA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"GRC": {	
+		"x": 0.09,
+		"fillKey": "C (<0.73)"
+	},	
+	"GTM": {	
+		"x": 13.14,
+		"fillKey": "E (<47.63)"
+	},	
+	"HIC": {	
+		"x": 1.34,
+		"fillKey": "D (<2.484)"
+	},	
+	"HKG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HND": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HPC": {	
+		"x": 0.9,
+		"fillKey": "D (<2.484)"
+	},	
+	"HRV": {	
+		"x": 0.09,
+		"fillKey": "C (<0.73)"
+	},	
+	"HTI": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HUN": {	
+		"x": 0.14,
+		"fillKey": "C (<0.73)"
+	},	
+	"IDN": {	
+		"x": 3.48,
+		"fillKey": "E (<47.63)"
+	},	
+	"IND": {	
+		"x": 0.21,
+		"fillKey": "C (<0.73)"
+	},	
+	"IRL": {	
+		"x": 0.22,
+		"fillKey": "C (<0.73)"
+	},	
+	"IRN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"IRQ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ISL": {	
+		"x": 6.75,
+		"fillKey": "E (<47.63)"
+	},	
+	"ISR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ITA": {	
+		"x": 1.75,
+		"fillKey": "D (<2.484)"
+	},	
+	"JAM": {	
+		"x": 4.19,
+		"fillKey": "E (<47.63)"
+	},	
+	"JOR": {	
+		"x": 0.02,
+		"fillKey": "B (<0.03)"
+	},	
+	"JPN": {	
+		"x": 1.56,
+		"fillKey": "D (<2.484)"
+	},	
+	"KAZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KEN": {	
+		"x": 12.05,
+		"fillKey": "E (<47.63)"
+	},	
+	"KGZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KHM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KOR": {	
+		"x": 0.2,
+		"fillKey": "C (<0.73)"
+	},	
+	"KWT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LAC": {	
+		"x": 2.42,
+		"fillKey": "D (<2.484)"
+	},	
+	"LBN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LBY": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LDC": {	
+		"x": 0.08,
+		"fillKey": "C (<0.73)"
+	},	
+	"LIC": {	
+		"x": 0.43,
+		"fillKey": "C (<0.73)"
+	},	
+	"LKA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LMC": {	
+		"x": 1.04,
+		"fillKey": "D (<2.484)"
+	},	
+	"LMY": {	
+		"x": 0.81,
+		"fillKey": "D (<2.484)"
+	},	
+	"LTU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LUX": {	
+		"x": 3.41,
+		"fillKey": "E (<47.63)"
+	},	
+	"LVA": {	
+		"x": 0.03,
+		"fillKey": "C (<0.73)"
+	},	
+	"MAR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MDA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MEA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MEX": {	
+		"x": 4.6,
+		"fillKey": "E (<47.63)"
+	},	
+	"MIC": {	
+		"x": 0.82,
+		"fillKey": "D (<2.484)"
+	},	
+	"MKD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MLT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MMR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MNA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MNG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MOZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MYS": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NAC": {	
+		"x": 1.84,
+		"fillKey": "D (<2.484)"
+	},	
+	"NAM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NGA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NIC": {	
+		"x": 21.88,
+		"fillKey": "E (<47.63)"
+	},	
+	"NLD": {	
+		"x": 2.03,
+		"fillKey": "D (<2.484)"
+	},	
+	"NOC": {	
+		"x": 0.03,
+		"fillKey": "C (<0.73)"
+	},	
+	"NOR": {	
+		"x": 0.3,
+		"fillKey": "C (<0.73)"
+	},	
+	"NPL": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NZL": {	
+		"x": 7.28,
+		"fillKey": "E (<47.63)"
+	},	
+	"OEC": {	
+		"x": 1.54,
+		"fillKey": "D (<2.484)"
+	},	
+	"OED": {	
+		"x": 1.57,
+		"fillKey": "D (<2.484)"
+	},	
+	"OMN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PAK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PAN": {	
+		"x": 0.47,
+		"fillKey": "C (<0.73)"
+	},	
+	"PER": {	
+		"x": 0.79,
+		"fillKey": "D (<2.484)"
+	},	
+	"PHL": {	
+		"x": 17.79,
+		"fillKey": "E (<47.63)"
+	},	
+	"POL": {	
+		"x": 0.09,
+		"fillKey": "C (<0.73)"
+	},	
+	"PRK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PRT": {	
+		"x": 2.99,
+		"fillKey": "E (<47.63)"
+	},	
+	"PRY": {	
+		"x": 0.07,
+		"fillKey": "C (<0.73)"
+	},	
+	"QAT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ROU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"RUS": {	
+		"x": 0.01,
+		"fillKey": "B (<0.03)"
+	},	
+	"SAS": {	
+		"x": 0.18,
+		"fillKey": "C (<0.73)"
+	},	
+	"SAU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SDN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SEN": {	
+		"x": 3.91,
+		"fillKey": "E (<47.63)"
+	},	
+	"SGP": {	
+		"x": 1.02,
+		"fillKey": "D (<2.484)"
+	},	
+	"SLV": {	
+		"x": 12.76,
+		"fillKey": "E (<47.63)"
+	},	
+	"SRB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SSA": {	
+		"x": 0.21,
+		"fillKey": "C (<0.73)"
+	},	
+	"SSF": {	
+		"x": 0.21,
+		"fillKey": "C (<0.73)"
+	},	
+	"SVK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SVN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SWE": {	
+		"x": 1.61,
+		"fillKey": "D (<2.484)"
+	},	
+	"SYR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TGO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"THA": {	
+		"x": 0.96,
+		"fillKey": "D (<2.484)"
+	},	
+	"TJK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TKM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TTO": {	
+		"x": 0.37,
+		"fillKey": "C (<0.73)"
+	},	
+	"TUN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TUR": {	
+		"x": 0.27,
+		"fillKey": "C (<0.73)"
+	},	
+	"TZA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"UKR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"UMC": {	
+		"x": 0.73,
+		"fillKey": "D (<2.484)"
+	},	
+	"URY": {	
+		"x": 0.61,
+		"fillKey": "C (<0.73)"
+	},	
+	"USA": {	
+		"x": 1.97,
+		"fillKey": "D (<2.484)"
+	},	
+	"UZB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"VEN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"VNM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"WLD": {	
+		"x": 1.19,
+		"fillKey": "D (<2.484)"
+	},	
+	"YEM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ZAF": {	
+		"x": 0.03,
+		"fillKey": "C (<0.73)"
+	},	
+	"ZMB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ZWE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	}	
+},		
+"1997": {		
+	"AGO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ALB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ARB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ARE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ARG": {	
+		"x": 0.64,
+		"fillKey": "C (<0.73)"
+	},	
+	"ARM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"AUS": {	
+		"x": 0.54,
+		"fillKey": "C (<0.73)"
+	},	
+	"AUT": {	
+		"x": 3.08,
+		"fillKey": "E (<47.63)"
+	},	
+	"AZE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BEL": {	
+		"x": 0.36,
+		"fillKey": "C (<0.73)"
+	},	
+	"BEN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BGD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BGR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BHR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BIH": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BLR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BOL": {	
+		"x": 1.38,
+		"fillKey": "D (<2.484)"
+	},	
+	"BRA": {	
+		"x": 2.4,
+		"fillKey": "D (<2.484)"
+	},	
+	"BRN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BWA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"CAN": {	
+		"x": 1.21,
+		"fillKey": "D (<2.484)"
+	},	
+	"CEB": {	
+		"x": 0.18,
+		"fillKey": "C (<0.73)"
+	},	
+	"CHE": {	
+		"x": 1.1,
+		"fillKey": "D (<2.484)"
+	},	
+	"CHL": {	
+		"x": 5.23,
+		"fillKey": "E (<47.63)"
+	},	
+	"CHN": {	
+		"x": 0.25,
+		"fillKey": "C (<0.73)"
+	},	
+	"CIV": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"CMR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COL": {	
+		"x": 1.08,
+		"fillKey": "D (<2.484)"
+	},	
+	"CRI": {	
+		"x": 11.26,
+		"fillKey": "E (<47.63)"
+	},	
+	"CUB": {	
+		"x": 6.15,
+		"fillKey": "E (<47.63)"
+	},	
+	"CYP": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"CZE": {	
+		"x": 0.77,
+		"fillKey": "D (<2.484)"
+	},	
+	"DEU": {	
+		"x": 1.04,
+		"fillKey": "D (<2.484)"
+	},	
+	"DNK": {	
+		"x": 6.57,
+		"fillKey": "E (<47.63)"
+	},	
+	"DOM": {	
+		"x": 0.66,
+		"fillKey": "C (<0.73)"
+	},	
+	"DZA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EAP": {	
+		"x": 1.1,
+		"fillKey": "D (<2.484)"
+	},	
+	"EAS": {	
+		"x": 0.9,
+		"fillKey": "D (<2.484)"
+	},	
+	"ECA": {	
+		"x": 0.9,
+		"fillKey": "D (<2.484)"
+	},	
+	"ECS": {	
+		"x": 0.07,
+		"fillKey": "C (<0.73)"
+	},	
+	"ECU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EGY": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EMU": {	
+		"x": 1.48,
+		"fillKey": "D (<2.484)"
+	},	
+	"ERI": {	
+		"x": 0.47,
+		"fillKey": "C (<0.73)"
+	},	
+	"ESP": {	
+		"x": 1.17,
+		"fillKey": "D (<2.484)"
+	},	
+	"EST": {	
+		"x": 0.09,
+		"fillKey": "C (<0.73)"
+	},	
+	"ETH": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EUU": {	
+		"x": 1.33,
+		"fillKey": "D (<2.484)"
+	},	
+	"FCS": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"FIN": {	
+		"x": 11.43,
+		"fillKey": "E (<47.63)"
+	},	
+	"FRA": {	
+		"x": 0.55,
+		"fillKey": "C (<0.73)"
+	},	
+	"GAB": {	
+		"x": 0.56,
+		"fillKey": "C (<0.73)"
+	},	
+	"GBR": {	
+		"x": 0.8,
+		"fillKey": "D (<2.484)"
+	},	
+	"GEO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"GHA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"GRC": {	
+		"x": 0.08,
+		"fillKey": "C (<0.73)"
+	},	
+	"GTM": {	
+		"x": 15.13,
+		"fillKey": "E (<47.63)"
+	},	
+	"HIC": {	
+		"x": 1.4,
+		"fillKey": "D (<2.484)"
+	},	
+	"HKG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HND": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HPC": {	
+		"x": 0.88,
+		"fillKey": "D (<2.484)"
+	},	
+	"HRV": {	
+		"x": 0.01,
+		"fillKey": "B (<0.03)"
+	},	
+	"HTI": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HUN": {	
+		"x": 0.15,
+		"fillKey": "C (<0.73)"
+	},	
+	"IDN": {	
+		"x": 3.5,
+		"fillKey": "E (<47.63)"
+	},	
+	"IND": {	
+		"x": 0.22,
+		"fillKey": "C (<0.73)"
+	},	
+	"IRL": {	
+		"x": 0.67,
+		"fillKey": "C (<0.73)"
+	},	
+	"IRN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"IRQ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ISL": {	
+		"x": 6.71,
+		"fillKey": "E (<47.63)"
+	},	
+	"ISR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ITA": {	
+		"x": 1.87,
+		"fillKey": "D (<2.484)"
+	},	
+	"JAM": {	
+		"x": 4.17,
+		"fillKey": "E (<47.63)"
+	},	
+	"JOR": {	
+		"x": 0.05,
+		"fillKey": "C (<0.73)"
+	},	
+	"JPN": {	
+		"x": 1.65,
+		"fillKey": "D (<2.484)"
+	},	
+	"KAZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KEN": {	
+		"x": 10.87,
+		"fillKey": "E (<47.63)"
+	},	
+	"KGZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KHM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KOR": {	
+		"x": 0.04,
+		"fillKey": "C (<0.73)"
+	},	
+	"KWT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LAC": {	
+		"x": 2.34,
+		"fillKey": "D (<2.484)"
+	},	
+	"LBN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LBY": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LDC": {	
+		"x": 0.08,
+		"fillKey": "C (<0.73)"
+	},	
+	"LIC": {	
+		"x": 0.43,
+		"fillKey": "C (<0.73)"
+	},	
+	"LKA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LMC": {	
+		"x": 1.1,
+		"fillKey": "D (<2.484)"
+	},	
+	"LMY": {	
+		"x": 0.83,
+		"fillKey": "D (<2.484)"
+	},	
+	"LTU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LUX": {	
+		"x": 4.93,
+		"fillKey": "E (<47.63)"
+	},	
+	"LVA": {	
+		"x": 0.04,
+		"fillKey": "C (<0.73)"
+	},	
+	"MAR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MDA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MEA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MEX": {	
+		"x": 4.09,
+		"fillKey": "E (<47.63)"
+	},	
+	"MIC": {	
+		"x": 0.85,
+		"fillKey": "D (<2.484)"
+	},	
+	"MKD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MLT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MMR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MNA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MNG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MOZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MYS": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NAC": {	
+		"x": 1.81,
+		"fillKey": "D (<2.484)"
+	},	
+	"NAM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NGA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NIC": {	
+		"x": 21.86,
+		"fillKey": "E (<47.63)"
+	},	
+	"NLD": {	
+		"x": 2.22,
+		"fillKey": "D (<2.484)"
+	},	
+	"NOC": {	
+		"x": 0.06,
+		"fillKey": "C (<0.73)"
+	},	
+	"NOR": {	
+		"x": 0.23,
+		"fillKey": "C (<0.73)"
+	},	
+	"NPL": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NZL": {	
+		"x": 7.42,
+		"fillKey": "E (<47.63)"
+	},	
+	"OEC": {	
+		"x": 1.6,
+		"fillKey": "D (<2.484)"
+	},	
+	"OED": {	
+		"x": 1.63,
+		"fillKey": "D (<2.484)"
+	},	
+	"OMN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PAK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PAN": {	
+		"x": 0.52,
+		"fillKey": "C (<0.73)"
+	},	
+	"PER": {	
+		"x": 0.86,
+		"fillKey": "D (<2.484)"
+	},	
+	"PHL": {	
+		"x": 18.18,
+		"fillKey": "E (<47.63)"
+	},	
+	"POL": {	
+		"x": 0.12,
+		"fillKey": "C (<0.73)"
+	},	
+	"PRK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PRT": {	
+		"x": 3.3,
+		"fillKey": "E (<47.63)"
+	},	
+	"PRY": {	
+		"x": 0.07,
+		"fillKey": "C (<0.73)"
+	},	
+	"QAT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ROU": {	
+		"x": 0.02,
+		"fillKey": "B (<0.03)"
+	},	
+	"RUS": {	
+		"x": 0.01,
+		"fillKey": "B (<0.03)"
+	},	
+	"SAS": {	
+		"x": 0.19,
+		"fillKey": "C (<0.73)"
+	},	
+	"SAU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SDN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SEN": {	
+		"x": 3.72,
+		"fillKey": "E (<47.63)"
+	},	
+	"SGP": {	
+		"x": 0.91,
+		"fillKey": "D (<2.484)"
+	},	
+	"SLV": {	
+		"x": 13.55,
+		"fillKey": "E (<47.63)"
+	},	
+	"SRB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SSA": {	
+		"x": 0.22,
+		"fillKey": "C (<0.73)"
+	},	
+	"SSF": {	
+		"x": 0.22,
+		"fillKey": "C (<0.73)"
+	},	
+	"SVK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SVN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SWE": {	
+		"x": 2,
+		"fillKey": "D (<2.484)"
+	},	
+	"SYR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TGO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"THA": {	
+		"x": 0.37,
+		"fillKey": "C (<0.73)"
+	},	
+	"TJK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TKM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TTO": {	
+		"x": 0.36,
+		"fillKey": "C (<0.73)"
+	},	
+	"TUN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TUR": {	
+		"x": 0.36,
+		"fillKey": "C (<0.73)"
+	},	
+	"TZA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"UKR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"UMC": {	
+		"x": 0.74,
+		"fillKey": "D (<2.484)"
+	},	
+	"URY": {	
+		"x": 0.43,
+		"fillKey": "C (<0.73)"
+	},	
+	"USA": {	
+		"x": 1.9,
+		"fillKey": "D (<2.484)"
+	},	
+	"UZB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"VEN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"VNM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"WLD": {	
+		"x": 1.24,
+		"fillKey": "D (<2.484)"
+	},	
+	"YEM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ZAF": {	
+		"x": 0.07,
+		"fillKey": "C (<0.73)"
+	},	
+	"ZMB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ZWE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	}	
+},		
+"1998": {		
+	"AGO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ALB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ARB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ARE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ARG": {	
+		"x": 0.68,
+		"fillKey": "C (<0.73)"
+	},	
+	"ARM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"AUS": {	
+		"x": 0.55,
+		"fillKey": "C (<0.73)"
+	},	
+	"AUT": {	
+		"x": 3.34,
+		"fillKey": "E (<47.63)"
+	},	
+	"AZE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BEL": {	
+		"x": 0.45,
+		"fillKey": "C (<0.73)"
+	},	
+	"BEN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BGD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BGR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BHR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BIH": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BLR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BOL": {	
+		"x": 1.35,
+		"fillKey": "D (<2.484)"
+	},	
+	"BRA": {	
+		"x": 2.33,
+		"fillKey": "D (<2.484)"
+	},	
+	"BRN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BWA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"CAN": {	
+		"x": 1.31,
+		"fillKey": "D (<2.484)"
+	},	
+	"CEB": {	
+		"x": 0.22,
+		"fillKey": "C (<0.73)"
+	},	
+	"CHE": {	
+		"x": 1.13,
+		"fillKey": "D (<2.484)"
+	},	
+	"CHL": {	
+		"x": 3.27,
+		"fillKey": "E (<47.63)"
+	},	
+	"CHN": {	
+		"x": 0.24,
+		"fillKey": "C (<0.73)"
+	},	
+	"CIV": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"CMR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COL": {	
+		"x": 1.18,
+		"fillKey": "D (<2.484)"
+	},	
+	"CRI": {	
+		"x": 12.65,
+		"fillKey": "E (<47.63)"
+	},	
+	"CUB": {	
+		"x": 5.51,
+		"fillKey": "E (<47.63)"
+	},	
+	"CYP": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"CZE": {	
+		"x": 0.91,
+		"fillKey": "D (<2.484)"
+	},	
+	"DEU": {	
+		"x": 1.39,
+		"fillKey": "D (<2.484)"
+	},	
+	"DNK": {	
+		"x": 9.48,
+		"fillKey": "E (<47.63)"
+	},	
+	"DOM": {	
+		"x": 0.42,
+		"fillKey": "C (<0.73)"
+	},	
+	"DZA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EAP": {	
+		"x": 1.13,
+		"fillKey": "D (<2.484)"
+	},	
+	"EAS": {	
+		"x": 0.98,
+		"fillKey": "D (<2.484)"
+	},	
+	"ECA": {	
+		"x": 1.06,
+		"fillKey": "D (<2.484)"
+	},	
+	"ECS": {	
+		"x": 0.06,
+		"fillKey": "C (<0.73)"
+	},	
+	"ECU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EGY": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EMU": {	
+		"x": 1.73,
+		"fillKey": "D (<2.484)"
+	},	
+	"ERI": {	
+		"x": 0.51,
+		"fillKey": "C (<0.73)"
+	},	
+	"ESP": {	
+		"x": 1.5,
+		"fillKey": "D (<2.484)"
+	},	
+	"EST": {	
+		"x": 0.14,
+		"fillKey": "C (<0.73)"
+	},	
+	"ETH": {	
+		"x": 1.57,
+		"fillKey": "D (<2.484)"
+	},	
+	"EUU": {	
+		"x": 1.57,
+		"fillKey": "D (<2.484)"
+	},	
+	"FCS": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"FIN": {	
+		"x": 13.34,
+		"fillKey": "E (<47.63)"
+	},	
+	"FRA": {	
+		"x": 0.54,
+		"fillKey": "C (<0.73)"
+	},	
+	"GAB": {	
+		"x": 0.52,
+		"fillKey": "C (<0.73)"
+	},	
+	"GBR": {	
+		"x": 0.98,
+		"fillKey": "D (<2.484)"
+	},	
+	"GEO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"GHA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"GRC": {	
+		"x": 0.15,
+		"fillKey": "C (<0.73)"
+	},	
+	"GTM": {	
+		"x": 6.93,
+		"fillKey": "E (<47.63)"
+	},	
+	"HIC": {	
+		"x": 1.44,
+		"fillKey": "D (<2.484)"
+	},	
+	"HKG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HND": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HPC": {	
+		"x": 0.68,
+		"fillKey": "C (<0.73)"
+	},	
+	"HRV": {	
+		"x": 0.08,
+		"fillKey": "C (<0.73)"
+	},	
+	"HTI": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HUN": {	
+		"x": 0.16,
+		"fillKey": "C (<0.73)"
+	},	
+	"IDN": {	
+		"x": 3.36,
+		"fillKey": "E (<47.63)"
+	},	
+	"IND": {	
+		"x": 0.23,
+		"fillKey": "C (<0.73)"
+	},	
+	"IRL": {	
+		"x": 1.22,
+		"fillKey": "D (<2.484)"
+	},	
+	"IRN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"IRQ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ISL": {	
+		"x": 10.43,
+		"fillKey": "E (<47.63)"
+	},	
+	"ISR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ITA": {	
+		"x": 2.07,
+		"fillKey": "D (<2.484)"
+	},	
+	"JAM": {	
+		"x": 3.16,
+		"fillKey": "E (<47.63)"
+	},	
+	"JOR": {	
+		"x": 0.04,
+		"fillKey": "C (<0.73)"
+	},	
+	"JPN": {	
+		"x": 1.62,
+		"fillKey": "D (<2.484)"
+	},	
+	"KAZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KEN": {	
+		"x": 11.09,
+		"fillKey": "E (<47.63)"
+	},	
+	"KGZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KHM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KOR": {	
+		"x": 0.03,
+		"fillKey": "C (<0.73)"
+	},	
+	"KWT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LAC": {	
+		"x": 2.2,
+		"fillKey": "D (<2.484)"
+	},	
+	"LBN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LBY": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LDC": {	
+		"x": 0.11,
+		"fillKey": "C (<0.73)"
+	},	
+	"LIC": {	
+		"x": 0.46,
+		"fillKey": "C (<0.73)"
+	},	
+	"LKA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LMC": {	
+		"x": 1.18,
+		"fillKey": "D (<2.484)"
+	},	
+	"LMY": {	
+		"x": 0.86,
+		"fillKey": "D (<2.484)"
+	},	
+	"LTU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LUX": {	
+		"x": 7.65,
+		"fillKey": "E (<47.63)"
+	},	
+	"LVA": {	
+		"x": 0.03,
+		"fillKey": "C (<0.73)"
+	},	
+	"MAR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MDA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MEA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MEX": {	
+		"x": 4.11,
+		"fillKey": "E (<47.63)"
+	},	
+	"MIC": {	
+		"x": 0.87,
+		"fillKey": "D (<2.484)"
+	},	
+	"MKD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MLT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MMR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MNA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MNG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MOZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MYS": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NAC": {	
+		"x": 1.76,
+		"fillKey": "D (<2.484)"
+	},	
+	"NAM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NGA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NIC": {	
+		"x": 14.78,
+		"fillKey": "E (<47.63)"
+	},	
+	"NLD": {	
+		"x": 2.43,
+		"fillKey": "D (<2.484)"
+	},	
+	"NOC": {	
+		"x": 0.07,
+		"fillKey": "C (<0.73)"
+	},	
+	"NOR": {	
+		"x": 0.24,
+		"fillKey": "C (<0.73)"
+	},	
+	"NPL": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NZL": {	
+		"x": 8.34,
+		"fillKey": "E (<47.63)"
+	},	
+	"OEC": {	
+		"x": 1.65,
+		"fillKey": "D (<2.484)"
+	},	
+	"OED": {	
+		"x": 1.68,
+		"fillKey": "D (<2.484)"
+	},	
+	"OMN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PAK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PAN": {	
+		"x": 0.55,
+		"fillKey": "C (<0.73)"
+	},	
+	"PER": {	
+		"x": 0.68,
+		"fillKey": "C (<0.73)"
+	},	
+	"PHL": {	
+		"x": 21.44,
+		"fillKey": "E (<47.63)"
+	},	
+	"POL": {	
+		"x": 0.16,
+		"fillKey": "C (<0.73)"
+	},	
+	"PRK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PRT": {	
+		"x": 3.01,
+		"fillKey": "E (<47.63)"
+	},	
+	"PRY": {	
+		"x": 0.07,
+		"fillKey": "C (<0.73)"
+	},	
+	"QAT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ROU": {	
+		"x": 0.02,
+		"fillKey": "B (<0.03)"
+	},	
+	"RUS": {	
+		"x": 0.01,
+		"fillKey": "B (<0.03)"
+	},	
+	"SAS": {	
+		"x": 0.19,
+		"fillKey": "C (<0.73)"
+	},	
+	"SAU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SDN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SEN": {	
+		"x": 3.62,
+		"fillKey": "E (<47.63)"
+	},	
+	"SGP": {	
+		"x": 0.86,
+		"fillKey": "D (<2.484)"
+	},	
+	"SLV": {	
+		"x": 11.95,
+		"fillKey": "E (<47.63)"
+	},	
+	"SRB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SSA": {	
+		"x": 0.27,
+		"fillKey": "C (<0.73)"
+	},	
+	"SSF": {	
+		"x": 0.27,
+		"fillKey": "C (<0.73)"
+	},	
+	"SVK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SVN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SWE": {	
+		"x": 1.95,
+		"fillKey": "D (<2.484)"
+	},	
+	"SYR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TGO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"THA": {	
+		"x": 0.36,
+		"fillKey": "C (<0.73)"
+	},	
+	"TJK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TKM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TTO": {	
+		"x": 0.35,
+		"fillKey": "C (<0.73)"
+	},	
+	"TUN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TUR": {	
+		"x": 0.3,
+		"fillKey": "C (<0.73)"
+	},	
+	"TZA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"UKR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"UMC": {	
+		"x": 0.74,
+		"fillKey": "D (<2.484)"
+	},	
+	"URY": {	
+		"x": 0.45,
+		"fillKey": "C (<0.73)"
+	},	
+	"USA": {	
+		"x": 1.83,
+		"fillKey": "D (<2.484)"
+	},	
+	"UZB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"VEN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"VNM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"WLD": {	
+		"x": 1.27,
+		"fillKey": "D (<2.484)"
+	},	
+	"YEM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ZAF": {	
+		"x": 0.11,
+		"fillKey": "C (<0.73)"
+	},	
+	"ZMB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ZWE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	}	
+},		
+"1999": {		
+	"AGO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ALB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ARB": {	
+		"x": 0.01,
+		"fillKey": "B (<0.03)"
+	},	
+	"ARE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ARG": {	
+		"x": 0.71,
+		"fillKey": "C (<0.73)"
+	},	
+	"ARM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"AUS": {	
+		"x": 0.59,
+		"fillKey": "C (<0.73)"
+	},	
+	"AUT": {	
+		"x": 2.75,
+		"fillKey": "E (<47.63)"
+	},	
+	"AZE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BEL": {	
+		"x": 0.61,
+		"fillKey": "C (<0.73)"
+	},	
+	"BEN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BGD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BGR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BHR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BIH": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BLR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BOL": {	
+		"x": 1.34,
+		"fillKey": "D (<2.484)"
+	},	
+	"BRA": {	
+		"x": 2.5,
+		"fillKey": "E (<47.63)"
+	},	
+	"BRN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BWA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"CAN": {	
+		"x": 1.46,
+		"fillKey": "D (<2.484)"
+	},	
+	"CEB": {	
+		"x": 0.24,
+		"fillKey": "C (<0.73)"
+	},	
+	"CHE": {	
+		"x": 1.12,
+		"fillKey": "D (<2.484)"
+	},	
+	"CHL": {	
+		"x": 2.63,
+		"fillKey": "E (<47.63)"
+	},	
+	"CHN": {	
+		"x": 0.24,
+		"fillKey": "C (<0.73)"
+	},	
+	"CIV": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"CMR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COL": {	
+		"x": 1.07,
+		"fillKey": "D (<2.484)"
+	},	
+	"CRI": {	
+		"x": 14.71,
+		"fillKey": "E (<47.63)"
+	},	
+	"CUB": {	
+		"x": 6.08,
+		"fillKey": "E (<47.63)"
+	},	
+	"CYP": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"CZE": {	
+		"x": 1.06,
+		"fillKey": "D (<2.484)"
+	},	
+	"DEU": {	
+		"x": 1.64,
+		"fillKey": "D (<2.484)"
+	},	
+	"DNK": {	
+		"x": 11.17,
+		"fillKey": "E (<47.63)"
+	},	
+	"DOM": {	
+		"x": 0.48,
+		"fillKey": "C (<0.73)"
+	},	
+	"DZA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EAP": {	
+		"x": 1.19,
+		"fillKey": "D (<2.484)"
+	},	
+	"EAS": {	
+		"x": 1.08,
+		"fillKey": "D (<2.484)"
+	},	
+	"ECA": {	
+		"x": 1.16,
+		"fillKey": "D (<2.484)"
+	},	
+	"ECS": {	
+		"x": 0.05,
+		"fillKey": "C (<0.73)"
+	},	
+	"ECU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EGY": {	
+		"x": 0.04,
+		"fillKey": "C (<0.73)"
+	},	
+	"EMU": {	
+		"x": 1.86,
+		"fillKey": "D (<2.484)"
+	},	
+	"ERI": {	
+		"x": 0.47,
+		"fillKey": "C (<0.73)"
+	},	
+	"ESP": {	
+		"x": 2.18,
+		"fillKey": "D (<2.484)"
+	},	
+	"EST": {	
+		"x": 0.14,
+		"fillKey": "C (<0.73)"
+	},	
+	"ETH": {	
+		"x": 1.22,
+		"fillKey": "D (<2.484)"
+	},	
+	"EUU": {	
+		"x": 1.71,
+		"fillKey": "D (<2.484)"
+	},	
+	"FCS": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"FIN": {	
+		"x": 12.11,
+		"fillKey": "E (<47.63)"
+	},	
+	"FRA": {	
+		"x": 0.57,
+		"fillKey": "C (<0.73)"
+	},	
+	"GAB": {	
+		"x": 0.53,
+		"fillKey": "C (<0.73)"
+	},	
+	"GBR": {	
+		"x": 1.17,
+		"fillKey": "D (<2.484)"
+	},	
+	"GEO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"GHA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"GRC": {	
+		"x": 0.33,
+		"fillKey": "C (<0.73)"
+	},	
+	"GTM": {	
+		"x": 11.48,
+		"fillKey": "E (<47.63)"
+	},	
+	"HIC": {	
+		"x": 1.52,
+		"fillKey": "D (<2.484)"
+	},	
+	"HKG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HND": {	
+		"x": 0.03,
+		"fillKey": "C (<0.73)"
+	},	
+	"HPC": {	
+		"x": 0.44,
+		"fillKey": "C (<0.73)"
+	},	
+	"HRV": {	
+		"x": 0.07,
+		"fillKey": "C (<0.73)"
+	},	
+	"HTI": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HUN": {	
+		"x": 0.17,
+		"fillKey": "C (<0.73)"
+	},	
+	"IDN": {	
+		"x": 3.18,
+		"fillKey": "E (<47.63)"
+	},	
+	"IND": {	
+		"x": 0.46,
+		"fillKey": "C (<0.73)"
+	},	
+	"IRL": {	
+		"x": 1.28,
+		"fillKey": "D (<2.484)"
+	},	
+	"IRN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"IRQ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ISL": {	
+		"x": 15.8,
+		"fillKey": "E (<47.63)"
+	},	
+	"ISR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ITA": {	
+		"x": 2.3,
+		"fillKey": "D (<2.484)"
+	},	
+	"JAM": {	
+		"x": 3.07,
+		"fillKey": "E (<47.63)"
+	},	
+	"JOR": {	
+		"x": 0.04,
+		"fillKey": "C (<0.73)"
+	},	
+	"JPN": {	
+		"x": 1.63,
+		"fillKey": "D (<2.484)"
+	},	
+	"KAZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KEN": {	
+		"x": 11.4,
+		"fillKey": "E (<47.63)"
+	},	
+	"KGZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KHM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KOR": {	
+		"x": 0.04,
+		"fillKey": "C (<0.73)"
+	},	
+	"KWT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LAC": {	
+		"x": 2.25,
+		"fillKey": "D (<2.484)"
+	},	
+	"LBN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LBY": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LDC": {	
+		"x": 0.1,
+		"fillKey": "C (<0.73)"
+	},	
+	"LIC": {	
+		"x": 0.41,
+		"fillKey": "C (<0.73)"
+	},	
+	"LKA": {	
+		"x": 0.05,
+		"fillKey": "C (<0.73)"
+	},	
+	"LMC": {	
+		"x": 1.41,
+		"fillKey": "D (<2.484)"
+	},	
+	"LMY": {	
+		"x": 0.94,
+		"fillKey": "D (<2.484)"
+	},	
+	"LTU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LUX": {	
+		"x": 10.28,
+		"fillKey": "E (<47.63)"
+	},	
+	"LVA": {	
+		"x": 0.05,
+		"fillKey": "C (<0.73)"
+	},	
+	"MAR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MDA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MEA": {	
+		"x": 0.01,
+		"fillKey": "B (<0.03)"
+	},	
+	"MEX": {	
+		"x": 3.82,
+		"fillKey": "E (<47.63)"
+	},	
+	"MIC": {	
+		"x": 0.95,
+		"fillKey": "D (<2.484)"
+	},	
+	"MKD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MLT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MMR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MNA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MNG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MOZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MYS": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NAC": {	
+		"x": 1.84,
+		"fillKey": "D (<2.484)"
+	},	
+	"NAM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NGA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NIC": {	
+		"x": 9.23,
+		"fillKey": "E (<47.63)"
+	},	
+	"NLD": {	
+		"x": 2.79,
+		"fillKey": "E (<47.63)"
+	},	
+	"NOC": {	
+		"x": 0.08,
+		"fillKey": "C (<0.73)"
+	},	
+	"NOR": {	
+		"x": 0.24,
+		"fillKey": "C (<0.73)"
+	},	
+	"NPL": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NZL": {	
+		"x": 8.92,
+		"fillKey": "E (<47.63)"
+	},	
+	"OEC": {	
+		"x": 1.74,
+		"fillKey": "D (<2.484)"
+	},	
+	"OED": {	
+		"x": 1.75,
+		"fillKey": "D (<2.484)"
+	},	
+	"OMN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PAK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PAN": {	
+		"x": 0.63,
+		"fillKey": "C (<0.73)"
+	},	
+	"PER": {	
+		"x": 0.74,
+		"fillKey": "D (<2.484)"
+	},	
+	"PHL": {	
+		"x": 25.57,
+		"fillKey": "E (<47.63)"
+	},	
+	"POL": {	
+		"x": 0.14,
+		"fillKey": "C (<0.73)"
+	},	
+	"PRK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PRT": {	
+		"x": 3.18,
+		"fillKey": "E (<47.63)"
+	},	
+	"PRY": {	
+		"x": 0.07,
+		"fillKey": "C (<0.73)"
+	},	
+	"QAT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ROU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"RUS": {	
+		"x": 0.01,
+		"fillKey": "B (<0.03)"
+	},	
+	"SAS": {	
+		"x": 0.4,
+		"fillKey": "C (<0.73)"
+	},	
+	"SAU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SDN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SEN": {	
+		"x": 3.58,
+		"fillKey": "E (<47.63)"
+	},	
+	"SGP": {	
+		"x": 0.83,
+		"fillKey": "D (<2.484)"
+	},	
+	"SLV": {	
+		"x": 16.23,
+		"fillKey": "E (<47.63)"
+	},	
+	"SRB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SSA": {	
+		"x": 0.25,
+		"fillKey": "C (<0.73)"
+	},	
+	"SSF": {	
+		"x": 0.25,
+		"fillKey": "C (<0.73)"
+	},	
+	"SVK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SVN": {	
+		"x": 0.23,
+		"fillKey": "C (<0.73)"
+	},	
+	"SWE": {	
+		"x": 1.97,
+		"fillKey": "D (<2.484)"
+	},	
+	"SYR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TGO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"THA": {	
+		"x": 0.96,
+		"fillKey": "D (<2.484)"
+	},	
+	"TJK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TKM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TTO": {	
+		"x": 0.34,
+		"fillKey": "C (<0.73)"
+	},	
+	"TUN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TUR": {	
+		"x": 0.2,
+		"fillKey": "C (<0.73)"
+	},	
+	"TZA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"UKR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"UMC": {	
+		"x": 0.77,
+		"fillKey": "D (<2.484)"
+	},	
+	"URY": {	
+		"x": 0.65,
+		"fillKey": "C (<0.73)"
+	},	
+	"USA": {	
+		"x": 1.89,
+		"fillKey": "D (<2.484)"
+	},	
+	"UZB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"VEN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"VNM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"WLD": {	
+		"x": 1.35,
+		"fillKey": "D (<2.484)"
+	},	
+	"YEM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ZAF": {	
+		"x": 0.1,
+		"fillKey": "C (<0.73)"
+	},	
+	"ZMB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ZWE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	}	
+},		
+"2000": {		
+	"AGO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ALB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ARB": {	
+		"x": 0.05,
+		"fillKey": "C (<0.73)"
+	},	
+	"ARE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ARG": {	
+		"x": 0.8,
+		"fillKey": "D (<2.484)"
+	},	
+	"ARM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"AUS": {	
+		"x": 0.59,
+		"fillKey": "C (<0.73)"
+	},	
+	"AUT": {	
+		"x": 2.67,
+		"fillKey": "E (<47.63)"
+	},	
+	"AZE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BEL": {	
+		"x": 0.71,
+		"fillKey": "C (<0.73)"
+	},	
+	"BEN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BGD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BGR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BHR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BIH": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BLR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BOL": {	
+		"x": 1.39,
+		"fillKey": "D (<2.484)"
+	},	
+	"BRA": {	
+		"x": 2.25,
+		"fillKey": "D (<2.484)"
+	},	
+	"BRN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BWA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"CAN": {	
+		"x": 1.4,
+		"fillKey": "D (<2.484)"
+	},	
+	"CEB": {	
+		"x": 0.21,
+		"fillKey": "C (<0.73)"
+	},	
+	"CHE": {	
+		"x": 1.3,
+		"fillKey": "D (<2.484)"
+	},	
+	"CHL": {	
+		"x": 2.35,
+		"fillKey": "D (<2.484)"
+	},	
+	"CHN": {	
+		"x": 0.23,
+		"fillKey": "C (<0.73)"
+	},	
+	"CIV": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"CMR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COL": {	
+		"x": 1.15,
+		"fillKey": "D (<2.484)"
+	},	
+	"CRI": {	
+		"x": 17,
+		"fillKey": "E (<47.63)"
+	},	
+	"CUB": {	
+		"x": 6.28,
+		"fillKey": "E (<47.63)"
+	},	
+	"CYP": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"CZE": {	
+		"x": 0.71,
+		"fillKey": "C (<0.73)"
+	},	
+	"DEU": {	
+		"x": 2.4,
+		"fillKey": "D (<2.484)"
+	},	
+	"DNK": {	
+		"x": 15.37,
+		"fillKey": "E (<47.63)"
+	},	
+	"DOM": {	
+		"x": 0.45,
+		"fillKey": "C (<0.73)"
+	},	
+	"DZA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EAP": {	
+		"x": 1.2,
+		"fillKey": "D (<2.484)"
+	},	
+	"EAS": {	
+		"x": 1.17,
+		"fillKey": "D (<2.484)"
+	},	
+	"ECA": {	
+		"x": 1.39,
+		"fillKey": "D (<2.484)"
+	},	
+	"ECS": {	
+		"x": 0.05,
+		"fillKey": "C (<0.73)"
+	},	
+	"ECU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EGY": {	
+		"x": 0.18,
+		"fillKey": "C (<0.73)"
+	},	
+	"EMU": {	
+		"x": 2.21,
+		"fillKey": "D (<2.484)"
+	},	
+	"ERI": {	
+		"x": 0.48,
+		"fillKey": "C (<0.73)"
+	},	
+	"ESP": {	
+		"x": 2.82,
+		"fillKey": "E (<47.63)"
+	},	
+	"EST": {	
+		"x": 0.15,
+		"fillKey": "C (<0.73)"
+	},	
+	"ETH": {	
+		"x": 0.3,
+		"fillKey": "C (<0.73)"
+	},	
+	"EUU": {	
+		"x": 2.06,
+		"fillKey": "D (<2.484)"
+	},	
+	"FCS": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"FIN": {	
+		"x": 12.45,
+		"fillKey": "E (<47.63)"
+	},	
+	"FRA": {	
+		"x": 0.58,
+		"fillKey": "C (<0.73)"
+	},	
+	"GAB": {	
+		"x": 0.53,
+		"fillKey": "C (<0.73)"
+	},	
+	"GBR": {	
+		"x": 1.3,
+		"fillKey": "D (<2.484)"
+	},	
+	"GEO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"GHA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"GRC": {	
+		"x": 0.84,
+		"fillKey": "D (<2.484)"
+	},	
+	"GTM": {	
+		"x": 10.02,
+		"fillKey": "E (<47.63)"
+	},	
+	"HIC": {	
+		"x": 1.61,
+		"fillKey": "D (<2.484)"
+	},	
+	"HKG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HND": {	
+		"x": 0.03,
+		"fillKey": "C (<0.73)"
+	},	
+	"HPC": {	
+		"x": 0.51,
+		"fillKey": "C (<0.73)"
+	},	
+	"HRV": {	
+		"x": 0.01,
+		"fillKey": "B (<0.03)"
+	},	
+	"HTI": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HUN": {	
+		"x": 0.18,
+		"fillKey": "C (<0.73)"
+	},	
+	"IDN": {	
+		"x": 5.22,
+		"fillKey": "E (<47.63)"
+	},	
+	"IND": {	
+		"x": 0.54,
+		"fillKey": "C (<0.73)"
+	},	
+	"IRL": {	
+		"x": 1.43,
+		"fillKey": "D (<2.484)"
+	},	
+	"IRN": {	
+		"x": 0.03,
+		"fillKey": "C (<0.73)"
+	},	
+	"IRQ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ISL": {	
+		"x": 17.22,
+		"fillKey": "E (<47.63)"
+	},	
+	"ISR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ITA": {	
+		"x": 2.47,
+		"fillKey": "D (<2.484)"
+	},	
+	"JAM": {	
+		"x": 3.1,
+		"fillKey": "E (<47.63)"
+	},	
+	"JOR": {	
+		"x": 0.04,
+		"fillKey": "C (<0.73)"
+	},	
+	"JPN": {	
+		"x": 1.58,
+		"fillKey": "D (<2.484)"
+	},	
+	"KAZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KEN": {	
+		"x": 17.76,
+		"fillKey": "E (<47.63)"
+	},	
+	"KGZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KHM": {	
+		"x": 0.22,
+		"fillKey": "C (<0.73)"
+	},	
+	"KOR": {	
+		"x": 0.04,
+		"fillKey": "C (<0.73)"
+	},	
+	"KSV": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KWT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LAC": {	
+		"x": 2.19,
+		"fillKey": "D (<2.484)"
+	},	
+	"LBN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LBY": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LDC": {	
+		"x": 0.08,
+		"fillKey": "C (<0.73)"
+	},	
+	"LIC": {	
+		"x": 0.56,
+		"fillKey": "C (<0.73)"
+	},	
+	"LKA": {	
+		"x": 0.16,
+		"fillKey": "C (<0.73)"
+	},	
+	"LMC": {	
+		"x": 1.66,
+		"fillKey": "D (<2.484)"
+	},	
+	"LMY": {	
+		"x": 0.98,
+		"fillKey": "D (<2.484)"
+	},	
+	"LTU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LUX": {	
+		"x": 11.61,
+		"fillKey": "E (<47.63)"
+	},	
+	"LVA": {	
+		"x": 0.1,
+		"fillKey": "C (<0.73)"
+	},	
+	"MAR": {	
+		"x": 0.5,
+		"fillKey": "C (<0.73)"
+	},	
+	"MDA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MEA": {	
+		"x": 0.08,
+		"fillKey": "C (<0.73)"
+	},	
+	"MEX": {	
+		"x": 3.72,
+		"fillKey": "E (<47.63)"
+	},	
+	"MIC": {	
+		"x": 1,
+		"fillKey": "D (<2.484)"
+	},	
+	"MKD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MLT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MMR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MNA": {	
+		"x": 0.04,
+		"fillKey": "C (<0.73)"
+	},	
+	"MNG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MOZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MYS": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NAC": {	
+		"x": 1.85,
+		"fillKey": "D (<2.484)"
+	},	
+	"NAM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NGA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NIC": {	
+		"x": 12.46,
+		"fillKey": "E (<47.63)"
+	},	
+	"NLD": {	
+		"x": 3.16,
+		"fillKey": "E (<47.63)"
+	},	
+	"NOC": {	
+		"x": 0.1,
+		"fillKey": "C (<0.73)"
+	},	
+	"NOR": {	
+		"x": 0.2,
+		"fillKey": "C (<0.73)"
+	},	
+	"NPL": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NZL": {	
+		"x": 9.25,
+		"fillKey": "E (<47.63)"
+	},	
+	"OEC": {	
+		"x": 1.84,
+		"fillKey": "D (<2.484)"
+	},	
+	"OED": {	
+		"x": 1.85,
+		"fillKey": "D (<2.484)"
+	},	
+	"OMN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PAK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PAN": {	
+		"x": 0.49,
+		"fillKey": "C (<0.73)"
+	},	
+	"PER": {	
+		"x": 0.8,
+		"fillKey": "D (<2.484)"
+	},	
+	"PHL": {	
+		"x": 25.67,
+		"fillKey": "E (<47.63)"
+	},	
+	"POL": {	
+		"x": 0.16,
+		"fillKey": "C (<0.73)"
+	},	
+	"PRK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PRT": {	
+		"x": 3.56,
+		"fillKey": "E (<47.63)"
+	},	
+	"PRY": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"QAT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ROU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"RUS": {	
+		"x": 0.01,
+		"fillKey": "B (<0.03)"
+	},	
+	"SAS": {	
+		"x": 0.46,
+		"fillKey": "C (<0.73)"
+	},	
+	"SAU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SDN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SEN": {	
+		"x": 3.3,
+		"fillKey": "E (<47.63)"
+	},	
+	"SGP": {	
+		"x": 0.77,
+		"fillKey": "D (<2.484)"
+	},	
+	"SLV": {	
+		"x": 23.28,
+		"fillKey": "E (<47.63)"
+	},	
+	"SRB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SSA": {	
+		"x": 0.34,
+		"fillKey": "C (<0.73)"
+	},	
+	"SSF": {	
+		"x": 0.35,
+		"fillKey": "C (<0.73)"
+	},	
+	"SVK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SVN": {	
+		"x": 0.51,
+		"fillKey": "C (<0.73)"
+	},	
+	"SWE": {	
+		"x": 3.14,
+		"fillKey": "E (<47.63)"
+	},	
+	"SYR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TGO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"THA": {	
+		"x": 0.53,
+		"fillKey": "C (<0.73)"
+	},	
+	"TJK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TKM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TTO": {	
+		"x": 0.37,
+		"fillKey": "C (<0.73)"
+	},	
+	"TUN": {	
+		"x": 0.22,
+		"fillKey": "C (<0.73)"
+	},	
+	"TUR": {	
+		"x": 0.22,
+		"fillKey": "C (<0.73)"
+	},	
+	"TZA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"UKR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"UMC": {	
+		"x": 0.73,
+		"fillKey": "D (<2.484)"
+	},	
+	"URY": {	
+		"x": 0.46,
+		"fillKey": "C (<0.73)"
+	},	
+	"USA": {	
+		"x": 1.92,
+		"fillKey": "D (<2.484)"
+	},	
+	"UZB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"VEN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"VNM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"WLD": {	
+		"x": 1.42,
+		"fillKey": "D (<2.484)"
+	},	
+	"YEM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ZAF": {	
+		"x": 0.15,
+		"fillKey": "C (<0.73)"
+	},	
+	"ZMB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ZWE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	}	
+},		
+"2001": {		
+	"AGO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ALB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ARB": {	
+		"x": 0.1,
+		"fillKey": "C (<0.73)"
+	},	
+	"ARE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ARG": {	
+		"x": 0.75,
+		"fillKey": "D (<2.484)"
+	},	
+	"ARM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"AUS": {	
+		"x": 0.71,
+		"fillKey": "C (<0.73)"
+	},	
+	"AUT": {	
+		"x": 2.91,
+		"fillKey": "E (<47.63)"
+	},	
+	"AZE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BEL": {	
+		"x": 0.81,
+		"fillKey": "D (<2.484)"
+	},	
+	"BEN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BGD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BGR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BHR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BIH": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BLR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BOL": {	
+		"x": 1.36,
+		"fillKey": "D (<2.484)"
+	},	
+	"BRA": {	
+		"x": 2.74,
+		"fillKey": "E (<47.63)"
+	},	
+	"BRN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BWA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"CAN": {	
+		"x": 1.52,
+		"fillKey": "D (<2.484)"
+	},	
+	"CEB": {	
+		"x": 0.29,
+		"fillKey": "C (<0.73)"
+	},	
+	"CHE": {	
+		"x": 1.26,
+		"fillKey": "D (<2.484)"
+	},	
+	"CHL": {	
+		"x": 4.88,
+		"fillKey": "E (<47.63)"
+	},	
+	"CHN": {	
+		"x": 0.22,
+		"fillKey": "C (<0.73)"
+	},	
+	"CIV": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"CMR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COL": {	
+		"x": 1.14,
+		"fillKey": "D (<2.484)"
+	},	
+	"CRI": {	
+		"x": 17.6,
+		"fillKey": "E (<47.63)"
+	},	
+	"CUB": {	
+		"x": 6.08,
+		"fillKey": "E (<47.63)"
+	},	
+	"CYP": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"CZE": {	
+		"x": 0.7,
+		"fillKey": "C (<0.73)"
+	},	
+	"DEU": {	
+		"x": 2.61,
+		"fillKey": "E (<47.63)"
+	},	
+	"DNK": {	
+		"x": 15.42,
+		"fillKey": "E (<47.63)"
+	},	
+	"DOM": {	
+		"x": 0.37,
+		"fillKey": "C (<0.73)"
+	},	
+	"DZA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EAP": {	
+		"x": 1.17,
+		"fillKey": "D (<2.484)"
+	},	
+	"EAS": {	
+		"x": 1.08,
+		"fillKey": "D (<2.484)"
+	},	
+	"ECA": {	
+		"x": 1.51,
+		"fillKey": "D (<2.484)"
+	},	
+	"ECS": {	
+		"x": 0.06,
+		"fillKey": "C (<0.73)"
+	},	
+	"ECU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EGY": {	
+		"x": 0.27,
+		"fillKey": "C (<0.73)"
+	},	
+	"EMU": {	
+		"x": 2.44,
+		"fillKey": "D (<2.484)"
+	},	
+	"ERI": {	
+		"x": 0.43,
+		"fillKey": "C (<0.73)"
+	},	
+	"ESP": {	
+		"x": 3.61,
+		"fillKey": "E (<47.63)"
+	},	
+	"EST": {	
+		"x": 0.13,
+		"fillKey": "C (<0.73)"
+	},	
+	"ETH": {	
+		"x": 0.05,
+		"fillKey": "C (<0.73)"
+	},	
+	"EUU": {	
+		"x": 2.22,
+		"fillKey": "D (<2.484)"
+	},	
+	"FCS": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"FIN": {	
+		"x": 11.19,
+		"fillKey": "E (<47.63)"
+	},	
+	"FRA": {	
+		"x": 0.65,
+		"fillKey": "C (<0.73)"
+	},	
+	"GAB": {	
+		"x": 0.51,
+		"fillKey": "C (<0.73)"
+	},	
+	"GBR": {	
+		"x": 1.44,
+		"fillKey": "D (<2.484)"
+	},	
+	"GEO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"GHA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"GRC": {	
+		"x": 1.57,
+		"fillKey": "D (<2.484)"
+	},	
+	"GTM": {	
+		"x": 10.41,
+		"fillKey": "E (<47.63)"
+	},	
+	"HIC": {	
+		"x": 1.66,
+		"fillKey": "D (<2.484)"
+	},	
+	"HKG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HND": {	
+		"x": 0.23,
+		"fillKey": "C (<0.73)"
+	},	
+	"HPC": {	
+		"x": 0.5,
+		"fillKey": "C (<0.73)"
+	},	
+	"HRV": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HTI": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HUN": {	
+		"x": 0.19,
+		"fillKey": "C (<0.73)"
+	},	
+	"IDN": {	
+		"x": 5.96,
+		"fillKey": "E (<47.63)"
+	},	
+	"IND": {	
+		"x": 0.7,
+		"fillKey": "C (<0.73)"
+	},	
+	"IRL": {	
+		"x": 1.75,
+		"fillKey": "D (<2.484)"
+	},	
+	"IRN": {	
+		"x": 0.03,
+		"fillKey": "C (<0.73)"
+	},	
+	"IRQ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ISL": {	
+		"x": 18.06,
+		"fillKey": "E (<47.63)"
+	},	
+	"ISR": {	
+		"x": 0.02,
+		"fillKey": "B (<0.03)"
+	},	
+	"ITA": {	
+		"x": 2.77,
+		"fillKey": "E (<47.63)"
+	},	
+	"JAM": {	
+		"x": 2.55,
+		"fillKey": "E (<47.63)"
+	},	
+	"JOR": {	
+		"x": 0.11,
+		"fillKey": "C (<0.73)"
+	},	
+	"JPN": {	
+		"x": 1.63,
+		"fillKey": "D (<2.484)"
+	},	
+	"KAZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KEN": {	
+		"x": 16.91,
+		"fillKey": "E (<47.63)"
+	},	
+	"KGZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KHM": {	
+		"x": 0.2,
+		"fillKey": "C (<0.73)"
+	},	
+	"KOR": {	
+		"x": 0.03,
+		"fillKey": "C (<0.73)"
+	},	
+	"KSV": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KWT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LAC": {	
+		"x": 2.5,
+		"fillKey": "E (<47.63)"
+	},	
+	"LBN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LBY": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LDC": {	
+		"x": 0.08,
+		"fillKey": "C (<0.73)"
+	},	
+	"LIC": {	
+		"x": 0.57,
+		"fillKey": "C (<0.73)"
+	},	
+	"LKA": {	
+		"x": 0.16,
+		"fillKey": "C (<0.73)"
+	},	
+	"LMC": {	
+		"x": 1.72,
+		"fillKey": "D (<2.484)"
+	},	
+	"LMY": {	
+		"x": 1.01,
+		"fillKey": "D (<2.484)"
+	},	
+	"LTU": {	
+		"x": 0.01,
+		"fillKey": "B (<0.03)"
+	},	
+	"LUX": {	
+		"x": 5.76,
+		"fillKey": "E (<47.63)"
+	},	
+	"LVA": {	
+		"x": 0.14,
+		"fillKey": "C (<0.73)"
+	},	
+	"MAR": {	
+		"x": 1.37,
+		"fillKey": "D (<2.484)"
+	},	
+	"MDA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MEA": {	
+		"x": 0.13,
+		"fillKey": "C (<0.73)"
+	},	
+	"MEX": {	
+		"x": 3.82,
+		"fillKey": "E (<47.63)"
+	},	
+	"MIC": {	
+		"x": 1.02,
+		"fillKey": "D (<2.484)"
+	},	
+	"MKD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MLT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MMR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MNA": {	
+		"x": 0.08,
+		"fillKey": "C (<0.73)"
+	},	
+	"MNG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MOZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MYS": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NAC": {	
+		"x": 1.83,
+		"fillKey": "D (<2.484)"
+	},	
+	"NAM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NGA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NIC": {	
+		"x": 11.98,
+		"fillKey": "E (<47.63)"
+	},	
+	"NLD": {	
+		"x": 3.4,
+		"fillKey": "E (<47.63)"
+	},	
+	"NOC": {	
+		"x": 0.12,
+		"fillKey": "C (<0.73)"
+	},	
+	"NOR": {	
+		"x": 0.23,
+		"fillKey": "C (<0.73)"
+	},	
+	"NPL": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NZL": {	
+		"x": 8.77,
+		"fillKey": "E (<47.63)"
+	},	
+	"OEC": {	
+		"x": 1.91,
+		"fillKey": "D (<2.484)"
+	},	
+	"OED": {	
+		"x": 1.92,
+		"fillKey": "D (<2.484)"
+	},	
+	"OMN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PAK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PAN": {	
+		"x": 0.45,
+		"fillKey": "C (<0.73)"
+	},	
+	"PER": {	
+		"x": 0.82,
+		"fillKey": "D (<2.484)"
+	},	
+	"PHL": {	
+		"x": 22.19,
+		"fillKey": "E (<47.63)"
+	},	
+	"POL": {	
+		"x": 0.32,
+		"fillKey": "C (<0.73)"
+	},	
+	"PRK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PRT": {	
+		"x": 3.7,
+		"fillKey": "E (<47.63)"
+	},	
+	"PRY": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"QAT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ROU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"RUS": {	
+		"x": 0.01,
+		"fillKey": "B (<0.03)"
+	},	
+	"SAS": {	
+		"x": 0.6,
+		"fillKey": "C (<0.73)"
+	},	
+	"SAU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SDN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SEN": {	
+		"x": 3.28,
+		"fillKey": "E (<47.63)"
+	},	
+	"SGP": {	
+		"x": 1.43,
+		"fillKey": "D (<2.484)"
+	},	
+	"SLV": {	
+		"x": 24.56,
+		"fillKey": "E (<47.63)"
+	},	
+	"SRB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SSA": {	
+		"x": 0.35,
+		"fillKey": "C (<0.73)"
+	},	
+	"SSF": {	
+		"x": 0.36,
+		"fillKey": "C (<0.73)"
+	},	
+	"SVK": {	
+		"x": 0.48,
+		"fillKey": "C (<0.73)"
+	},	
+	"SVN": {	
+		"x": 0.5,
+		"fillKey": "C (<0.73)"
+	},	
+	"SWE": {	
+		"x": 2.64,
+		"fillKey": "E (<47.63)"
+	},	
+	"SYR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TGO": {	
+		"x": 0.81,
+		"fillKey": "D (<2.484)"
+	},	
+	"THA": {	
+		"x": 0.48,
+		"fillKey": "C (<0.73)"
+	},	
+	"TJK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TKM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TTO": {	
+		"x": 0.51,
+		"fillKey": "C (<0.73)"
+	},	
+	"TUN": {	
+		"x": 0.21,
+		"fillKey": "C (<0.73)"
+	},	
+	"TUR": {	
+		"x": 0.27,
+		"fillKey": "C (<0.73)"
+	},	
+	"TZA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"UKR": {	
+		"x": 0.01,
+		"fillKey": "B (<0.03)"
+	},	
+	"UMC": {	
+		"x": 0.75,
+		"fillKey": "D (<2.484)"
+	},	
+	"URY": {	
+		"x": 0.4,
+		"fillKey": "C (<0.73)"
+	},	
+	"USA": {	
+		"x": 1.88,
+		"fillKey": "D (<2.484)"
+	},	
+	"UZB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"VEN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"VNM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"WLD": {	
+		"x": 1.46,
+		"fillKey": "D (<2.484)"
+	},	
+	"YEM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ZAF": {	
+		"x": 0.15,
+		"fillKey": "C (<0.73)"
+	},	
+	"ZMB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ZWE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	}	
+},		
+"2002": {		
+	"AGO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ALB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ARB": {	
+		"x": 0.09,
+		"fillKey": "C (<0.73)"
+	},	
+	"ARE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ARG": {	
+		"x": 1.12,
+		"fillKey": "D (<2.484)"
+	},	
+	"ARM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"AUS": {	
+		"x": 0.88,
+		"fillKey": "D (<2.484)"
+	},	
+	"AUT": {	
+		"x": 2.75,
+		"fillKey": "E (<47.63)"
+	},	
+	"AZE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BEL": {	
+		"x": 0.96,
+		"fillKey": "D (<2.484)"
+	},	
+	"BEN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BGD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BGR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BHR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BIH": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BLR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BOL": {	
+		"x": 1.29,
+		"fillKey": "D (<2.484)"
+	},	
+	"BRA": {	
+		"x": 2.97,
+		"fillKey": "E (<47.63)"
+	},	
+	"BRN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BWA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"CAN": {	
+		"x": 1.57,
+		"fillKey": "D (<2.484)"
+	},	
+	"CEB": {	
+		"x": 0.3,
+		"fillKey": "C (<0.73)"
+	},	
+	"CHE": {	
+		"x": 1.43,
+		"fillKey": "D (<2.484)"
+	},	
+	"CHL": {	
+		"x": 4.47,
+		"fillKey": "E (<47.63)"
+	},	
+	"CHN": {	
+		"x": 0.2,
+		"fillKey": "C (<0.73)"
+	},	
+	"CIV": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"CMR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COL": {	
+		"x": 1.09,
+		"fillKey": "D (<2.484)"
+	},	
+	"CRI": {	
+		"x": 19.04,
+		"fillKey": "E (<47.63)"
+	},	
+	"CUB": {	
+		"x": 5.98,
+		"fillKey": "E (<47.63)"
+	},	
+	"CYP": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"CZE": {	
+		"x": 0.66,
+		"fillKey": "C (<0.73)"
+	},	
+	"DEU": {	
+		"x": 3.67,
+		"fillKey": "E (<47.63)"
+	},	
+	"DNK": {	
+		"x": 17.2,
+		"fillKey": "E (<47.63)"
+	},	
+	"DOM": {	
+		"x": 0.37,
+		"fillKey": "C (<0.73)"
+	},	
+	"DZA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EAP": {	
+		"x": 1.15,
+		"fillKey": "D (<2.484)"
+	},	
+	"EAS": {	
+		"x": 0.99,
+		"fillKey": "D (<2.484)"
+	},	
+	"ECA": {	
+		"x": 1.82,
+		"fillKey": "D (<2.484)"
+	},	
+	"ECS": {	
+		"x": 0.05,
+		"fillKey": "C (<0.73)"
+	},	
+	"ECU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EGY": {	
+		"x": 0.23,
+		"fillKey": "C (<0.73)"
+	},	
+	"EMU": {	
+		"x": 3.01,
+		"fillKey": "E (<47.63)"
+	},	
+	"ERI": {	
+		"x": 0.39,
+		"fillKey": "C (<0.73)"
+	},	
+	"ESP": {	
+		"x": 4.98,
+		"fillKey": "E (<47.63)"
+	},	
+	"EST": {	
+		"x": 0.28,
+		"fillKey": "C (<0.73)"
+	},	
+	"ETH": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EUU": {	
+		"x": 2.69,
+		"fillKey": "E (<47.63)"
+	},	
+	"FCS": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"FIN": {	
+		"x": 12.06,
+		"fillKey": "E (<47.63)"
+	},	
+	"FRA": {	
+		"x": 0.7,
+		"fillKey": "C (<0.73)"
+	},	
+	"GAB": {	
+		"x": 0.48,
+		"fillKey": "C (<0.73)"
+	},	
+	"GBR": {	
+		"x": 1.65,
+		"fillKey": "D (<2.484)"
+	},	
+	"GEO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"GHA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"GRC": {	
+		"x": 1.44,
+		"fillKey": "D (<2.484)"
+	},	
+	"GTM": {	
+		"x": 10.24,
+		"fillKey": "E (<47.63)"
+	},	
+	"HIC": {	
+		"x": 1.86,
+		"fillKey": "D (<2.484)"
+	},	
+	"HKG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HND": {	
+		"x": 0.37,
+		"fillKey": "C (<0.73)"
+	},	
+	"HPC": {	
+		"x": 0.54,
+		"fillKey": "C (<0.73)"
+	},	
+	"HRV": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HTI": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HUN": {	
+		"x": 0.12,
+		"fillKey": "C (<0.73)"
+	},	
+	"IDN": {	
+		"x": 5.77,
+		"fillKey": "E (<47.63)"
+	},	
+	"IND": {	
+		"x": 0.76,
+		"fillKey": "D (<2.484)"
+	},	
+	"IRL": {	
+		"x": 1.89,
+		"fillKey": "D (<2.484)"
+	},	
+	"IRN": {	
+		"x": 0.02,
+		"fillKey": "B (<0.03)"
+	},	
+	"IRQ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ISL": {	
+		"x": 17.03,
+		"fillKey": "E (<47.63)"
+	},	
+	"ISR": {	
+		"x": 0.02,
+		"fillKey": "B (<0.03)"
+	},	
+	"ITA": {	
+		"x": 3.17,
+		"fillKey": "E (<47.63)"
+	},	
+	"JAM": {	
+		"x": 0.89,
+		"fillKey": "D (<2.484)"
+	},	
+	"JOR": {	
+		"x": 0.1,
+		"fillKey": "C (<0.73)"
+	},	
+	"JPN": {	
+		"x": 1.71,
+		"fillKey": "D (<2.484)"
+	},	
+	"KAZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KEN": {	
+		"x": 14.49,
+		"fillKey": "E (<47.63)"
+	},	
+	"KGZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KHM": {	
+		"x": 0.14,
+		"fillKey": "C (<0.73)"
+	},	
+	"KOR": {	
+		"x": 0.06,
+		"fillKey": "C (<0.73)"
+	},	
+	"KSV": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KWT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LAC": {	
+		"x": 2.57,
+		"fillKey": "E (<47.63)"
+	},	
+	"LBN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LBY": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LDC": {	
+		"x": 0.08,
+		"fillKey": "C (<0.73)"
+	},	
+	"LIC": {	
+		"x": 0.49,
+		"fillKey": "C (<0.73)"
+	},	
+	"LKA": {	
+		"x": 0.2,
+		"fillKey": "C (<0.73)"
+	},	
+	"LMC": {	
+		"x": 1.69,
+		"fillKey": "D (<2.484)"
+	},	
+	"LMY": {	
+		"x": 1,
+		"fillKey": "D (<2.484)"
+	},	
+	"LTU": {	
+		"x": 0.02,
+		"fillKey": "B (<0.03)"
+	},	
+	"LUX": {	
+		"x": 1.82,
+		"fillKey": "D (<2.484)"
+	},	
+	"LVA": {	
+		"x": 0.53,
+		"fillKey": "C (<0.73)"
+	},	
+	"MAR": {	
+		"x": 1.27,
+		"fillKey": "D (<2.484)"
+	},	
+	"MDA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MEA": {	
+		"x": 0.12,
+		"fillKey": "C (<0.73)"
+	},	
+	"MEX": {	
+		"x": 3.66,
+		"fillKey": "E (<47.63)"
+	},	
+	"MIC": {	
+		"x": 1.01,
+		"fillKey": "D (<2.484)"
+	},	
+	"MKD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MLT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MMR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MNA": {	
+		"x": 0.07,
+		"fillKey": "C (<0.73)"
+	},	
+	"MNG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MOZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MYS": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NAC": {	
+		"x": 1.96,
+		"fillKey": "D (<2.484)"
+	},	
+	"NAM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NGA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NIC": {	
+		"x": 13.02,
+		"fillKey": "E (<47.63)"
+	},	
+	"NLD": {	
+		"x": 4.03,
+		"fillKey": "E (<47.63)"
+	},	
+	"NOC": {	
+		"x": 0.13,
+		"fillKey": "C (<0.73)"
+	},	
+	"NOR": {	
+		"x": 0.25,
+		"fillKey": "C (<0.73)"
+	},	
+	"NPL": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NZL": {	
+		"x": 8.27,
+		"fillKey": "E (<47.63)"
+	},	
+	"OEC": {	
+		"x": 2.13,
+		"fillKey": "D (<2.484)"
+	},	
+	"OED": {	
+		"x": 2.13,
+		"fillKey": "D (<2.484)"
+	},	
+	"OMN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PAK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PAN": {	
+		"x": 0.34,
+		"fillKey": "C (<0.73)"
+	},	
+	"PER": {	
+		"x": 0.88,
+		"fillKey": "D (<2.484)"
+	},	
+	"PHL": {	
+		"x": 21.13,
+		"fillKey": "E (<47.63)"
+	},	
+	"POL": {	
+		"x": 0.34,
+		"fillKey": "C (<0.73)"
+	},	
+	"PRK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PRT": {	
+		"x": 4.23,
+		"fillKey": "E (<47.63)"
+	},	
+	"PRY": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"QAT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ROU": {	
+		"x": 0.01,
+		"fillKey": "B (<0.03)"
+	},	
+	"RUS": {	
+		"x": 0.02,
+		"fillKey": "B (<0.03)"
+	},	
+	"SAS": {	
+		"x": 0.64,
+		"fillKey": "C (<0.73)"
+	},	
+	"SAU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SDN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SEN": {	
+		"x": 3.42,
+		"fillKey": "E (<47.63)"
+	},	
+	"SGP": {	
+		"x": 1.36,
+		"fillKey": "D (<2.484)"
+	},	
+	"SLV": {	
+		"x": 23.92,
+		"fillKey": "E (<47.63)"
+	},	
+	"SRB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SSA": {	
+		"x": 0.31,
+		"fillKey": "C (<0.73)"
+	},	
+	"SSF": {	
+		"x": 0.31,
+		"fillKey": "C (<0.73)"
+	},	
+	"SVK": {	
+		"x": 0.47,
+		"fillKey": "C (<0.73)"
+	},	
+	"SVN": {	
+		"x": 0.7,
+		"fillKey": "C (<0.73)"
+	},	
+	"SWE": {	
+		"x": 3.26,
+		"fillKey": "E (<47.63)"
+	},	
+	"SYR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TGO": {	
+		"x": 0.66,
+		"fillKey": "C (<0.73)"
+	},	
+	"THA": {	
+		"x": 0.63,
+		"fillKey": "C (<0.73)"
+	},	
+	"TJK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TKM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TTO": {	
+		"x": 0.46,
+		"fillKey": "C (<0.73)"
+	},	
+	"TUN": {	
+		"x": 0.25,
+		"fillKey": "C (<0.73)"
+	},	
+	"TUR": {	
+		"x": 0.22,
+		"fillKey": "C (<0.73)"
+	},	
+	"TZA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"UKR": {	
+		"x": 0.01,
+		"fillKey": "B (<0.03)"
+	},	
+	"UMC": {	
+		"x": 0.75,
+		"fillKey": "D (<2.484)"
+	},	
+	"URY": {	
+		"x": 0.41,
+		"fillKey": "C (<0.73)"
+	},	
+	"USA": {	
+		"x": 2.01,
+		"fillKey": "D (<2.484)"
+	},	
+	"UZB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"VEN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"VNM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"WLD": {	
+		"x": 1.58,
+		"fillKey": "D (<2.484)"
+	},	
+	"YEM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ZAF": {	
+		"x": 0.14,
+		"fillKey": "C (<0.73)"
+	},	
+	"ZMB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ZWE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	}	
+},		
+"2003": {		
+	"AGO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ALB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ARB": {	
+		"x": 0.11,
+		"fillKey": "C (<0.73)"
+	},	
+	"ARE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ARG": {	
+		"x": 1.21,
+		"fillKey": "D (<2.484)"
+	},	
+	"ARM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"AUS": {	
+		"x": 1.06,
+		"fillKey": "D (<2.484)"
+	},	
+	"AUT": {	
+		"x": 3.61,
+		"fillKey": "E (<47.63)"
+	},	
+	"AZE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BEL": {	
+		"x": 1.13,
+		"fillKey": "D (<2.484)"
+	},	
+	"BEN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BGD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BGR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BHR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BIH": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BLR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BOL": {	
+		"x": 1.25,
+		"fillKey": "D (<2.484)"
+	},	
+	"BRA": {	
+		"x": 3.28,
+		"fillKey": "E (<47.63)"
+	},	
+	"BRN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BWA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"CAN": {	
+		"x": 1.68,
+		"fillKey": "D (<2.484)"
+	},	
+	"CEB": {	
+		"x": 0.35,
+		"fillKey": "C (<0.73)"
+	},	
+	"CHE": {	
+		"x": 1.48,
+		"fillKey": "D (<2.484)"
+	},	
+	"CHL": {	
+		"x": 3.87,
+		"fillKey": "E (<47.63)"
+	},	
+	"CHN": {	
+		"x": 0.18,
+		"fillKey": "C (<0.73)"
+	},	
+	"CIV": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"CMR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COL": {	
+		"x": 1.06,
+		"fillKey": "D (<2.484)"
+	},	
+	"CRI": {	
+		"x": 17.09,
+		"fillKey": "E (<47.63)"
+	},	
+	"CUB": {	
+		"x": 4.55,
+		"fillKey": "E (<47.63)"
+	},	
+	"CYP": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"CZE": {	
+		"x": 0.6,
+		"fillKey": "C (<0.73)"
+	},	
+	"DEU": {	
+		"x": 4.52,
+		"fillKey": "E (<47.63)"
+	},	
+	"DNK": {	
+		"x": 17.44,
+		"fillKey": "E (<47.63)"
+	},	
+	"DOM": {	
+		"x": 0.42,
+		"fillKey": "C (<0.73)"
+	},	
+	"DZA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EAP": {	
+		"x": 1.13,
+		"fillKey": "D (<2.484)"
+	},	
+	"EAS": {	
+		"x": 0.88,
+		"fillKey": "D (<2.484)"
+	},	
+	"ECA": {	
+		"x": 2.09,
+		"fillKey": "D (<2.484)"
+	},	
+	"ECS": {	
+		"x": 0.06,
+		"fillKey": "C (<0.73)"
+	},	
+	"ECU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EGY": {	
+		"x": 0.39,
+		"fillKey": "C (<0.73)"
+	},	
+	"EMU": {	
+		"x": 3.47,
+		"fillKey": "E (<47.63)"
+	},	
+	"ERI": {	
+		"x": 0.36,
+		"fillKey": "C (<0.73)"
+	},	
+	"ESP": {	
+		"x": 5.95,
+		"fillKey": "E (<47.63)"
+	},	
+	"EST": {	
+		"x": 0.35,
+		"fillKey": "C (<0.73)"
+	},	
+	"ETH": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EUU": {	
+		"x": 3.1,
+		"fillKey": "E (<47.63)"
+	},	
+	"FCS": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"FIN": {	
+		"x": 11.22,
+		"fillKey": "E (<47.63)"
+	},	
+	"FRA": {	
+		"x": 0.74,
+		"fillKey": "D (<2.484)"
+	},	
+	"GAB": {	
+		"x": 0.46,
+		"fillKey": "C (<0.73)"
+	},	
+	"GBR": {	
+		"x": 1.87,
+		"fillKey": "D (<2.484)"
+	},	
+	"GEO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"GHA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"GRC": {	
+		"x": 1.94,
+		"fillKey": "D (<2.484)"
+	},	
+	"GTM": {	
+		"x": 22.29,
+		"fillKey": "E (<47.63)"
+	},	
+	"HIC": {	
+		"x": 2,
+		"fillKey": "D (<2.484)"
+	},	
+	"HKG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HND": {	
+		"x": 0.79,
+		"fillKey": "D (<2.484)"
+	},	
+	"HPC": {	
+		"x": 0.69,
+		"fillKey": "C (<0.73)"
+	},	
+	"HRV": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HTI": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HUN": {	
+		"x": 0.48,
+		"fillKey": "C (<0.73)"
+	},	
+	"IDN": {	
+		"x": 5.51,
+		"fillKey": "E (<47.63)"
+	},	
+	"IND": {	
+		"x": 0.86,
+		"fillKey": "D (<2.484)"
+	},	
+	"IRL": {	
+		"x": 2.17,
+		"fillKey": "D (<2.484)"
+	},	
+	"IRN": {	
+		"x": 0.02,
+		"fillKey": "B (<0.03)"
+	},	
+	"IRQ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ISL": {	
+		"x": 16.54,
+		"fillKey": "E (<47.63)"
+	},	
+	"ISR": {	
+		"x": 0.03,
+		"fillKey": "C (<0.73)"
+	},	
+	"ITA": {	
+		"x": 3.56,
+		"fillKey": "E (<47.63)"
+	},	
+	"JAM": {	
+		"x": 0.88,
+		"fillKey": "D (<2.484)"
+	},	
+	"JOR": {	
+		"x": 0.11,
+		"fillKey": "C (<0.73)"
+	},	
+	"JPN": {	
+		"x": 1.89,
+		"fillKey": "D (<2.484)"
+	},	
+	"KAZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KEN": {	
+		"x": 21.29,
+		"fillKey": "E (<47.63)"
+	},	
+	"KGZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KHM": {	
+		"x": 1.05,
+		"fillKey": "D (<2.484)"
+	},	
+	"KOR": {	
+		"x": 0.06,
+		"fillKey": "C (<0.73)"
+	},	
+	"KSV": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KWT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LAC": {	
+		"x": 2.8,
+		"fillKey": "E (<47.63)"
+	},	
+	"LBN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LBY": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LDC": {	
+		"x": 0.07,
+		"fillKey": "C (<0.73)"
+	},	
+	"LIC": {	
+		"x": 0.74,
+		"fillKey": "D (<2.484)"
+	},	
+	"LKA": {	
+		"x": 0.18,
+		"fillKey": "C (<0.73)"
+	},	
+	"LMC": {	
+		"x": 1.73,
+		"fillKey": "D (<2.484)"
+	},	
+	"LMY": {	
+		"x": 1.01,
+		"fillKey": "D (<2.484)"
+	},	
+	"LTU": {	
+		"x": 0.04,
+		"fillKey": "C (<0.73)"
+	},	
+	"LUX": {	
+		"x": 2.19,
+		"fillKey": "D (<2.484)"
+	},	
+	"LVA": {	
+		"x": 1.81,
+		"fillKey": "D (<2.484)"
+	},	
+	"MAR": {	
+		"x": 1.22,
+		"fillKey": "D (<2.484)"
+	},	
+	"MDA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MEA": {	
+		"x": 0.16,
+		"fillKey": "C (<0.73)"
+	},	
+	"MEX": {	
+		"x": 4.1,
+		"fillKey": "E (<47.63)"
+	},	
+	"MIC": {	
+		"x": 1.02,
+		"fillKey": "D (<2.484)"
+	},	
+	"MKD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MLT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MMR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MNA": {	
+		"x": 0.09,
+		"fillKey": "C (<0.73)"
+	},	
+	"MNG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MOZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MYS": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NAC": {	
+		"x": 1.97,
+		"fillKey": "D (<2.484)"
+	},	
+	"NAM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NGA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NIC": {	
+		"x": 16.34,
+		"fillKey": "E (<47.63)"
+	},	
+	"NLD": {	
+		"x": 4.02,
+		"fillKey": "E (<47.63)"
+	},	
+	"NOC": {	
+		"x": 0.16,
+		"fillKey": "C (<0.73)"
+	},	
+	"NOR": {	
+		"x": 0.51,
+		"fillKey": "C (<0.73)"
+	},	
+	"NPL": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NZL": {	
+		"x": 8.07,
+		"fillKey": "E (<47.63)"
+	},	
+	"OEC": {	
+		"x": 2.3,
+		"fillKey": "D (<2.484)"
+	},	
+	"OED": {	
+		"x": 2.31,
+		"fillKey": "D (<2.484)"
+	},	
+	"OMN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PAK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PAN": {	
+		"x": 0.38,
+		"fillKey": "C (<0.73)"
+	},	
+	"PER": {	
+		"x": 0.89,
+		"fillKey": "D (<2.484)"
+	},	
+	"PHL": {	
+		"x": 18.55,
+		"fillKey": "E (<47.63)"
+	},	
+	"POL": {	
+		"x": 0.39,
+		"fillKey": "C (<0.73)"
+	},	
+	"PRK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PRT": {	
+		"x": 4.26,
+		"fillKey": "E (<47.63)"
+	},	
+	"PRY": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"QAT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ROU": {	
+		"x": 0.01,
+		"fillKey": "B (<0.03)"
+	},	
+	"RUS": {	
+		"x": 0.04,
+		"fillKey": "C (<0.73)"
+	},	
+	"SAS": {	
+		"x": 0.73,
+		"fillKey": "D (<2.484)"
+	},	
+	"SAU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SDN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SEN": {	
+		"x": 2.61,
+		"fillKey": "E (<47.63)"
+	},	
+	"SGP": {	
+		"x": 1.4,
+		"fillKey": "D (<2.484)"
+	},	
+	"SLV": {	
+		"x": 24.1,
+		"fillKey": "E (<47.63)"
+	},	
+	"SRB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SSA": {	
+		"x": 0.41,
+		"fillKey": "C (<0.73)"
+	},	
+	"SSF": {	
+		"x": 0.41,
+		"fillKey": "C (<0.73)"
+	},	
+	"SVK": {	
+		"x": 0.33,
+		"fillKey": "C (<0.73)"
+	},	
+	"SVN": {	
+		"x": 0.88,
+		"fillKey": "D (<2.484)"
+	},	
+	"SWE": {	
+		"x": 3.83,
+		"fillKey": "E (<47.63)"
+	},	
+	"SYR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TGO": {	
+		"x": 1.14,
+		"fillKey": "D (<2.484)"
+	},	
+	"THA": {	
+		"x": 0.99,
+		"fillKey": "D (<2.484)"
+	},	
+	"TJK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TKM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TTO": {	
+		"x": 0.19,
+		"fillKey": "C (<0.73)"
+	},	
+	"TUN": {	
+		"x": 0.29,
+		"fillKey": "C (<0.73)"
+	},	
+	"TUR": {	
+		"x": 0.16,
+		"fillKey": "C (<0.73)"
+	},	
+	"TZA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"UKR": {	
+		"x": 0.02,
+		"fillKey": "B (<0.03)"
+	},	
+	"UMC": {	
+		"x": 0.76,
+		"fillKey": "D (<2.484)"
+	},	
+	"URY": {	
+		"x": 0.44,
+		"fillKey": "C (<0.73)"
+	},	
+	"USA": {	
+		"x": 2.02,
+		"fillKey": "D (<2.484)"
+	},	
+	"UZB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"VEN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"VNM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"WLD": {	
+		"x": 1.67,
+		"fillKey": "D (<2.484)"
+	},	
+	"YEM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ZAF": {	
+		"x": 0.13,
+		"fillKey": "C (<0.73)"
+	},	
+	"ZMB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ZWE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	}	
+},		
+"2004": {		
+	"AGO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ALB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ARB": {	
+		"x": 0.14,
+		"fillKey": "C (<0.73)"
+	},	
+	"ARE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ARG": {	
+		"x": 1.25,
+		"fillKey": "D (<2.484)"
+	},	
+	"ARM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"AUS": {	
+		"x": 1.12,
+		"fillKey": "D (<2.484)"
+	},	
+	"AUT": {	
+		"x": 4.86,
+		"fillKey": "E (<47.63)"
+	},	
+	"AZE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BEL": {	
+		"x": 1.4,
+		"fillKey": "D (<2.484)"
+	},	
+	"BEN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BGD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BGR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BHR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BIH": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BLR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BOL": {	
+		"x": 1.22,
+		"fillKey": "D (<2.484)"
+	},	
+	"BRA": {	
+		"x": 3.24,
+		"fillKey": "E (<47.63)"
+	},	
+	"BRN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BWA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"CAN": {	
+		"x": 1.63,
+		"fillKey": "D (<2.484)"
+	},	
+	"CEB": {	
+		"x": 0.59,
+		"fillKey": "C (<0.73)"
+	},	
+	"CHE": {	
+		"x": 1.57,
+		"fillKey": "D (<2.484)"
+	},	
+	"CHL": {	
+		"x": 3.98,
+		"fillKey": "E (<47.63)"
+	},	
+	"CHN": {	
+		"x": 0.17,
+		"fillKey": "C (<0.73)"
+	},	
+	"CIV": {	
+		"x": 1.94,
+		"fillKey": "D (<2.484)"
+	},	
+	"CMR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COL": {	
+		"x": 1.04,
+		"fillKey": "D (<2.484)"
+	},	
+	"CRI": {	
+		"x": 18.09,
+		"fillKey": "E (<47.63)"
+	},	
+	"CUB": {	
+		"x": 5.05,
+		"fillKey": "E (<47.63)"
+	},	
+	"CYP": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"CZE": {	
+		"x": 0.86,
+		"fillKey": "D (<2.484)"
+	},	
+	"DEU": {	
+		"x": 5.82,
+		"fillKey": "E (<47.63)"
+	},	
+	"DNK": {	
+		"x": 23.49,
+		"fillKey": "E (<47.63)"
+	},	
+	"DOM": {	
+		"x": 0.65,
+		"fillKey": "C (<0.73)"
+	},	
+	"DZA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EAP": {	
+		"x": 1.1,
+		"fillKey": "D (<2.484)"
+	},	
+	"EAS": {	
+		"x": 0.82,
+		"fillKey": "D (<2.484)"
+	},	
+	"ECA": {	
+		"x": 2.56,
+		"fillKey": "E (<47.63)"
+	},	
+	"ECS": {	
+		"x": 0.13,
+		"fillKey": "C (<0.73)"
+	},	
+	"ECU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EGY": {	
+		"x": 0.52,
+		"fillKey": "C (<0.73)"
+	},	
+	"EMU": {	
+		"x": 4.17,
+		"fillKey": "E (<47.63)"
+	},	
+	"ERI": {	
+		"x": 0.35,
+		"fillKey": "C (<0.73)"
+	},	
+	"ESP": {	
+		"x": 6.9,
+		"fillKey": "E (<47.63)"
+	},	
+	"EST": {	
+		"x": 0.37,
+		"fillKey": "C (<0.73)"
+	},	
+	"ETH": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EUU": {	
+		"x": 3.81,
+		"fillKey": "E (<47.63)"
+	},	
+	"FCS": {	
+		"x": 0.07,
+		"fillKey": "C (<0.73)"
+	},	
+	"FIN": {	
+		"x": 12.29,
+		"fillKey": "E (<47.63)"
+	},	
+	"FRA": {	
+		"x": 0.78,
+		"fillKey": "D (<2.484)"
+	},	
+	"GAB": {	
+		"x": 0.52,
+		"fillKey": "C (<0.73)"
+	},	
+	"GBR": {	
+		"x": 2.38,
+		"fillKey": "D (<2.484)"
+	},	
+	"GEO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"GHA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"GRC": {	
+		"x": 2.12,
+		"fillKey": "D (<2.484)"
+	},	
+	"GTM": {	
+		"x": 21.28,
+		"fillKey": "E (<47.63)"
+	},	
+	"HIC": {	
+		"x": 2.23,
+		"fillKey": "D (<2.484)"
+	},	
+	"HKG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HND": {	
+		"x": 1.52,
+		"fillKey": "D (<2.484)"
+	},	
+	"HPC": {	
+		"x": 0.84,
+		"fillKey": "D (<2.484)"
+	},	
+	"HRV": {	
+		"x": 0.05,
+		"fillKey": "C (<0.73)"
+	},	
+	"HTI": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HUN": {	
+		"x": 2.17,
+		"fillKey": "D (<2.484)"
+	},	
+	"IDN": {	
+		"x": 5.56,
+		"fillKey": "E (<47.63)"
+	},	
+	"IND": {	
+		"x": 0.96,
+		"fillKey": "D (<2.484)"
+	},	
+	"IRL": {	
+		"x": 3.03,
+		"fillKey": "E (<47.63)"
+	},	
+	"IRN": {	
+		"x": 0.03,
+		"fillKey": "C (<0.73)"
+	},	
+	"IRQ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ISL": {	
+		"x": 17.22,
+		"fillKey": "E (<47.63)"
+	},	
+	"ISR": {	
+		"x": 0.02,
+		"fillKey": "B (<0.03)"
+	},	
+	"ITA": {	
+		"x": 3.9,
+		"fillKey": "E (<47.63)"
+	},	
+	"JAM": {	
+		"x": 1.43,
+		"fillKey": "D (<2.484)"
+	},	
+	"JOR": {	
+		"x": 0.1,
+		"fillKey": "C (<0.73)"
+	},	
+	"JPN": {	
+		"x": 1.92,
+		"fillKey": "D (<2.484)"
+	},	
+	"KAZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KEN": {	
+		"x": 24.29,
+		"fillKey": "E (<47.63)"
+	},	
+	"KGZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KHM": {	
+		"x": 1.72,
+		"fillKey": "D (<2.484)"
+	},	
+	"KOR": {	
+		"x": 0.08,
+		"fillKey": "C (<0.73)"
+	},	
+	"KSV": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KWT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LAC": {	
+		"x": 2.78,
+		"fillKey": "E (<47.63)"
+	},	
+	"LBN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LBY": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LDC": {	
+		"x": 0.06,
+		"fillKey": "C (<0.73)"
+	},	
+	"LIC": {	
+		"x": 0.83,
+		"fillKey": "D (<2.484)"
+	},	
+	"LKA": {	
+		"x": 0.18,
+		"fillKey": "C (<0.73)"
+	},	
+	"LMC": {	
+		"x": 1.78,
+		"fillKey": "D (<2.484)"
+	},	
+	"LMY": {	
+		"x": 1.01,
+		"fillKey": "D (<2.484)"
+	},	
+	"LTU": {	
+		"x": 0.04,
+		"fillKey": "C (<0.73)"
+	},	
+	"LUX": {	
+		"x": 2.69,
+		"fillKey": "E (<47.63)"
+	},	
+	"LVA": {	
+		"x": 1.86,
+		"fillKey": "D (<2.484)"
+	},	
+	"MAR": {	
+		"x": 1.12,
+		"fillKey": "D (<2.484)"
+	},	
+	"MDA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MEA": {	
+		"x": 0.19,
+		"fillKey": "C (<0.73)"
+	},	
+	"MEX": {	
+		"x": 3.92,
+		"fillKey": "E (<47.63)"
+	},	
+	"MIC": {	
+		"x": 1.01,
+		"fillKey": "D (<2.484)"
+	},	
+	"MKD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MLT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MMR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MNA": {	
+		"x": 0.11,
+		"fillKey": "C (<0.73)"
+	},	
+	"MNG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MOZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MYS": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NAC": {	
+		"x": 2.03,
+		"fillKey": "D (<2.484)"
+	},	
+	"NAM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NGA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NIC": {	
+		"x": 16.74,
+		"fillKey": "E (<47.63)"
+	},	
+	"NLD": {	
+		"x": 5.08,
+		"fillKey": "E (<47.63)"
+	},	
+	"NOC": {	
+		"x": 0.18,
+		"fillKey": "C (<0.73)"
+	},	
+	"NOR": {	
+		"x": 0.55,
+		"fillKey": "C (<0.73)"
+	},	
+	"NPL": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NZL": {	
+		"x": 8.51,
+		"fillKey": "E (<47.63)"
+	},	
+	"OEC": {	
+		"x": 2.57,
+		"fillKey": "E (<47.63)"
+	},	
+	"OED": {	
+		"x": 2.56,
+		"fillKey": "E (<47.63)"
+	},	
+	"OMN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PAK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PAN": {	
+		"x": 0.42,
+		"fillKey": "C (<0.73)"
+	},	
+	"PER": {	
+		"x": 0.66,
+		"fillKey": "C (<0.73)"
+	},	
+	"PHL": {	
+		"x": 18.37,
+		"fillKey": "E (<47.63)"
+	},	
+	"POL": {	
+		"x": 0.65,
+		"fillKey": "C (<0.73)"
+	},	
+	"PRK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PRT": {	
+		"x": 5.45,
+		"fillKey": "E (<47.63)"
+	},	
+	"PRY": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"QAT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ROU": {	
+		"x": 0.01,
+		"fillKey": "B (<0.03)"
+	},	
+	"RUS": {	
+		"x": 0.05,
+		"fillKey": "C (<0.73)"
+	},	
+	"SAS": {	
+		"x": 0.81,
+		"fillKey": "D (<2.484)"
+	},	
+	"SAU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SDN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SEN": {	
+		"x": 1.99,
+		"fillKey": "D (<2.484)"
+	},	
+	"SGP": {	
+		"x": 1.3,
+		"fillKey": "D (<2.484)"
+	},	
+	"SLV": {	
+		"x": 23.8,
+		"fillKey": "E (<47.63)"
+	},	
+	"SRB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SSA": {	
+		"x": 0.47,
+		"fillKey": "C (<0.73)"
+	},	
+	"SSF": {	
+		"x": 0.48,
+		"fillKey": "C (<0.73)"
+	},	
+	"SVK": {	
+		"x": 0.09,
+		"fillKey": "C (<0.73)"
+	},	
+	"SVN": {	
+		"x": 0.79,
+		"fillKey": "D (<2.484)"
+	},	
+	"SWE": {	
+		"x": 5.31,
+		"fillKey": "E (<47.63)"
+	},	
+	"SYR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TGO": {	
+		"x": 1.08,
+		"fillKey": "D (<2.484)"
+	},	
+	"THA": {	
+		"x": 1.02,
+		"fillKey": "D (<2.484)"
+	},	
+	"TJK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TKM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TTO": {	
+		"x": 0.36,
+		"fillKey": "C (<0.73)"
+	},	
+	"TUN": {	
+		"x": 0.37,
+		"fillKey": "C (<0.73)"
+	},	
+	"TUR": {	
+		"x": 0.15,
+		"fillKey": "C (<0.73)"
+	},	
+	"TZA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"UKR": {	
+		"x": 0.02,
+		"fillKey": "B (<0.03)"
+	},	
+	"UMC": {	
+		"x": 0.74,
+		"fillKey": "D (<2.484)"
+	},	
+	"URY": {	
+		"x": 0.61,
+		"fillKey": "C (<0.73)"
+	},	
+	"USA": {	
+		"x": 2.09,
+		"fillKey": "D (<2.484)"
+	},	
+	"UZB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"VEN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"VNM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"WLD": {	
+		"x": 1.81,
+		"fillKey": "D (<2.484)"
+	},	
+	"YEM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ZAF": {	
+		"x": 0.13,
+		"fillKey": "C (<0.73)"
+	},	
+	"ZMB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ZWE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	}	
+},		
+"2005": {		
+	"AGO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ALB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ARB": {	
+		"x": 0.13,
+		"fillKey": "C (<0.73)"
+	},	
+	"ARE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ARG": {	
+		"x": 1.29,
+		"fillKey": "D (<2.484)"
+	},	
+	"ARM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"AUS": {	
+		"x": 2.1,
+		"fillKey": "D (<2.484)"
+	},	
+	"AUT": {	
+		"x": 6.14,
+		"fillKey": "E (<47.63)"
+	},	
+	"AZE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BEL": {	
+		"x": 2.12,
+		"fillKey": "D (<2.484)"
+	},	
+	"BEN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BGD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BGR": {	
+		"x": 0.01,
+		"fillKey": "B (<0.03)"
+	},	
+	"BHR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BIH": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BLR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BOL": {	
+		"x": 1.16,
+		"fillKey": "D (<2.484)"
+	},	
+	"BRA": {	
+		"x": 3.4,
+		"fillKey": "E (<47.63)"
+	},	
+	"BRN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BWA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"CAN": {	
+		"x": 1.7,
+		"fillKey": "D (<2.484)"
+	},	
+	"CEB": {	
+		"x": 0.96,
+		"fillKey": "D (<2.484)"
+	},	
+	"CHE": {	
+		"x": 1.82,
+		"fillKey": "D (<2.484)"
+	},	
+	"CHL": {	
+		"x": 3.42,
+		"fillKey": "E (<47.63)"
+	},	
+	"CHN": {	
+		"x": 0.3,
+		"fillKey": "C (<0.73)"
+	},	
+	"CIV": {	
+		"x": 1.94,
+		"fillKey": "D (<2.484)"
+	},	
+	"CMR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COL": {	
+		"x": 1.1,
+		"fillKey": "D (<2.484)"
+	},	
+	"CRI": {	
+		"x": 17.23,
+		"fillKey": "E (<47.63)"
+	},	
+	"CUB": {	
+		"x": 2.74,
+		"fillKey": "E (<47.63)"
+	},	
+	"CYP": {	
+		"x": 0.02,
+		"fillKey": "B (<0.03)"
+	},	
+	"CZE": {	
+		"x": 0.92,
+		"fillKey": "D (<2.484)"
+	},	
+	"DEU": {	
+		"x": 6.85,
+		"fillKey": "E (<47.63)"
+	},	
+	"DNK": {	
+		"x": 27.01,
+		"fillKey": "E (<47.63)"
+	},	
+	"DOM": {	
+		"x": 0.29,
+		"fillKey": "C (<0.73)"
+	},	
+	"DZA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EAP": {	
+		"x": 1.23,
+		"fillKey": "D (<2.484)"
+	},	
+	"EAS": {	
+		"x": 0.85,
+		"fillKey": "D (<2.484)"
+	},	
+	"ECA": {	
+		"x": 2.96,
+		"fillKey": "E (<47.63)"
+	},	
+	"ECS": {	
+		"x": 0.24,
+		"fillKey": "C (<0.73)"
+	},	
+	"ECU": {	
+		"x": 0.4,
+		"fillKey": "C (<0.73)"
+	},	
+	"EGY": {	
+		"x": 0.51,
+		"fillKey": "C (<0.73)"
+	},	
+	"EMU": {	
+		"x": 4.91,
+		"fillKey": "E (<47.63)"
+	},	
+	"ERI": {	
+		"x": 0.35,
+		"fillKey": "C (<0.73)"
+	},	
+	"ESP": {	
+		"x": 8.25,
+		"fillKey": "E (<47.63)"
+	},	
+	"EST": {	
+		"x": 0.87,
+		"fillKey": "D (<2.484)"
+	},	
+	"ETH": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EUU": {	
+		"x": 4.47,
+		"fillKey": "E (<47.63)"
+	},	
+	"FCS": {	
+		"x": 0.07,
+		"fillKey": "C (<0.73)"
+	},	
+	"FIN": {	
+		"x": 13.71,
+		"fillKey": "E (<47.63)"
+	},	
+	"FRA": {	
+		"x": 0.85,
+		"fillKey": "D (<2.484)"
+	},	
+	"GAB": {	
+		"x": 0.51,
+		"fillKey": "C (<0.73)"
+	},	
+	"GBR": {	
+		"x": 3.04,
+		"fillKey": "E (<47.63)"
+	},	
+	"GEO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"GHA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"GRC": {	
+		"x": 2.34,
+		"fillKey": "D (<2.484)"
+	},	
+	"GTM": {	
+		"x": 17.17,
+		"fillKey": "E (<47.63)"
+	},	
+	"HIC": {	
+		"x": 2.49,
+		"fillKey": "E (<47.63)"
+	},	
+	"HKG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HND": {	
+		"x": 2.85,
+		"fillKey": "E (<47.63)"
+	},	
+	"HPC": {	
+		"x": 1,
+		"fillKey": "D (<2.484)"
+	},	
+	"HRV": {	
+		"x": 0.19,
+		"fillKey": "C (<0.73)"
+	},	
+	"HTI": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HUN": {	
+		"x": 4.66,
+		"fillKey": "E (<47.63)"
+	},	
+	"IDN": {	
+		"x": 5.2,
+		"fillKey": "E (<47.63)"
+	},	
+	"IND": {	
+		"x": 1.17,
+		"fillKey": "D (<2.484)"
+	},	
+	"IRL": {	
+		"x": 4.85,
+		"fillKey": "E (<47.63)"
+	},	
+	"IRN": {	
+		"x": 0.04,
+		"fillKey": "C (<0.73)"
+	},	
+	"IRQ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ISL": {	
+		"x": 19.13,
+		"fillKey": "E (<47.63)"
+	},	
+	"ISR": {	
+		"x": 0.02,
+		"fillKey": "B (<0.03)"
+	},	
+	"ITA": {	
+		"x": 4.17,
+		"fillKey": "E (<47.63)"
+	},	
+	"JAM": {	
+		"x": 1.64,
+		"fillKey": "D (<2.484)"
+	},	
+	"JOR": {	
+		"x": 0.08,
+		"fillKey": "C (<0.73)"
+	},	
+	"JPN": {	
+		"x": 2.29,
+		"fillKey": "D (<2.484)"
+	},	
+	"KAZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KEN": {	
+		"x": 22.02,
+		"fillKey": "E (<47.63)"
+	},	
+	"KGZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KHM": {	
+		"x": 1.56,
+		"fillKey": "D (<2.484)"
+	},	
+	"KOR": {	
+		"x": 0.1,
+		"fillKey": "C (<0.73)"
+	},	
+	"KSV": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KWT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LAC": {	
+		"x": 2.85,
+		"fillKey": "E (<47.63)"
+	},	
+	"LBN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LBY": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LDC": {	
+		"x": 0.06,
+		"fillKey": "C (<0.73)"
+	},	
+	"LIC": {	
+		"x": 0.76,
+		"fillKey": "D (<2.484)"
+	},	
+	"LKA": {	
+		"x": 0.21,
+		"fillKey": "C (<0.73)"
+	},	
+	"LMC": {	
+		"x": 1.79,
+		"fillKey": "D (<2.484)"
+	},	
+	"LMY": {	
+		"x": 1.07,
+		"fillKey": "D (<2.484)"
+	},	
+	"LTU": {	
+		"x": 0.06,
+		"fillKey": "C (<0.73)"
+	},	
+	"LUX": {	
+		"x": 3.5,
+		"fillKey": "E (<47.63)"
+	},	
+	"LVA": {	
+		"x": 1.79,
+		"fillKey": "D (<2.484)"
+	},	
+	"MAR": {	
+		"x": 1.07,
+		"fillKey": "D (<2.484)"
+	},	
+	"MDA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MEA": {	
+		"x": 0.19,
+		"fillKey": "C (<0.73)"
+	},	
+	"MEX": {	
+		"x": 4.27,
+		"fillKey": "E (<47.63)"
+	},	
+	"MIC": {	
+		"x": 1.08,
+		"fillKey": "D (<2.484)"
+	},	
+	"MKD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MLT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MMR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MNA": {	
+		"x": 0.11,
+		"fillKey": "C (<0.73)"
+	},	
+	"MNE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MNG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MOZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MYS": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NAC": {	
+		"x": 2.13,
+		"fillKey": "D (<2.484)"
+	},	
+	"NAM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NGA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NIC": {	
+		"x": 20.42,
+		"fillKey": "E (<47.63)"
+	},	
+	"NLD": {	
+		"x": 7.34,
+		"fillKey": "E (<47.63)"
+	},	
+	"NOC": {	
+		"x": 0.18,
+		"fillKey": "C (<0.73)"
+	},	
+	"NOR": {	
+		"x": 0.61,
+		"fillKey": "C (<0.73)"
+	},	
+	"NPL": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NZL": {	
+		"x": 9.95,
+		"fillKey": "E (<47.63)"
+	},	
+	"OEC": {	
+		"x": 2.88,
+		"fillKey": "E (<47.63)"
+	},	
+	"OED": {	
+		"x": 2.87,
+		"fillKey": "E (<47.63)"
+	},	
+	"OMN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PAK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PAN": {	
+		"x": 0.39,
+		"fillKey": "C (<0.73)"
+	},	
+	"PER": {	
+		"x": 1.42,
+		"fillKey": "D (<2.484)"
+	},	
+	"PHL": {	
+		"x": 17.54,
+		"fillKey": "E (<47.63)"
+	},	
+	"POL": {	
+		"x": 1.06,
+		"fillKey": "D (<2.484)"
+	},	
+	"PRK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PRT": {	
+		"x": 7.64,
+		"fillKey": "E (<47.63)"
+	},	
+	"PRY": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"QAT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ROU": {	
+		"x": 0.01,
+		"fillKey": "B (<0.03)"
+	},	
+	"RUS": {	
+		"x": 0.05,
+		"fillKey": "C (<0.73)"
+	},	
+	"SAS": {	
+		"x": 0.98,
+		"fillKey": "D (<2.484)"
+	},	
+	"SAU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SDN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SEN": {	
+		"x": 2.16,
+		"fillKey": "D (<2.484)"
+	},	
+	"SGP": {	
+		"x": 1.25,
+		"fillKey": "D (<2.484)"
+	},	
+	"SLV": {	
+		"x": 23.62,
+		"fillKey": "E (<47.63)"
+	},	
+	"SRB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SSA": {	
+		"x": 0.46,
+		"fillKey": "C (<0.73)"
+	},	
+	"SSF": {	
+		"x": 0.46,
+		"fillKey": "C (<0.73)"
+	},	
+	"SVK": {	
+		"x": 0.12,
+		"fillKey": "C (<0.73)"
+	},	
+	"SVN": {	
+		"x": 0.75,
+		"fillKey": "D (<2.484)"
+	},	
+	"SWE": {	
+		"x": 5.32,
+		"fillKey": "E (<47.63)"
+	},	
+	"SYR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TGO": {	
+		"x": 1.06,
+		"fillKey": "D (<2.484)"
+	},	
+	"THA": {	
+		"x": 1.16,
+		"fillKey": "D (<2.484)"
+	},	
+	"TJK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TKM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TTO": {	
+		"x": 0.31,
+		"fillKey": "C (<0.73)"
+	},	
+	"TUN": {	
+		"x": 0.33,
+		"fillKey": "C (<0.73)"
+	},	
+	"TUR": {	
+		"x": 0.12,
+		"fillKey": "C (<0.73)"
+	},	
+	"TZA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"UKR": {	
+		"x": 0.02,
+		"fillKey": "B (<0.03)"
+	},	
+	"UMC": {	
+		"x": 0.83,
+		"fillKey": "D (<2.484)"
+	},	
+	"URY": {	
+		"x": 0.51,
+		"fillKey": "C (<0.73)"
+	},	
+	"USA": {	
+		"x": 2.2,
+		"fillKey": "D (<2.484)"
+	},	
+	"UZB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"VEN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"VNM": {	
+		"x": 0.09,
+		"fillKey": "C (<0.73)"
+	},	
+	"WLD": {	
+		"x": 1.98,
+		"fillKey": "D (<2.484)"
+	},	
+	"YEM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ZAF": {	
+		"x": 0.13,
+		"fillKey": "C (<0.73)"
+	},	
+	"ZMB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ZWE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	}	
+},		
+"2006": {		
+	"AGO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ALB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ARB": {	
+		"x": 0.13,
+		"fillKey": "C (<0.73)"
+	},	
+	"ARE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ARG": {	
+		"x": 1.79,
+		"fillKey": "D (<2.484)"
+	},	
+	"ARM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"AUS": {	
+		"x": 2.46,
+		"fillKey": "D (<2.484)"
+	},	
+	"AUT": {	
+		"x": 8.29,
+		"fillKey": "E (<47.63)"
+	},	
+	"AZE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BEL": {	
+		"x": 3.07,
+		"fillKey": "E (<47.63)"
+	},	
+	"BEN": {	
+		"x": 2.6,
+		"fillKey": "E (<47.63)"
+	},	
+	"BGD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BGR": {	
+		"x": 0.04,
+		"fillKey": "C (<0.73)"
+	},	
+	"BHR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BIH": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BLR": {	
+		"x": 0.01,
+		"fillKey": "B (<0.03)"
+	},	
+	"BOL": {	
+		"x": 1.09,
+		"fillKey": "D (<2.484)"
+	},	
+	"BRA": {	
+		"x": 3.57,
+		"fillKey": "E (<47.63)"
+	},	
+	"BRN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BWA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"CAN": {	
+		"x": 1.83,
+		"fillKey": "D (<2.484)"
+	},	
+	"CEB": {	
+		"x": 1.13,
+		"fillKey": "D (<2.484)"
+	},	
+	"CHE": {	
+		"x": 1.9,
+		"fillKey": "D (<2.484)"
+	},	
+	"CHL": {	
+		"x": 2.6,
+		"fillKey": "E (<47.63)"
+	},	
+	"CHN": {	
+		"x": 0.39,
+		"fillKey": "C (<0.73)"
+	},	
+	"CIV": {	
+		"x": 1.98,
+		"fillKey": "D (<2.484)"
+	},	
+	"CMR": {	
+		"x": 12.59,
+		"fillKey": "E (<47.63)"
+	},	
+	"COD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COL": {	
+		"x": 1.1,
+		"fillKey": "D (<2.484)"
+	},	
+	"CRI": {	
+		"x": 17.97,
+		"fillKey": "E (<47.63)"
+	},	
+	"CUB": {	
+		"x": 2.47,
+		"fillKey": "D (<2.484)"
+	},	
+	"CYP": {	
+		"x": 0.02,
+		"fillKey": "B (<0.03)"
+	},	
+	"CZE": {	
+		"x": 1.16,
+		"fillKey": "D (<2.484)"
+	},	
+	"DEU": {	
+		"x": 8.03,
+		"fillKey": "E (<47.63)"
+	},	
+	"DNK": {	
+		"x": 20.12,
+		"fillKey": "E (<47.63)"
+	},	
+	"DOM": {	
+		"x": 0.25,
+		"fillKey": "C (<0.73)"
+	},	
+	"DZA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EAP": {	
+		"x": 1.25,
+		"fillKey": "D (<2.484)"
+	},	
+	"EAS": {	
+		"x": 0.88,
+		"fillKey": "D (<2.484)"
+	},	
+	"ECA": {	
+		"x": 3.35,
+		"fillKey": "E (<47.63)"
+	},	
+	"ECS": {	
+		"x": 0.2,
+		"fillKey": "C (<0.73)"
+	},	
+	"ECU": {	
+		"x": 4.87,
+		"fillKey": "E (<47.63)"
+	},	
+	"EGY": {	
+		"x": 0.53,
+		"fillKey": "C (<0.73)"
+	},	
+	"EMU": {	
+		"x": 5.67,
+		"fillKey": "E (<47.63)"
+	},	
+	"ERI": {	
+		"x": 0.74,
+		"fillKey": "D (<2.484)"
+	},	
+	"ESP": {	
+		"x": 8.86,
+		"fillKey": "E (<47.63)"
+	},	
+	"EST": {	
+		"x": 1.19,
+		"fillKey": "D (<2.484)"
+	},	
+	"ETH": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EUU": {	
+		"x": 5.07,
+		"fillKey": "E (<47.63)"
+	},	
+	"FCS": {	
+		"x": 0.14,
+		"fillKey": "C (<0.73)"
+	},	
+	"FIN": {	
+		"x": 13.31,
+		"fillKey": "E (<47.63)"
+	},	
+	"FRA": {	
+		"x": 1.07,
+		"fillKey": "D (<2.484)"
+	},	
+	"GAB": {	
+		"x": 0.48,
+		"fillKey": "C (<0.73)"
+	},	
+	"GBR": {	
+		"x": 3.43,
+		"fillKey": "E (<47.63)"
+	},	
+	"GEO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"GHA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"GRC": {	
+		"x": 3.01,
+		"fillKey": "E (<47.63)"
+	},	
+	"GTM": {	
+		"x": 15.96,
+		"fillKey": "E (<47.63)"
+	},	
+	"HIC": {	
+		"x": 2.77,
+		"fillKey": "E (<47.63)"
+	},	
+	"HKG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HND": {	
+		"x": 2.37,
+		"fillKey": "D (<2.484)"
+	},	
+	"HPC": {	
+		"x": 1.49,
+		"fillKey": "D (<2.484)"
+	},	
+	"HRV": {	
+		"x": 0.24,
+		"fillKey": "C (<0.73)"
+	},	
+	"HTI": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HUN": {	
+		"x": 3.64,
+		"fillKey": "E (<47.63)"
+	},	
+	"IDN": {	
+		"x": 5.03,
+		"fillKey": "E (<47.63)"
+	},	
+	"IND": {	
+		"x": 1.56,
+		"fillKey": "D (<2.484)"
+	},	
+	"IRL": {	
+		"x": 6.46,
+		"fillKey": "E (<47.63)"
+	},	
+	"IRN": {	
+		"x": 0.06,
+		"fillKey": "C (<0.73)"
+	},	
+	"IRQ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ISL": {	
+		"x": 26.52,
+		"fillKey": "E (<47.63)"
+	},	
+	"ISR": {	
+		"x": 0.02,
+		"fillKey": "B (<0.03)"
+	},	
+	"ITA": {	
+		"x": 4.43,
+		"fillKey": "E (<47.63)"
+	},	
+	"JAM": {	
+		"x": 1.73,
+		"fillKey": "D (<2.484)"
+	},	
+	"JOR": {	
+		"x": 0.08,
+		"fillKey": "C (<0.73)"
+	},	
+	"JPN": {	
+		"x": 2.33,
+		"fillKey": "D (<2.484)"
+	},	
+	"KAZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KEN": {	
+		"x": 20.53,
+		"fillKey": "E (<47.63)"
+	},	
+	"KGZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KHM": {	
+		"x": 1.45,
+		"fillKey": "D (<2.484)"
+	},	
+	"KOR": {	
+		"x": 0.14,
+		"fillKey": "C (<0.73)"
+	},	
+	"KSV": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KWT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LAC": {	
+		"x": 2.84,
+		"fillKey": "E (<47.63)"
+	},	
+	"LBN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LBY": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LDC": {	
+		"x": 0.06,
+		"fillKey": "C (<0.73)"
+	},	
+	"LIC": {	
+		"x": 0.83,
+		"fillKey": "D (<2.484)"
+	},	
+	"LKA": {	
+		"x": 0.22,
+		"fillKey": "C (<0.73)"
+	},	
+	"LMC": {	
+		"x": 1.98,
+		"fillKey": "D (<2.484)"
+	},	
+	"LMY": {	
+		"x": 1.12,
+		"fillKey": "D (<2.484)"
+	},	
+	"LTU": {	
+		"x": 0.31,
+		"fillKey": "C (<0.73)"
+	},	
+	"LUX": {	
+		"x": 3.83,
+		"fillKey": "E (<47.63)"
+	},	
+	"LVA": {	
+		"x": 1.8,
+		"fillKey": "D (<2.484)"
+	},	
+	"MAR": {	
+		"x": 0.92,
+		"fillKey": "D (<2.484)"
+	},	
+	"MDA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MEA": {	
+		"x": 0.19,
+		"fillKey": "C (<0.73)"
+	},	
+	"MEX": {	
+		"x": 3.64,
+		"fillKey": "E (<47.63)"
+	},	
+	"MIC": {	
+		"x": 1.12,
+		"fillKey": "D (<2.484)"
+	},	
+	"MKD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MLT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MMR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MNA": {	
+		"x": 0.11,
+		"fillKey": "C (<0.73)"
+	},	
+	"MNE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MNG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MOZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MYS": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NAC": {	
+		"x": 2.34,
+		"fillKey": "D (<2.484)"
+	},	
+	"NAM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NGA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NIC": {	
+		"x": 20.23,
+		"fillKey": "E (<47.63)"
+	},	
+	"NLD": {	
+		"x": 8.07,
+		"fillKey": "E (<47.63)"
+	},	
+	"NOC": {	
+		"x": 0.19,
+		"fillKey": "C (<0.73)"
+	},	
+	"NOR": {	
+		"x": 0.84,
+		"fillKey": "D (<2.484)"
+	},	
+	"NPL": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NZL": {	
+		"x": 10.42,
+		"fillKey": "E (<47.63)"
+	},	
+	"OEC": {	
+		"x": 3.21,
+		"fillKey": "E (<47.63)"
+	},	
+	"OED": {	
+		"x": 3.17,
+		"fillKey": "E (<47.63)"
+	},	
+	"OMN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PAK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PAN": {	
+		"x": 0.4,
+		"fillKey": "C (<0.73)"
+	},	
+	"PER": {	
+		"x": 1.37,
+		"fillKey": "D (<2.484)"
+	},	
+	"PHL": {	
+		"x": 18.52,
+		"fillKey": "E (<47.63)"
+	},	
+	"POL": {	
+		"x": 1.4,
+		"fillKey": "D (<2.484)"
+	},	
+	"PRK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PRT": {	
+		"x": 9.72,
+		"fillKey": "E (<47.63)"
+	},	
+	"PRY": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"QAT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ROU": {	
+		"x": 0.01,
+		"fillKey": "B (<0.03)"
+	},	
+	"RUS": {	
+		"x": 0.05,
+		"fillKey": "C (<0.73)"
+	},	
+	"SAS": {	
+		"x": 1.31,
+		"fillKey": "D (<2.484)"
+	},	
+	"SAU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SDN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SEN": {	
+		"x": 2.21,
+		"fillKey": "D (<2.484)"
+	},	
+	"SGP": {	
+		"x": 1.21,
+		"fillKey": "D (<2.484)"
+	},	
+	"SLV": {	
+		"x": 22.68,
+		"fillKey": "E (<47.63)"
+	},	
+	"SRB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SSA": {	
+		"x": 0.64,
+		"fillKey": "C (<0.73)"
+	},	
+	"SSF": {	
+		"x": 0.64,
+		"fillKey": "C (<0.73)"
+	},	
+	"SVK": {	
+		"x": 1.29,
+		"fillKey": "D (<2.484)"
+	},	
+	"SVN": {	
+		"x": 0.74,
+		"fillKey": "D (<2.484)"
+	},	
+	"SWE": {	
+		"x": 6.52,
+		"fillKey": "E (<47.63)"
+	},	
+	"SYR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TGO": {	
+		"x": 1.36,
+		"fillKey": "D (<2.484)"
+	},	
+	"THA": {	
+		"x": 1.06,
+		"fillKey": "D (<2.484)"
+	},	
+	"TJK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TKM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TTO": {	
+		"x": 0.38,
+		"fillKey": "C (<0.73)"
+	},	
+	"TUN": {	
+		"x": 0.29,
+		"fillKey": "C (<0.73)"
+	},	
+	"TUR": {	
+		"x": 0.16,
+		"fillKey": "C (<0.73)"
+	},	
+	"TZA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"UKR": {	
+		"x": 0.02,
+		"fillKey": "B (<0.03)"
+	},	
+	"UMC": {	
+		"x": 0.84,
+		"fillKey": "D (<2.484)"
+	},	
+	"URY": {	
+		"x": 0.89,
+		"fillKey": "D (<2.484)"
+	},	
+	"USA": {	
+		"x": 2.42,
+		"fillKey": "D (<2.484)"
+	},	
+	"UZB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"VEN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"VNM": {	
+		"x": 0.11,
+		"fillKey": "C (<0.73)"
+	},	
+	"WLD": {	
+		"x": 2.15,
+		"fillKey": "D (<2.484)"
+	},	
+	"YEM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ZAF": {	
+		"x": 0.13,
+		"fillKey": "C (<0.73)"
+	},	
+	"ZMB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ZWE": {	
+		"x": 1.54,
+		"fillKey": "D (<2.484)"
+	}	
+},		
+"2007": {		
+	"AGO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ALB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ARB": {	
+		"x": 0.17,
+		"fillKey": "C (<0.73)"
+	},	
+	"ARE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ARG": {	
+		"x": 1.61,
+		"fillKey": "D (<2.484)"
+	},	
+	"ARM": {	
+		"x": 0.05,
+		"fillKey": "C (<0.73)"
+	},	
+	"AUS": {	
+		"x": 2.75,
+		"fillKey": "E (<47.63)"
+	},	
+	"AUT": {	
+		"x": 9.96,
+		"fillKey": "E (<47.63)"
+	},	
+	"AZE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BEL": {	
+		"x": 3.54,
+		"fillKey": "E (<47.63)"
+	},	
+	"BEN": {	
+		"x": 1.36,
+		"fillKey": "D (<2.484)"
+	},	
+	"BGD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BGR": {	
+		"x": 0.11,
+		"fillKey": "C (<0.73)"
+	},	
+	"BHR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BIH": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BLR": {	
+		"x": 0.05,
+		"fillKey": "C (<0.73)"
+	},	
+	"BOL": {	
+		"x": 1.08,
+		"fillKey": "D (<2.484)"
+	},	
+	"BRA": {	
+		"x": 4.19,
+		"fillKey": "E (<47.63)"
+	},	
+	"BRN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BWA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"CAN": {	
+		"x": 1.8,
+		"fillKey": "D (<2.484)"
+	},	
+	"CEB": {	
+		"x": 1.51,
+		"fillKey": "D (<2.484)"
+	},	
+	"CHE": {	
+		"x": 1.85,
+		"fillKey": "D (<2.484)"
+	},	
+	"CHL": {	
+		"x": 4.62,
+		"fillKey": "E (<47.63)"
+	},	
+	"CHN": {	
+		"x": 0.48,
+		"fillKey": "C (<0.73)"
+	},	
+	"CIV": {	
+		"x": 2.04,
+		"fillKey": "D (<2.484)"
+	},	
+	"CMR": {	
+		"x": 1.45,
+		"fillKey": "D (<2.484)"
+	},	
+	"COD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COL": {	
+		"x": 1.05,
+		"fillKey": "D (<2.484)"
+	},	
+	"CRI": {	
+		"x": 17.23,
+		"fillKey": "E (<47.63)"
+	},	
+	"CUB": {	
+		"x": 2.34,
+		"fillKey": "D (<2.484)"
+	},	
+	"CYP": {	
+		"x": 0.06,
+		"fillKey": "C (<0.73)"
+	},	
+	"CZE": {	
+		"x": 1.51,
+		"fillKey": "D (<2.484)"
+	},	
+	"DEU": {	
+		"x": 10.59,
+		"fillKey": "E (<47.63)"
+	},	
+	"DNK": {	
+		"x": 26.14,
+		"fillKey": "E (<47.63)"
+	},	
+	"DOM": {	
+		"x": 0.32,
+		"fillKey": "C (<0.73)"
+	},	
+	"DZA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EAP": {	
+		"x": 1.29,
+		"fillKey": "D (<2.484)"
+	},	
+	"EAS": {	
+		"x": 0.91,
+		"fillKey": "D (<2.484)"
+	},	
+	"ECA": {	
+		"x": 3.96,
+		"fillKey": "E (<47.63)"
+	},	
+	"ECS": {	
+		"x": 0.29,
+		"fillKey": "C (<0.73)"
+	},	
+	"ECU": {	
+		"x": 5.88,
+		"fillKey": "E (<47.63)"
+	},	
+	"EGY": {	
+		"x": 0.66,
+		"fillKey": "C (<0.73)"
+	},	
+	"EMU": {	
+		"x": 6.78,
+		"fillKey": "E (<47.63)"
+	},	
+	"ERI": {	
+		"x": 0.69,
+		"fillKey": "C (<0.73)"
+	},	
+	"ESP": {	
+		"x": 10.26,
+		"fillKey": "E (<47.63)"
+	},	
+	"EST": {	
+		"x": 1.02,
+		"fillKey": "D (<2.484)"
+	},	
+	"ETH": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EUU": {	
+		"x": 6.02,
+		"fillKey": "E (<47.63)"
+	},	
+	"FCS": {	
+		"x": 0.11,
+		"fillKey": "C (<0.73)"
+	},	
+	"FIN": {	
+		"x": 12.47,
+		"fillKey": "E (<47.63)"
+	},	
+	"FRA": {	
+		"x": 1.48,
+		"fillKey": "D (<2.484)"
+	},	
+	"GAB": {	
+		"x": 0.46,
+		"fillKey": "C (<0.73)"
+	},	
+	"GBR": {	
+		"x": 3.72,
+		"fillKey": "E (<47.63)"
+	},	
+	"GEO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"GHA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"GRC": {	
+		"x": 3.19,
+		"fillKey": "E (<47.63)"
+	},	
+	"GTM": {	
+		"x": 19.52,
+		"fillKey": "E (<47.63)"
+	},	
+	"HIC": {	
+		"x": 3.11,
+		"fillKey": "E (<47.63)"
+	},	
+	"HKG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HND": {	
+		"x": 2.3,
+		"fillKey": "D (<2.484)"
+	},	
+	"HPC": {	
+		"x": 0.94,
+		"fillKey": "D (<2.484)"
+	},	
+	"HRV": {	
+		"x": 0.36,
+		"fillKey": "C (<0.73)"
+	},	
+	"HTI": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HUN": {	
+		"x": 4.19,
+		"fillKey": "E (<47.63)"
+	},	
+	"IDN": {	
+		"x": 4.96,
+		"fillKey": "E (<47.63)"
+	},	
+	"IND": {	
+		"x": 3.24,
+		"fillKey": "E (<47.63)"
+	},	
+	"IRL": {	
+		"x": 7.64,
+		"fillKey": "E (<47.63)"
+	},	
+	"IRN": {	
+		"x": 0.07,
+		"fillKey": "C (<0.73)"
+	},	
+	"IRQ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ISL": {	
+		"x": 29.89,
+		"fillKey": "E (<47.63)"
+	},	
+	"ISR": {	
+		"x": 0.02,
+		"fillKey": "B (<0.03)"
+	},	
+	"ITA": {	
+		"x": 4.83,
+		"fillKey": "E (<47.63)"
+	},	
+	"JAM": {	
+		"x": 2.28,
+		"fillKey": "D (<2.484)"
+	},	
+	"JOR": {	
+		"x": 0.1,
+		"fillKey": "C (<0.73)"
+	},	
+	"JPN": {	
+		"x": 2.38,
+		"fillKey": "D (<2.484)"
+	},	
+	"KAZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KEN": {	
+		"x": 20.05,
+		"fillKey": "E (<47.63)"
+	},	
+	"KGZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KHM": {	
+		"x": 1.21,
+		"fillKey": "D (<2.484)"
+	},	
+	"KOR": {	
+		"x": 0.22,
+		"fillKey": "C (<0.73)"
+	},	
+	"KSV": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KWT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LAC": {	
+		"x": 3.25,
+		"fillKey": "E (<47.63)"
+	},	
+	"LBN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LBY": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LDC": {	
+		"x": 0.05,
+		"fillKey": "C (<0.73)"
+	},	
+	"LIC": {	
+		"x": 0.79,
+		"fillKey": "D (<2.484)"
+	},	
+	"LKA": {	
+		"x": 0.2,
+		"fillKey": "C (<0.73)"
+	},	
+	"LMC": {	
+		"x": 2.71,
+		"fillKey": "E (<47.63)"
+	},	
+	"LMY": {	
+		"x": 1.36,
+		"fillKey": "D (<2.484)"
+	},	
+	"LTU": {	
+		"x": 1.19,
+		"fillKey": "D (<2.484)"
+	},	
+	"LUX": {	
+		"x": 4.63,
+		"fillKey": "E (<47.63)"
+	},	
+	"LVA": {	
+		"x": 1.99,
+		"fillKey": "D (<2.484)"
+	},	
+	"MAR": {	
+		"x": 1.4,
+		"fillKey": "D (<2.484)"
+	},	
+	"MDA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MEA": {	
+		"x": 0.25,
+		"fillKey": "C (<0.73)"
+	},	
+	"MEX": {	
+		"x": 3.9,
+		"fillKey": "E (<47.63)"
+	},	
+	"MIC": {	
+		"x": 1.37,
+		"fillKey": "D (<2.484)"
+	},	
+	"MKD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MLT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MMR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MNA": {	
+		"x": 0.14,
+		"fillKey": "C (<0.73)"
+	},	
+	"MNE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MNG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MOZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MYS": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NAC": {	
+		"x": 2.49,
+		"fillKey": "E (<47.63)"
+	},	
+	"NAM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NGA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NIC": {	
+		"x": 19.45,
+		"fillKey": "E (<47.63)"
+	},	
+	"NLD": {	
+		"x": 7.11,
+		"fillKey": "E (<47.63)"
+	},	
+	"NOC": {	
+		"x": 0.22,
+		"fillKey": "C (<0.73)"
+	},	
+	"NOR": {	
+		"x": 0.94,
+		"fillKey": "D (<2.484)"
+	},	
+	"NPL": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NZL": {	
+		"x": 11.54,
+		"fillKey": "E (<47.63)"
+	},	
+	"OEC": {	
+		"x": 3.61,
+		"fillKey": "E (<47.63)"
+	},	
+	"OED": {	
+		"x": 3.56,
+		"fillKey": "E (<47.63)"
+	},	
+	"OMN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PAK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PAN": {	
+		"x": 0.29,
+		"fillKey": "C (<0.73)"
+	},	
+	"PER": {	
+		"x": 1.51,
+		"fillKey": "D (<2.484)"
+	},	
+	"PHL": {	
+		"x": 17.24,
+		"fillKey": "E (<47.63)"
+	},	
+	"POL": {	
+		"x": 1.94,
+		"fillKey": "D (<2.484)"
+	},	
+	"PRK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PRT": {	
+		"x": 13.06,
+		"fillKey": "E (<47.63)"
+	},	
+	"PRY": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"QAT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ROU": {	
+		"x": 0.06,
+		"fillKey": "C (<0.73)"
+	},	
+	"RUS": {	
+		"x": 0.05,
+		"fillKey": "C (<0.73)"
+	},	
+	"SAS": {	
+		"x": 2.75,
+		"fillKey": "E (<47.63)"
+	},	
+	"SAU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SDN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SEN": {	
+		"x": 1.51,
+		"fillKey": "D (<2.484)"
+	},	
+	"SGP": {	
+		"x": 1.18,
+		"fillKey": "D (<2.484)"
+	},	
+	"SLV": {	
+		"x": 26.27,
+		"fillKey": "E (<47.63)"
+	},	
+	"SRB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SSA": {	
+		"x": 0.47,
+		"fillKey": "C (<0.73)"
+	},	
+	"SSF": {	
+		"x": 0.48,
+		"fillKey": "C (<0.73)"
+	},	
+	"SVK": {	
+		"x": 1.73,
+		"fillKey": "D (<2.484)"
+	},	
+	"SVN": {	
+		"x": 0.75,
+		"fillKey": "D (<2.484)"
+	},	
+	"SWE": {	
+		"x": 7.57,
+		"fillKey": "E (<47.63)"
+	},	
+	"SYR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TGO": {	
+		"x": 5.1,
+		"fillKey": "E (<47.63)"
+	},	
+	"THA": {	
+		"x": 1.25,
+		"fillKey": "D (<2.484)"
+	},	
+	"TJK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TKM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TTO": {	
+		"x": 0.25,
+		"fillKey": "C (<0.73)"
+	},	
+	"TUN": {	
+		"x": 0.31,
+		"fillKey": "C (<0.73)"
+	},	
+	"TUR": {	
+		"x": 0.32,
+		"fillKey": "C (<0.73)"
+	},	
+	"TZA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"UKR": {	
+		"x": 0.02,
+		"fillKey": "B (<0.03)"
+	},	
+	"UMC": {	
+		"x": 0.95,
+		"fillKey": "D (<2.484)"
+	},	
+	"URY": {	
+		"x": 1.45,
+		"fillKey": "D (<2.484)"
+	},	
+	"USA": {	
+		"x": 2.59,
+		"fillKey": "E (<47.63)"
+	},	
+	"UZB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"VEN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"VNM": {	
+		"x": 0.12,
+		"fillKey": "C (<0.73)"
+	},	
+	"WLD": {	
+		"x": 2.43,
+		"fillKey": "D (<2.484)"
+	},	
+	"YEM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ZAF": {	
+		"x": 0.12,
+		"fillKey": "C (<0.73)"
+	},	
+	"ZMB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ZWE": {	
+		"x": 1.05,
+		"fillKey": "D (<2.484)"
+	}	
+},		
+"2008": {		
+	"AGO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ALB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ARB": {	
+		"x": 0.17,
+		"fillKey": "C (<0.73)"
+	},	
+	"ARE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ARG": {	
+		"x": 1.33,
+		"fillKey": "D (<2.484)"
+	},	
+	"ARM": {	
+		"x": 0.03,
+		"fillKey": "C (<0.73)"
+	},	
+	"AUS": {	
+		"x": 3.22,
+		"fillKey": "E (<47.63)"
+	},	
+	"AUT": {	
+		"x": 9.83,
+		"fillKey": "E (<47.63)"
+	},	
+	"AZE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BEL": {	
+		"x": 4.8,
+		"fillKey": "E (<47.63)"
+	},	
+	"BEN": {	
+		"x": 1.31,
+		"fillKey": "D (<2.484)"
+	},	
+	"BGD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BGR": {	
+		"x": 0.27,
+		"fillKey": "C (<0.73)"
+	},	
+	"BHR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BIH": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BLR": {	
+		"x": 0.1,
+		"fillKey": "C (<0.73)"
+	},	
+	"BOL": {	
+		"x": 1.07,
+		"fillKey": "D (<2.484)"
+	},	
+	"BRA": {	
+		"x": 4.47,
+		"fillKey": "E (<47.63)"
+	},	
+	"BRN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BWA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"CAN": {	
+		"x": 1.69,
+		"fillKey": "D (<2.484)"
+	},	
+	"CEB": {	
+		"x": 2.07,
+		"fillKey": "D (<2.484)"
+	},	
+	"CHE": {	
+		"x": 1.92,
+		"fillKey": "D (<2.484)"
+	},	
+	"CHL": {	
+		"x": 5.23,
+		"fillKey": "E (<47.63)"
+	},	
+	"CHN": {	
+		"x": 0.86,
+		"fillKey": "D (<2.484)"
+	},	
+	"CIV": {	
+		"x": 2.03,
+		"fillKey": "D (<2.484)"
+	},	
+	"CMR": {	
+		"x": 1.36,
+		"fillKey": "D (<2.484)"
+	},	
+	"COD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COL": {	
+		"x": 1.06,
+		"fillKey": "D (<2.484)"
+	},	
+	"CRI": {	
+		"x": 14.89,
+		"fillKey": "E (<47.63)"
+	},	
+	"CUB": {	
+		"x": 3.18,
+		"fillKey": "E (<47.63)"
+	},	
+	"CYP": {	
+		"x": 0.28,
+		"fillKey": "C (<0.73)"
+	},	
+	"CZE": {	
+		"x": 2.05,
+		"fillKey": "D (<2.484)"
+	},	
+	"DEU": {	
+		"x": 10.99,
+		"fillKey": "E (<47.63)"
+	},	
+	"DNK": {	
+		"x": 27.5,
+		"fillKey": "E (<47.63)"
+	},	
+	"DOM": {	
+		"x": 0.24,
+		"fillKey": "C (<0.73)"
+	},	
+	"DZA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EAP": {	
+		"x": 1.55,
+		"fillKey": "D (<2.484)"
+	},	
+	"EAS": {	
+		"x": 1.27,
+		"fillKey": "D (<2.484)"
+	},	
+	"ECA": {	
+		"x": 4.43,
+		"fillKey": "E (<47.63)"
+	},	
+	"ECS": {	
+		"x": 0.44,
+		"fillKey": "C (<0.73)"
+	},	
+	"ECU": {	
+		"x": 2.82,
+		"fillKey": "E (<47.63)"
+	},	
+	"EGY": {	
+		"x": 0.71,
+		"fillKey": "C (<0.73)"
+	},	
+	"EMU": {	
+		"x": 7.59,
+		"fillKey": "E (<47.63)"
+	},	
+	"ERI": {	
+		"x": 0.7,
+		"fillKey": "C (<0.73)"
+	},	
+	"ESP": {	
+		"x": 12.47,
+		"fillKey": "E (<47.63)"
+	},	
+	"EST": {	
+		"x": 1.6,
+		"fillKey": "D (<2.484)"
+	},	
+	"ETH": {	
+		"x": 0.37,
+		"fillKey": "C (<0.73)"
+	},	
+	"EUU": {	
+		"x": 6.78,
+		"fillKey": "E (<47.63)"
+	},	
+	"FCS": {	
+		"x": 0.12,
+		"fillKey": "C (<0.73)"
+	},	
+	"FIN": {	
+		"x": 13.76,
+		"fillKey": "E (<47.63)"
+	},	
+	"FRA": {	
+		"x": 1.78,
+		"fillKey": "D (<2.484)"
+	},	
+	"GAB": {	
+		"x": 0.44,
+		"fillKey": "C (<0.73)"
+	},	
+	"GBR": {	
+		"x": 4.36,
+		"fillKey": "E (<47.63)"
+	},	
+	"GEO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"GHA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"GRC": {	
+		"x": 3.88,
+		"fillKey": "E (<47.63)"
+	},	
+	"GTM": {	
+		"x": 17.51,
+		"fillKey": "E (<47.63)"
+	},	
+	"HIC": {	
+		"x": 3.51,
+		"fillKey": "E (<47.63)"
+	},	
+	"HKG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HND": {	
+		"x": 3.01,
+		"fillKey": "E (<47.63)"
+	},	
+	"HPC": {	
+		"x": 1,
+		"fillKey": "D (<2.484)"
+	},	
+	"HRV": {	
+		"x": 0.5,
+		"fillKey": "C (<0.73)"
+	},	
+	"HTI": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HUN": {	
+		"x": 5.36,
+		"fillKey": "E (<47.63)"
+	},	
+	"IDN": {	
+		"x": 5.59,
+		"fillKey": "E (<47.63)"
+	},	
+	"IND": {	
+		"x": 3.47,
+		"fillKey": "E (<47.63)"
+	},	
+	"IRL": {	
+		"x": 8.76,
+		"fillKey": "E (<47.63)"
+	},	
+	"IRN": {	
+		"x": 0.09,
+		"fillKey": "C (<0.73)"
+	},	
+	"IRQ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ISL": {	
+		"x": 24.52,
+		"fillKey": "E (<47.63)"
+	},	
+	"ISR": {	
+		"x": 0.02,
+		"fillKey": "B (<0.03)"
+	},	
+	"ITA": {	
+		"x": 5.28,
+		"fillKey": "E (<47.63)"
+	},	
+	"JAM": {	
+		"x": 1.88,
+		"fillKey": "D (<2.484)"
+	},	
+	"JOR": {	
+		"x": 0.09,
+		"fillKey": "C (<0.73)"
+	},	
+	"JPN": {	
+		"x": 2.46,
+		"fillKey": "D (<2.484)"
+	},	
+	"KAZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KEN": {	
+		"x": 22.08,
+		"fillKey": "E (<47.63)"
+	},	
+	"KGZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KHM": {	
+		"x": 1.28,
+		"fillKey": "D (<2.484)"
+	},	
+	"KOR": {	
+		"x": 0.29,
+		"fillKey": "C (<0.73)"
+	},	
+	"KSV": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KWT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LAC": {	
+		"x": 3.3,
+		"fillKey": "E (<47.63)"
+	},	
+	"LBN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LBY": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LDC": {	
+		"x": 0.05,
+		"fillKey": "C (<0.73)"
+	},	
+	"LIC": {	
+		"x": 0.9,
+		"fillKey": "D (<2.484)"
+	},	
+	"LKA": {	
+		"x": 0.29,
+		"fillKey": "C (<0.73)"
+	},	
+	"LMC": {	
+		"x": 2.92,
+		"fillKey": "E (<47.63)"
+	},	
+	"LMY": {	
+		"x": 1.58,
+		"fillKey": "D (<2.484)"
+	},	
+	"LTU": {	
+		"x": 1.51,
+		"fillKey": "D (<2.484)"
+	},	
+	"LUX": {	
+		"x": 5.54,
+		"fillKey": "E (<47.63)"
+	},	
+	"LVA": {	
+		"x": 1.95,
+		"fillKey": "D (<2.484)"
+	},	
+	"MAR": {	
+		"x": 1.45,
+		"fillKey": "D (<2.484)"
+	},	
+	"MDA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MEA": {	
+		"x": 0.26,
+		"fillKey": "C (<0.73)"
+	},	
+	"MEX": {	
+		"x": 3.74,
+		"fillKey": "E (<47.63)"
+	},	
+	"MIC": {	
+		"x": 1.6,
+		"fillKey": "D (<2.484)"
+	},	
+	"MKD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MLT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MMR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MNA": {	
+		"x": 0.15,
+		"fillKey": "C (<0.73)"
+	},	
+	"MNE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MNG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MOZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MYS": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NAC": {	
+		"x": 2.91,
+		"fillKey": "E (<47.63)"
+	},	
+	"NAM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NGA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NIC": {	
+		"x": 19.64,
+		"fillKey": "E (<47.63)"
+	},	
+	"NLD": {	
+		"x": 8.76,
+		"fillKey": "E (<47.63)"
+	},	
+	"NOC": {	
+		"x": 0.25,
+		"fillKey": "C (<0.73)"
+	},	
+	"NOR": {	
+		"x": 0.93,
+		"fillKey": "D (<2.484)"
+	},	
+	"NPL": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NZL": {	
+		"x": 13.29,
+		"fillKey": "E (<47.63)"
+	},	
+	"OEC": {	
+		"x": 4.09,
+		"fillKey": "E (<47.63)"
+	},	
+	"OED": {	
+		"x": 4.02,
+		"fillKey": "E (<47.63)"
+	},	
+	"OMN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PAK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PAN": {	
+		"x": 0.25,
+		"fillKey": "C (<0.73)"
+	},	
+	"PER": {	
+		"x": 1.54,
+		"fillKey": "D (<2.484)"
+	},	
+	"PHL": {	
+		"x": 17.73,
+		"fillKey": "E (<47.63)"
+	},	
+	"POL": {	
+		"x": 2.88,
+		"fillKey": "E (<47.63)"
+	},	
+	"PRK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PRT": {	
+		"x": 17.24,
+		"fillKey": "E (<47.63)"
+	},	
+	"PRY": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"QAT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ROU": {	
+		"x": 0.04,
+		"fillKey": "C (<0.73)"
+	},	
+	"RUS": {	
+		"x": 0.05,
+		"fillKey": "C (<0.73)"
+	},	
+	"SAS": {	
+		"x": 2.97,
+		"fillKey": "E (<47.63)"
+	},	
+	"SAU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SDN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SEN": {	
+		"x": 1.33,
+		"fillKey": "D (<2.484)"
+	},	
+	"SGP": {	
+		"x": 1.26,
+		"fillKey": "D (<2.484)"
+	},	
+	"SLV": {	
+		"x": 28.37,
+		"fillKey": "E (<47.63)"
+	},	
+	"SRB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SSA": {	
+		"x": 0.54,
+		"fillKey": "C (<0.73)"
+	},	
+	"SSF": {	
+		"x": 0.54,
+		"fillKey": "C (<0.73)"
+	},	
+	"SVK": {	
+		"x": 1.82,
+		"fillKey": "D (<2.484)"
+	},	
+	"SVN": {	
+		"x": 1.77,
+		"fillKey": "D (<2.484)"
+	},	
+	"SWE": {	
+		"x": 8.23,
+		"fillKey": "E (<47.63)"
+	},	
+	"SYR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TGO": {	
+		"x": 1.63,
+		"fillKey": "D (<2.484)"
+	},	
+	"THA": {	
+		"x": 1.77,
+		"fillKey": "D (<2.484)"
+	},	
+	"TJK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TKM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TTO": {	
+		"x": 0.26,
+		"fillKey": "C (<0.73)"
+	},	
+	"TUN": {	
+		"x": 0.27,
+		"fillKey": "C (<0.73)"
+	},	
+	"TUR": {	
+		"x": 0.58,
+		"fillKey": "C (<0.73)"
+	},	
+	"TZA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"UKR": {	
+		"x": 0.16,
+		"fillKey": "C (<0.73)"
+	},	
+	"UMC": {	
+		"x": 1.19,
+		"fillKey": "D (<2.484)"
+	},	
+	"URY": {	
+		"x": 9.59,
+		"fillKey": "E (<47.63)"
+	},	
+	"USA": {	
+		"x": 3.09,
+		"fillKey": "E (<47.63)"
+	},	
+	"UZB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"VEN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"VNM": {	
+		"x": 0.08,
+		"fillKey": "C (<0.73)"
+	},	
+	"WLD": {	
+		"x": 2.74,
+		"fillKey": "E (<47.63)"
+	},	
+	"YEM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ZAF": {	
+		"x": 0.15,
+		"fillKey": "C (<0.73)"
+	},	
+	"ZMB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ZWE": {	
+		"x": 1.59,
+		"fillKey": "D (<2.484)"
+	}	
+},		
+"2009": {		
+	"AGO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ALB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ARB": {	
+		"x": 0.2,
+		"fillKey": "C (<0.73)"
+	},	
+	"ARE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ARG": {	
+		"x": 1.15,
+		"fillKey": "D (<2.484)"
+	},	
+	"ARM": {	
+		"x": 0.07,
+		"fillKey": "C (<0.73)"
+	},	
+	"AUS": {	
+		"x": 2.73,
+		"fillKey": "E (<47.63)"
+	},	
+	"AUT": {	
+		"x": 9.51,
+		"fillKey": "E (<47.63)"
+	},	
+	"AZE": {	
+		"x": 0.01,
+		"fillKey": "B (<0.03)"
+	},	
+	"BEL": {	
+		"x": 5.69,
+		"fillKey": "E (<47.63)"
+	},	
+	"BEN": {	
+		"x": 0.78,
+		"fillKey": "D (<2.484)"
+	},	
+	"BGD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BGR": {	
+		"x": 0.59,
+		"fillKey": "C (<0.73)"
+	},	
+	"BHR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BIH": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BLR": {	
+		"x": 0.2,
+		"fillKey": "C (<0.73)"
+	},	
+	"BOL": {	
+		"x": 1.08,
+		"fillKey": "D (<2.484)"
+	},	
+	"BRA": {	
+		"x": 5.12,
+		"fillKey": "E (<47.63)"
+	},	
+	"BRN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BWA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"CAN": {	
+		"x": 2.35,
+		"fillKey": "D (<2.484)"
+	},	
+	"CEB": {	
+		"x": 2.9,
+		"fillKey": "E (<47.63)"
+	},	
+	"CHE": {	
+		"x": 1.96,
+		"fillKey": "D (<2.484)"
+	},	
+	"CHL": {	
+		"x": 7.17,
+		"fillKey": "E (<47.63)"
+	},	
+	"CHN": {	
+		"x": 1.29,
+		"fillKey": "D (<2.484)"
+	},	
+	"CIV": {	
+		"x": 1.24,
+		"fillKey": "D (<2.484)"
+	},	
+	"CMR": {	
+		"x": 1.23,
+		"fillKey": "D (<2.484)"
+	},	
+	"COD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COL": {	
+		"x": 1.05,
+		"fillKey": "D (<2.484)"
+	},	
+	"CRI": {	
+		"x": 17.56,
+		"fillKey": "E (<47.63)"
+	},	
+	"CUB": {	
+		"x": 3.04,
+		"fillKey": "E (<47.63)"
+	},	
+	"CYP": {	
+		"x": 0.59,
+		"fillKey": "C (<0.73)"
+	},	
+	"CZE": {	
+		"x": 2.72,
+		"fillKey": "E (<47.63)"
+	},	
+	"DEU": {	
+		"x": 12.89,
+		"fillKey": "E (<47.63)"
+	},	
+	"DNK": {	
+		"x": 27.61,
+		"fillKey": "E (<47.63)"
+	},	
+	"DOM": {	
+		"x": 0.24,
+		"fillKey": "C (<0.73)"
+	},	
+	"DZA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EAP": {	
+		"x": 1.84,
+		"fillKey": "D (<2.484)"
+	},	
+	"EAS": {	
+		"x": 1.66,
+		"fillKey": "D (<2.484)"
+	},	
+	"ECA": {	
+		"x": 5.32,
+		"fillKey": "E (<47.63)"
+	},	
+	"ECS": {	
+		"x": 0.66,
+		"fillKey": "C (<0.73)"
+	},	
+	"ECU": {	
+		"x": 2.42,
+		"fillKey": "D (<2.484)"
+	},	
+	"EGY": {	
+		"x": 0.82,
+		"fillKey": "D (<2.484)"
+	},	
+	"EMU": {	
+		"x": 9.13,
+		"fillKey": "E (<47.63)"
+	},	
+	"ERI": {	
+		"x": 0.68,
+		"fillKey": "C (<0.73)"
+	},	
+	"ESP": {	
+		"x": 16.33,
+		"fillKey": "E (<47.63)"
+	},	
+	"EST": {	
+		"x": 5.8,
+		"fillKey": "E (<47.63)"
+	},	
+	"ETH": {	
+		"x": 0.6,
+		"fillKey": "C (<0.73)"
+	},	
+	"EUU": {	
+		"x": 8.17,
+		"fillKey": "E (<47.63)"
+	},	
+	"FCS": {	
+		"x": 0.07,
+		"fillKey": "C (<0.73)"
+	},	
+	"FIN": {	
+		"x": 12.49,
+		"fillKey": "E (<47.63)"
+	},	
+	"FRA": {	
+		"x": 2.37,
+		"fillKey": "D (<2.484)"
+	},	
+	"GAB": {	
+		"x": 0.43,
+		"fillKey": "C (<0.73)"
+	},	
+	"GBR": {	
+		"x": 5.37,
+		"fillKey": "E (<47.63)"
+	},	
+	"GEO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"GHA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"GRC": {	
+		"x": 4.6,
+		"fillKey": "E (<47.63)"
+	},	
+	"GTM": {	
+		"x": 30.03,
+		"fillKey": "E (<47.63)"
+	},	
+	"HIC": {	
+		"x": 4.13,
+		"fillKey": "E (<47.63)"
+	},	
+	"HKG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HND": {	
+		"x": 2.15,
+		"fillKey": "D (<2.484)"
+	},	
+	"HPC": {	
+		"x": 0.96,
+		"fillKey": "D (<2.484)"
+	},	
+	"HRV": {	
+		"x": 0.62,
+		"fillKey": "C (<0.73)"
+	},	
+	"HTI": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HUN": {	
+		"x": 7.43,
+		"fillKey": "E (<47.63)"
+	},	
+	"IDN": {	
+		"x": 6.01,
+		"fillKey": "E (<47.63)"
+	},	
+	"IND": {	
+		"x": 4.22,
+		"fillKey": "E (<47.63)"
+	},	
+	"IRL": {	
+		"x": 11.47,
+		"fillKey": "E (<47.63)"
+	},	
+	"IRN": {	
+		"x": 0.1,
+		"fillKey": "C (<0.73)"
+	},	
+	"IRQ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ISL": {	
+		"x": 27.05,
+		"fillKey": "E (<47.63)"
+	},	
+	"ISR": {	
+		"x": 0.14,
+		"fillKey": "C (<0.73)"
+	},	
+	"ITA": {	
+		"x": 6.98,
+		"fillKey": "E (<47.63)"
+	},	
+	"JAM": {	
+		"x": 2.63,
+		"fillKey": "E (<47.63)"
+	},	
+	"JOR": {	
+		"x": 0.07,
+		"fillKey": "C (<0.73)"
+	},	
+	"JPN": {	
+		"x": 2.56,
+		"fillKey": "E (<47.63)"
+	},	
+	"KAZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KEN": {	
+		"x": 24.32,
+		"fillKey": "E (<47.63)"
+	},	
+	"KGZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KHM": {	
+		"x": 1.67,
+		"fillKey": "D (<2.484)"
+	},	
+	"KOR": {	
+		"x": 0.41,
+		"fillKey": "C (<0.73)"
+	},	
+	"KSV": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KWT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LAC": {	
+		"x": 3.73,
+		"fillKey": "E (<47.63)"
+	},	
+	"LBN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LBY": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LDC": {	
+		"x": 0.07,
+		"fillKey": "C (<0.73)"
+	},	
+	"LIC": {	
+		"x": 0.95,
+		"fillKey": "D (<2.484)"
+	},	
+	"LKA": {	
+		"x": 0.43,
+		"fillKey": "C (<0.73)"
+	},	
+	"LMC": {	
+		"x": 3.36,
+		"fillKey": "E (<47.63)"
+	},	
+	"LMY": {	
+		"x": 1.95,
+		"fillKey": "D (<2.484)"
+	},	
+	"LTU": {	
+		"x": 1.78,
+		"fillKey": "D (<2.484)"
+	},	
+	"LUX": {	
+		"x": 5.11,
+		"fillKey": "E (<47.63)"
+	},	
+	"LVA": {	
+		"x": 1.78,
+		"fillKey": "D (<2.484)"
+	},	
+	"MAR": {	
+		"x": 1.85,
+		"fillKey": "D (<2.484)"
+	},	
+	"MDA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MEA": {	
+		"x": 0.31,
+		"fillKey": "C (<0.73)"
+	},	
+	"MEX": {	
+		"x": 3.86,
+		"fillKey": "E (<47.63)"
+	},	
+	"MIC": {	
+		"x": 1.97,
+		"fillKey": "D (<2.484)"
+	},	
+	"MKD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MLT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MMR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MNA": {	
+		"x": 0.18,
+		"fillKey": "C (<0.73)"
+	},	
+	"MNE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MNG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MOZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MYS": {	
+		"x": 1.26,
+		"fillKey": "D (<2.484)"
+	},	
+	"NAC": {	
+		"x": 3.5,
+		"fillKey": "E (<47.63)"
+	},	
+	"NAM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NGA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NIC": {	
+		"x": 22.3,
+		"fillKey": "E (<47.63)"
+	},	
+	"NLD": {	
+		"x": 9.46,
+		"fillKey": "E (<47.63)"
+	},	
+	"NOC": {	
+		"x": 0.3,
+		"fillKey": "C (<0.73)"
+	},	
+	"NOR": {	
+		"x": 0.92,
+		"fillKey": "D (<2.484)"
+	},	
+	"NPL": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NZL": {	
+		"x": 15.97,
+		"fillKey": "E (<47.63)"
+	},	
+	"OEC": {	
+		"x": 4.83,
+		"fillKey": "E (<47.63)"
+	},	
+	"OED": {	
+		"x": 4.74,
+		"fillKey": "E (<47.63)"
+	},	
+	"OMN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PAK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PAN": {	
+		"x": 0.33,
+		"fillKey": "C (<0.73)"
+	},	
+	"PER": {	
+		"x": 1.51,
+		"fillKey": "D (<2.484)"
+	},	
+	"PHL": {	
+		"x": 16.78,
+		"fillKey": "E (<47.63)"
+	},	
+	"POL": {	
+		"x": 4.17,
+		"fillKey": "E (<47.63)"
+	},	
+	"PRK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PRT": {	
+		"x": 20.23,
+		"fillKey": "E (<47.63)"
+	},	
+	"PRY": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"QAT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ROU": {	
+		"x": 0.03,
+		"fillKey": "C (<0.73)"
+	},	
+	"RUS": {	
+		"x": 0.05,
+		"fillKey": "C (<0.73)"
+	},	
+	"SAS": {	
+		"x": 3.61,
+		"fillKey": "E (<47.63)"
+	},	
+	"SAU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SDN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SEN": {	
+		"x": 1.85,
+		"fillKey": "D (<2.484)"
+	},	
+	"SGP": {	
+		"x": 2.77,
+		"fillKey": "E (<47.63)"
+	},	
+	"SLV": {	
+		"x": 30.31,
+		"fillKey": "E (<47.63)"
+	},	
+	"SRB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SSA": {	
+		"x": 0.57,
+		"fillKey": "C (<0.73)"
+	},	
+	"SSF": {	
+		"x": 0.58,
+		"fillKey": "C (<0.73)"
+	},	
+	"SVK": {	
+		"x": 2.09,
+		"fillKey": "D (<2.484)"
+	},	
+	"SVN": {	
+		"x": 1.17,
+		"fillKey": "D (<2.484)"
+	},	
+	"SWE": {	
+		"x": 10.21,
+		"fillKey": "E (<47.63)"
+	},	
+	"SYR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TGO": {	
+		"x": 1.57,
+		"fillKey": "D (<2.484)"
+	},	
+	"THA": {	
+		"x": 2.08,
+		"fillKey": "D (<2.484)"
+	},	
+	"TJK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TKM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TTO": {	
+		"x": 0.25,
+		"fillKey": "C (<0.73)"
+	},	
+	"TUN": {	
+		"x": 0.64,
+		"fillKey": "C (<0.73)"
+	},	
+	"TUR": {	
+		"x": 1.12,
+		"fillKey": "D (<2.484)"
+	},	
+	"TZA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"UKR": {	
+		"x": 0.1,
+		"fillKey": "C (<0.73)"
+	},	
+	"UMC": {	
+		"x": 1.54,
+		"fillKey": "D (<2.484)"
+	},	
+	"URY": {	
+		"x": 9.42,
+		"fillKey": "E (<47.63)"
+	},	
+	"USA": {	
+		"x": 3.68,
+		"fillKey": "E (<47.63)"
+	},	
+	"UZB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"VEN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"VNM": {	
+		"x": 0.09,
+		"fillKey": "C (<0.73)"
+	},	
+	"WLD": {	
+		"x": 3.22,
+		"fillKey": "E (<47.63)"
+	},	
+	"YEM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ZAF": {	
+		"x": 0.16,
+		"fillKey": "C (<0.73)"
+	},	
+	"ZMB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ZWE": {	
+		"x": 1.02,
+		"fillKey": "D (<2.484)"
+	}	
+},		
+"2010": {		
+	"AGO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ALB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ARB": {	
+		"x": 0.29,
+		"fillKey": "C (<0.73)"
+	},	
+	"ARE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ARG": {	
+		"x": 1.77,
+		"fillKey": "D (<2.484)"
+	},	
+	"ARM": {	
+		"x": 0.11,
+		"fillKey": "C (<0.73)"
+	},	
+	"AUS": {	
+		"x": 3.22,
+		"fillKey": "E (<47.63)"
+	},	
+	"AUT": {	
+		"x": 9.74,
+		"fillKey": "E (<47.63)"
+	},	
+	"AZE": {	
+		"x": 0.01,
+		"fillKey": "B (<0.03)"
+	},	
+	"BEL": {	
+		"x": 6.59,
+		"fillKey": "E (<47.63)"
+	},	
+	"BEN": {	
+		"x": 0.67,
+		"fillKey": "C (<0.73)"
+	},	
+	"BGD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BGR": {	
+		"x": 1.59,
+		"fillKey": "D (<2.484)"
+	},	
+	"BHR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BIH": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BLR": {	
+		"x": 0.24,
+		"fillKey": "C (<0.73)"
+	},	
+	"BOL": {	
+		"x": 0.65,
+		"fillKey": "C (<0.73)"
+	},	
+	"BRA": {	
+		"x": 6.54,
+		"fillKey": "E (<47.63)"
+	},	
+	"BRN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BWA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"CAN": {	
+		"x": 2.97,
+		"fillKey": "E (<47.63)"
+	},	
+	"CEB": {	
+		"x": 3.77,
+		"fillKey": "E (<47.63)"
+	},	
+	"CHE": {	
+		"x": 2.12,
+		"fillKey": "D (<2.484)"
+	},	
+	"CHL": {	
+		"x": 4.27,
+		"fillKey": "E (<47.63)"
+	},	
+	"CHN": {	
+		"x": 1.67,
+		"fillKey": "D (<2.484)"
+	},	
+	"CIV": {	
+		"x": 1.06,
+		"fillKey": "D (<2.484)"
+	},	
+	"CMR": {	
+		"x": 1,
+		"fillKey": "D (<2.484)"
+	},	
+	"COD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COL": {	
+		"x": 0.95,
+		"fillKey": "D (<2.484)"
+	},	
+	"CRI": {	
+		"x": 17.53,
+		"fillKey": "E (<47.63)"
+	},	
+	"CUB": {	
+		"x": 2.68,
+		"fillKey": "E (<47.63)"
+	},	
+	"CYP": {	
+		"x": 1.37,
+		"fillKey": "D (<2.484)"
+	},	
+	"CZE": {	
+		"x": 3.65,
+		"fillKey": "E (<47.63)"
+	},	
+	"DEU": {	
+		"x": 13.37,
+		"fillKey": "E (<47.63)"
+	},	
+	"DNK": {	
+		"x": 31.95,
+		"fillKey": "E (<47.63)"
+	},	
+	"DOM": {	
+		"x": 0.23,
+		"fillKey": "C (<0.73)"
+	},	
+	"DZA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EAP": {	
+		"x": 2.24,
+		"fillKey": "D (<2.484)"
+	},	
+	"EAS": {	
+		"x": 1.94,
+		"fillKey": "D (<2.484)"
+	},	
+	"ECA": {	
+		"x": 5.91,
+		"fillKey": "E (<47.63)"
+	},	
+	"ECS": {	
+		"x": 0.94,
+		"fillKey": "D (<2.484)"
+	},	
+	"ECU": {	
+		"x": 2.52,
+		"fillKey": "E (<47.63)"
+	},	
+	"EGY": {	
+		"x": 1.16,
+		"fillKey": "D (<2.484)"
+	},	
+	"EMU": {	
+		"x": 10.04,
+		"fillKey": "E (<47.63)"
+	},	
+	"ERI": {	
+		"x": 0.64,
+		"fillKey": "C (<0.73)"
+	},	
+	"ESP": {	
+		"x": 18.59,
+		"fillKey": "E (<47.63)"
+	},	
+	"EST": {	
+		"x": 7.84,
+		"fillKey": "E (<47.63)"
+	},	
+	"ETH": {	
+		"x": 0.36,
+		"fillKey": "C (<0.73)"
+	},	
+	"EUU": {	
+		"x": 9.07,
+		"fillKey": "E (<47.63)"
+	},	
+	"FCS": {	
+		"x": 0.06,
+		"fillKey": "C (<0.73)"
+	},	
+	"FIN": {	
+		"x": 13.95,
+		"fillKey": "E (<47.63)"
+	},	
+	"FRA": {	
+		"x": 2.79,
+		"fillKey": "E (<47.63)"
+	},	
+	"GAB": {	
+		"x": 0.49,
+		"fillKey": "C (<0.73)"
+	},	
+	"GBR": {	
+		"x": 5.86,
+		"fillKey": "E (<47.63)"
+	},	
+	"GEO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"GHA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"GRC": {	
+		"x": 5.34,
+		"fillKey": "E (<47.63)"
+	},	
+	"GTM": {	
+		"x": 29.6,
+		"fillKey": "E (<47.63)"
+	},	
+	"HIC": {	
+		"x": 4.66,
+		"fillKey": "E (<47.63)"
+	},	
+	"HKG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HND": {	
+		"x": 2.06,
+		"fillKey": "D (<2.484)"
+	},	
+	"HPC": {	
+		"x": 0.92,
+		"fillKey": "D (<2.484)"
+	},	
+	"HRV": {	
+		"x": 1.23,
+		"fillKey": "D (<2.484)"
+	},	
+	"HTI": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"HUN": {	
+		"x": 7.58,
+		"fillKey": "E (<47.63)"
+	},	
+	"IDN": {	
+		"x": 5.6,
+		"fillKey": "E (<47.63)"
+	},	
+	"IND": {	
+		"x": 4.44,
+		"fillKey": "E (<47.63)"
+	},	
+	"IRL": {	
+		"x": 11.01,
+		"fillKey": "E (<47.63)"
+	},	
+	"IRN": {	
+		"x": 0.07,
+		"fillKey": "C (<0.73)"
+	},	
+	"IRQ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ISL": {	
+		"x": 26.17,
+		"fillKey": "E (<47.63)"
+	},	
+	"ISR": {	
+		"x": 0.2,
+		"fillKey": "C (<0.73)"
+	},	
+	"ITA": {	
+		"x": 8.65,
+		"fillKey": "E (<47.63)"
+	},	
+	"JAM": {	
+		"x": 4.29,
+		"fillKey": "E (<47.63)"
+	},	
+	"JOR": {	
+		"x": 0.08,
+		"fillKey": "C (<0.73)"
+	},	
+	"JPN": {	
+		"x": 3.78,
+		"fillKey": "E (<47.63)"
+	},	
+	"KAZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KEN": {	
+		"x": 23.82,
+		"fillKey": "E (<47.63)"
+	},	
+	"KGZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KHM": {	
+		"x": 2.31,
+		"fillKey": "D (<2.484)"
+	},	
+	"KOR": {	
+		"x": 0.5,
+		"fillKey": "C (<0.73)"
+	},	
+	"KSV": {	
+		"x": 0.02,
+		"fillKey": "B (<0.03)"
+	},	
+	"KWT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LAC": {	
+		"x": 4.24,
+		"fillKey": "E (<47.63)"
+	},	
+	"LBN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LBY": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LDC": {	
+		"x": 0.06,
+		"fillKey": "C (<0.73)"
+	},	
+	"LIC": {	
+		"x": 0.95,
+		"fillKey": "D (<2.484)"
+	},	
+	"LKA": {	
+		"x": 0.96,
+		"fillKey": "D (<2.484)"
+	},	
+	"LMC": {	
+		"x": 3.4,
+		"fillKey": "E (<47.63)"
+	},	
+	"LMY": {	
+		"x": 2.24,
+		"fillKey": "D (<2.484)"
+	},	
+	"LTU": {	
+		"x": 7.43,
+		"fillKey": "E (<47.63)"
+	},	
+	"LUX": {	
+		"x": 4.92,
+		"fillKey": "E (<47.63)"
+	},	
+	"LVA": {	
+		"x": 1.74,
+		"fillKey": "D (<2.484)"
+	},	
+	"MAR": {	
+		"x": 2.8,
+		"fillKey": "E (<47.63)"
+	},	
+	"MDA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MEA": {	
+		"x": 0.42,
+		"fillKey": "C (<0.73)"
+	},	
+	"MEX": {	
+		"x": 3.9,
+		"fillKey": "E (<47.63)"
+	},	
+	"MIC": {	
+		"x": 2.27,
+		"fillKey": "D (<2.484)"
+	},	
+	"MKD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MLT": {	
+		"x": 0.09,
+		"fillKey": "C (<0.73)"
+	},	
+	"MMR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MNA": {	
+		"x": 0.24,
+		"fillKey": "C (<0.73)"
+	},	
+	"MNE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MNG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MOZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MYS": {	
+		"x": 1.02,
+		"fillKey": "D (<2.484)"
+	},	
+	"NAC": {	
+		"x": 3.96,
+		"fillKey": "E (<47.63)"
+	},	
+	"NAM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NGA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NIC": {	
+		"x": 23.23,
+		"fillKey": "E (<47.63)"
+	},	
+	"NLD": {	
+		"x": 9.39,
+		"fillKey": "E (<47.63)"
+	},	
+	"NOC": {	
+		"x": 0.33,
+		"fillKey": "C (<0.73)"
+	},	
+	"NOR": {	
+		"x": 1,
+		"fillKey": "D (<2.484)"
+	},	
+	"NPL": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NZL": {	
+		"x": 18.09,
+		"fillKey": "E (<47.63)"
+	},	
+	"OEC": {	
+		"x": 5.46,
+		"fillKey": "E (<47.63)"
+	},	
+	"OED": {	
+		"x": 5.36,
+		"fillKey": "E (<47.63)"
+	},	
+	"OMN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PAK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PAN": {	
+		"x": 0.3,
+		"fillKey": "C (<0.73)"
+	},	
+	"PER": {	
+		"x": 2.04,
+		"fillKey": "D (<2.484)"
+	},	
+	"PHL": {	
+		"x": 14.78,
+		"fillKey": "E (<47.63)"
+	},	
+	"POL": {	
+		"x": 5.07,
+		"fillKey": "E (<47.63)"
+	},	
+	"PRK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PRT": {	
+		"x": 22.73,
+		"fillKey": "E (<47.63)"
+	},	
+	"PRY": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"QAT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ROU": {	
+		"x": 0.69,
+		"fillKey": "C (<0.73)"
+	},	
+	"RUS": {	
+		"x": 0.05,
+		"fillKey": "C (<0.73)"
+	},	
+	"SAS": {	
+		"x": 3.82,
+		"fillKey": "E (<47.63)"
+	},	
+	"SAU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SDN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SEN": {	
+		"x": 1.78,
+		"fillKey": "D (<2.484)"
+	},	
+	"SGP": {	
+		"x": 2.8,
+		"fillKey": "E (<47.63)"
+	},	
+	"SLV": {	
+		"x": 30.21,
+		"fillKey": "E (<47.63)"
+	},	
+	"SRB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SSA": {	
+		"x": 0.56,
+		"fillKey": "C (<0.73)"
+	},	
+	"SSF": {	
+		"x": 0.57,
+		"fillKey": "C (<0.73)"
+	},	
+	"SVK": {	
+		"x": 2.49,
+		"fillKey": "E (<47.63)"
+	},	
+	"SVN": {	
+		"x": 1.42,
+		"fillKey": "D (<2.484)"
+	},	
+	"SWE": {	
+		"x": 10.58,
+		"fillKey": "E (<47.63)"
+	},	
+	"SYR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TGO": {	
+		"x": 1.52,
+		"fillKey": "D (<2.484)"
+	},	
+	"THA": {	
+		"x": 2.14,
+		"fillKey": "D (<2.484)"
+	},	
+	"TJK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TKM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TTO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TUN": {	
+		"x": 0.86,
+		"fillKey": "D (<2.484)"
+	},	
+	"TUR": {	
+		"x": 1.85,
+		"fillKey": "D (<2.484)"
+	},	
+	"TZA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"UKR": {	
+		"x": 0.13,
+		"fillKey": "C (<0.73)"
+	},	
+	"UMC": {	
+		"x": 1.93,
+		"fillKey": "D (<2.484)"
+	},	
+	"URY": {	
+		"x": 8.69,
+		"fillKey": "E (<47.63)"
+	},	
+	"USA": {	
+		"x": 4.1,
+		"fillKey": "E (<47.63)"
+	},	
+	"UZB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"VEN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"VNM": {	
+		"x": 0.11,
+		"fillKey": "C (<0.73)"
+	},	
+	"WLD": {	
+		"x": 3.62,
+		"fillKey": "E (<47.63)"
+	},	
+	"YEM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ZAF": {	
+		"x": 0.16,
+		"fillKey": "C (<0.73)"
+	},	
+	"ZMB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ZWE": {	
+		"x": 0.86,
+		"fillKey": "D (<2.484)"
+	}	
+},		
+"2011": {		
+	"AGO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ALB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ARB": {	
+		"x": 0.31,
+		"fillKey": "C (<0.73)"
+	},	
+	"ARE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ARG": {	
+		"x": 1.66,
+		"fillKey": "D (<2.484)"
+	},	
+	"ARM": {	
+		"x": 0.04,
+		"fillKey": "C (<0.73)"
+	},	
+	"AUS": {	
+		"x": 3.47,
+		"fillKey": "E (<47.63)"
+	},	
+	"AUT": {	
+		"x": 10.67,
+		"fillKey": "E (<47.63)"
+	},	
+	"AZE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BEL": {	
+		"x": 9.19,
+		"fillKey": "E (<47.63)"
+	},	
+	"BEN": {	
+		"x": 0.65,
+		"fillKey": "C (<0.73)"
+	},	
+	"BGD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BGR": {	
+		"x": 2.04,
+		"fillKey": "D (<2.484)"
+	},	
+	"BHR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BIH": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"BLR": {	
+		"x": 0.34,
+		"fillKey": "C (<0.73)"
+	},	
+	"BOL": {	
+		"x": 3.41,
+		"fillKey": "E (<47.63)"
+	},	
+	"BRA": {	
+		"x": 6.57,
+		"fillKey": "E (<47.63)"
+	},	
+	"BRN": {	
+		"x": 0.05,
+		"fillKey": "C (<0.73)"
+	},	
+	"BWA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"CAN": {	
+		"x": 3.33,
+		"fillKey": "E (<47.63)"
+	},	
+	"CEB": {	
+		"x": 5.24,
+		"fillKey": "E (<47.63)"
+	},	
+	"CHE": {	
+		"x": 2.56,
+		"fillKey": "E (<47.63)"
+	},	
+	"CHL": {	
+		"x": 7.63,
+		"fillKey": "E (<47.63)"
+	},	
+	"CHN": {	
+		"x": 2.22,
+		"fillKey": "D (<2.484)"
+	},	
+	"CIV": {	
+		"x": 1.05,
+		"fillKey": "D (<2.484)"
+	},	
+	"CMR": {	
+		"x": 1.03,
+		"fillKey": "D (<2.484)"
+	},	
+	"COD": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"COL": {	
+		"x": 3.3,
+		"fillKey": "E (<47.63)"
+	},	
+	"CRI": {	
+		"x": 18.66,
+		"fillKey": "E (<47.63)"
+	},	
+	"CUB": {	
+		"x": 2.64,
+		"fillKey": "E (<47.63)"
+	},	
+	"CYP": {	
+		"x": 3.61,
+		"fillKey": "E (<47.63)"
+	},	
+	"CZE": {	
+		"x": 6.09,
+		"fillKey": "E (<47.63)"
+	},	
+	"DEU": {	
+		"x": 17.57,
+		"fillKey": "E (<47.63)"
+	},	
+	"DNK": {	
+		"x": 40.22,
+		"fillKey": "E (<47.63)"
+	},	
+	"DOM": {	
+		"x": 0.21,
+		"fillKey": "C (<0.73)"
+	},	
+	"DZA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"EAP": {	
+		"x": 2.61,
+		"fillKey": "E (<47.63)"
+	},	
+	"EAS": {	
+		"x": 2.4,
+		"fillKey": "D (<2.484)"
+	},	
+	"ECA": {	
+		"x": 7.17,
+		"fillKey": "E (<47.63)"
+	},	
+	"ECS": {	
+		"x": 1.23,
+		"fillKey": "D (<2.484)"
+	},	
+	"ECU": {	
+		"x": 2.79,
+		"fillKey": "E (<47.63)"
+	},	
+	"EGY": {	
+		"x": 1.25,
+		"fillKey": "D (<2.484)"
+	},	
+	"EMU": {	
+		"x": 12.3,
+		"fillKey": "E (<47.63)"
+	},	
+	"ERI": {	
+		"x": 0.59,
+		"fillKey": "C (<0.73)"
+	},	
+	"ESP": {	
+		"x": 19.25,
+		"fillKey": "E (<47.63)"
+	},	
+	"EST": {	
+		"x": 8.91,
+		"fillKey": "E (<47.63)"
+	},	
+	"ETH": {	
+		"x": 0.37,
+		"fillKey": "C (<0.73)"
+	},	
+	"EUU": {	
+		"x": 11.18,
+		"fillKey": "E (<47.63)"
+	},	
+	"FCS": {	
+		"x": 0.07,
+		"fillKey": "C (<0.73)"
+	},	
+	"FIN": {	
+		"x": 15.93,
+		"fillKey": "E (<47.63)"
+	},	
+	"FRA": {	
+		"x": 3.59,
+		"fillKey": "E (<47.63)"
+	},	
+	"GAB": {	
+		"x": 0.51,
+		"fillKey": "C (<0.73)"
+	},	
+	"GBR": {	
+		"x": 7.87,
+		"fillKey": "E (<47.63)"
+	},	
+	"GEO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"GHA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"GRC": {	
+		"x": 6.98,
+		"fillKey": "E (<47.63)"
+	},	
+	"GTM": {	
+		"x": 27.07,
+		"fillKey": "E (<47.63)"
+	},	
+	"HIC": {	
+		"x": 5.51,
+		"fillKey": "E (<47.63)"
+	},	
+	"HKG": {	
+		"x": 0.01,
+		"fillKey": "B (<0.03)"
+	},	
+	"HND": {	
+		"x": 3.99,
+		"fillKey": "E (<47.63)"
+	},	
+	"HPC": {	
+		"x": 1.16,
+		"fillKey": "D (<2.484)"
+	},	
+	"HRV": {	
+		"x": 2.39,
+		"fillKey": "D (<2.484)"
+	},	
+	"HTI": {	
+		"x": 4.32,
+		"fillKey": "E (<47.63)"
+	},	
+	"HUN": {	
+		"x": 6.91,
+		"fillKey": "E (<47.63)"
+	},	
+	"IDN": {	
+		"x": 5.25,
+		"fillKey": "E (<47.63)"
+	},	
+	"IND": {	
+		"x": 5,
+		"fillKey": "E (<47.63)"
+	},	
+	"IRL": {	
+		"x": 17.06,
+		"fillKey": "E (<47.63)"
+	},	
+	"IRN": {	
+		"x": 0.09,
+		"fillKey": "C (<0.73)"
+	},	
+	"IRQ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ISL": {	
+		"x": 27.32,
+		"fillKey": "E (<47.63)"
+	},	
+	"ISR": {	
+		"x": 0.4,
+		"fillKey": "C (<0.73)"
+	},	
+	"ITA": {	
+		"x": 12.35,
+		"fillKey": "E (<47.63)"
+	},	
+	"JAM": {	
+		"x": 6.22,
+		"fillKey": "E (<47.63)"
+	},	
+	"JOR": {	
+		"x": 0.08,
+		"fillKey": "C (<0.73)"
+	},	
+	"JPN": {	
+		"x": 4.24,
+		"fillKey": "E (<47.63)"
+	},	
+	"KAZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KEN": {	
+		"x": 23.3,
+		"fillKey": "E (<47.63)"
+	},	
+	"KGZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KHM": {	
+		"x": 2.18,
+		"fillKey": "D (<2.484)"
+	},	
+	"KOR": {	
+		"x": 0.55,
+		"fillKey": "C (<0.73)"
+	},	
+	"KSV": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"KWT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LAC": {	
+		"x": 4.41,
+		"fillKey": "E (<47.63)"
+	},	
+	"LBN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LBY": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"LDC": {	
+		"x": 0.08,
+		"fillKey": "C (<0.73)"
+	},	
+	"LIC": {	
+		"x": 0.94,
+		"fillKey": "D (<2.484)"
+	},	
+	"LKA": {	
+		"x": 1.23,
+		"fillKey": "D (<2.484)"
+	},	
+	"LMC": {	
+		"x": 3.67,
+		"fillKey": "E (<47.63)"
+	},	
+	"LMY": {	
+		"x": 2.59,
+		"fillKey": "E (<47.63)"
+	},	
+	"LTU": {	
+		"x": 14.91,
+		"fillKey": "E (<47.63)"
+	},	
+	"LUX": {	
+		"x": 6.96,
+		"fillKey": "E (<47.63)"
+	},	
+	"LVA": {	
+		"x": 3.12,
+		"fillKey": "E (<47.63)"
+	},	
+	"MAR": {	
+		"x": 2.78,
+		"fillKey": "E (<47.63)"
+	},	
+	"MDA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MEA": {	
+		"x": 0.46,
+		"fillKey": "C (<0.73)"
+	},	
+	"MEX": {	
+		"x": 3.62,
+		"fillKey": "E (<47.63)"
+	},	
+	"MIC": {	
+		"x": 2.63,
+		"fillKey": "E (<47.63)"
+	},	
+	"MKD": {	
+		"x": 0.01,
+		"fillKey": "B (<0.03)"
+	},	
+	"MLT": {	
+		"x": 0.5,
+		"fillKey": "C (<0.73)"
+	},	
+	"MMR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MNA": {	
+		"x": 0.27,
+		"fillKey": "C (<0.73)"
+	},	
+	"MNE": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MNG": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MOZ": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"MYS": {	
+		"x": 1.03,
+		"fillKey": "D (<2.484)"
+	},	
+	"NAC": {	
+		"x": 4.6,
+		"fillKey": "E (<47.63)"
+	},	
+	"NAM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NGA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NIC": {	
+		"x": 22.41,
+		"fillKey": "E (<47.63)"
+	},	
+	"NLD": {	
+		"x": 10.85,
+		"fillKey": "E (<47.63)"
+	},	
+	"NOC": {	
+		"x": 0.35,
+		"fillKey": "C (<0.73)"
+	},	
+	"NOR": {	
+		"x": 1.31,
+		"fillKey": "D (<2.484)"
+	},	
+	"NPL": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"NZL": {	
+		"x": 19.49,
+		"fillKey": "E (<47.63)"
+	},	
+	"OEC": {	
+		"x": 6.49,
+		"fillKey": "E (<47.63)"
+	},	
+	"OED": {	
+		"x": 6.33,
+		"fillKey": "E (<47.63)"
+	},	
+	"OMN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PAK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PAN": {	
+		"x": 0.29,
+		"fillKey": "C (<0.73)"
+	},	
+	"PER": {	
+		"x": 1.87,
+		"fillKey": "D (<2.484)"
+	},	
+	"PHL": {	
+		"x": 14.64,
+		"fillKey": "E (<47.63)"
+	},	
+	"POL": {	
+		"x": 6.63,
+		"fillKey": "E (<47.63)"
+	},	
+	"PRK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"PRT": {	
+		"x": 24.23,
+		"fillKey": "E (<47.63)"
+	},	
+	"PRY": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"QAT": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ROU": {	
+		"x": 2.56,
+		"fillKey": "E (<47.63)"
+	},	
+	"RUS": {	
+		"x": 0.05,
+		"fillKey": "C (<0.73)"
+	},	
+	"SAS": {	
+		"x": 4.34,
+		"fillKey": "E (<47.63)"
+	},	
+	"SAU": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SDN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SEN": {	
+		"x": 1.86,
+		"fillKey": "D (<2.484)"
+	},	
+	"SGP": {	
+		"x": 2.29,
+		"fillKey": "D (<2.484)"
+	},	
+	"SLV": {	
+		"x": 31.3,
+		"fillKey": "E (<47.63)"
+	},	
+	"SRB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"SSA": {	
+		"x": 0.56,
+		"fillKey": "C (<0.73)"
+	},	
+	"SSF": {	
+		"x": 0.57,
+		"fillKey": "C (<0.73)"
+	},	
+	"SVK": {	
+		"x": 4.32,
+		"fillKey": "E (<47.63)"
+	},	
+	"SVN": {	
+		"x": 2,
+		"fillKey": "D (<2.484)"
+	},	
+	"SWE": {	
+		"x": 11.73,
+		"fillKey": "E (<47.63)"
+	},	
+	"SYR": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TGO": {	
+		"x": 1.44,
+		"fillKey": "D (<2.484)"
+	},	
+	"THA": {	
+		"x": 2.81,
+		"fillKey": "E (<47.63)"
+	},	
+	"TJK": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TKM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TTO": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"TUN": {	
+		"x": 0.68,
+		"fillKey": "C (<0.73)"
+	},	
+	"TUR": {	
+		"x": 2.51,
+		"fillKey": "E (<47.63)"
+	},	
+	"TZA": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"UKR": {	
+		"x": 0.13,
+		"fillKey": "C (<0.73)"
+	},	
+	"UMC": {	
+		"x": 2.32,
+		"fillKey": "D (<2.484)"
+	},	
+	"URY": {	
+		"x": 9.26,
+		"fillKey": "E (<47.63)"
+	},	
+	"USA": {	
+		"x": 4.79,
+		"fillKey": "E (<47.63)"
+	},	
+	"UZB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"VEN": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"VNM": {	
+		"x": 0.14,
+		"fillKey": "C (<0.73)"
+	},	
+	"WLD": {	
+		"x": 4.2,
+		"fillKey": "E (<47.63)"
+	},	
+	"YEM": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ZAF": {	
+		"x": 0.16,
+		"fillKey": "C (<0.73)"
+	},	
+	"ZMB": {	
+		"x": 0,
+		"fillKey": "A (<=0)"
+	},	
+	"ZWE": {	
+		"x": 0.76,
+		"fillKey": "D (<2.484)"
+	}	
+},		
+"2012": {		
+	"AUS": {	
+		"x": 3.94,
+		"fillKey": "E (<47.63)"
+	},	
+	"AUT": {	
+		"x": 11.68,
+		"fillKey": "E (<47.63)"
+	},	
+	"BEL": {	
+		"x": 11.8,
+		"fillKey": "E (<47.63)"
+	},	
+	"CAN": {	
+		"x": 3.53,
+		"fillKey": "E (<47.63)"
+	},	
+	"CHE": {	
+		"x": 2.45,
+		"fillKey": "D (<2.484)"
+	},	
+	"CHL": {	
+		"x": 9.34,
+		"fillKey": "E (<47.63)"
+	},	
+	"CZE": {	
+		"x": 6.8,
+		"fillKey": "E (<47.63)"
+	},	
+	"DEU": {	
+		"x": 18.88,
+		"fillKey": "E (<47.63)"
+	},	
+	"DNK": {	
+		"x": 47.63,
+		"fillKey": "E (<47.63)"
+	},	
+	"ESP": {	
+		"x": 22.49,
+		"fillKey": "E (<47.63)"
+	},	
+	"EST": {	
+		"x": 11.98,
+		"fillKey": "E (<47.63)"
+	},	
+	"FIN": {	
+		"x": 16.03,
+		"fillKey": "E (<47.63)"
+	},	
+	"FRA": {	
+		"x": 4.47,
+		"fillKey": "E (<47.63)"
+	},	
+	"GBR": {	
+		"x": 9.97,
+		"fillKey": "E (<47.63)"
+	},	
+	"GRC": {	
+		"x": 8.15,
+		"fillKey": "E (<47.63)"
+	},	
+	"HUN": {	
+		"x": 7.15,
+		"fillKey": "E (<47.63)"
+	},	
+	"IRL": {	
+		"x": 16.16,
+		"fillKey": "E (<47.63)"
+	},	
+	"ISL": {	
+		"x": 29.68,
+		"fillKey": "E (<47.63)"
+	},	
+	"ISR": {	
+		"x": 0.4,
+		"fillKey": "C (<0.73)"
+	},	
+	"ITA": {	
+		"x": 16.25,
+		"fillKey": "E (<47.63)"
+	},	
+	"JPN": {	
+		"x": 4.21,
+		"fillKey": "E (<47.63)"
+	},	
+	"KOR": {	
+		"x": 0.57,
+		"fillKey": "C (<0.73)"
+	},	
+	"LUX": {	
+		"x": 7.15,
+		"fillKey": "E (<47.63)"
+	},	
+	"MEX": {	
+		"x": 3.72,
+		"fillKey": "E (<47.63)"
+	},	
+	"NLD": {	
+		"x": 11.95,
+		"fillKey": "E (<47.63)"
+	},	
+	"NOR": {	
+		"x": 1.31,
+		"fillKey": "D (<2.484)"
+	},	
+	"NZL": {	
+		"x": 19.99,
+		"fillKey": "E (<47.63)"
+	},	
+	"POL": {	
+		"x": 9.13,
+		"fillKey": "E (<47.63)"
+	},	
+	"PRT": {	
+		"x": 30.22,
+		"fillKey": "E (<47.63)"
+	},	
+	"SVK": {	
+		"x": 4.7,
+		"fillKey": "E (<47.63)"
+	},	
+	"SVN": {	
+		"x": 2.67,
+		"fillKey": "E (<47.63)"
+	},	
+	"SWE": {	
+		"x": 10.83,
+		"fillKey": "E (<47.63)"
+	},	
+	"TUR": {	
+		"x": 3.07,
+		"fillKey": "E (<47.63)"
+	},	
+	"USA": {	
+		"x": 5.58,
+		"fillKey": "E (<47.63)"
+	}	
+}
+}
+};
+
+      chartParams.element = document.getElementById('chart_1');
+      
+      var mapchart_1 = new Datamap(chartParams);
+      
+      // draw a bubble map if specified
+      if (chartParams.bubbles) {
+        var bubbles = chartParams.bubbles;
+        mapchart_1.bubbles(bubbles);
+      }
+      
+      if (chartParams.labels){
+        mapchart_1.labels();
+      }
+      
+      if (chartParams.legend){
+        mapchart_1.legend();
+      }
+      
+      setProjection = function( element, options ) {
+        var projection, path;
+        
+        projection = d3.geo.albersUsa()
+            .scale(element.offsetWidth)
+            .translate([element.offsetWidth / 2, element.offsetHeight / 2]);
+            path = d3.geo.path().projection(projection);
+            return {path: path, projection: projection};
+        };
+    </script>
+</body>

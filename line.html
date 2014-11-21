@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+
+<link href="css/nv.d3.css" rel="stylesheet" type="text/css">
+<link href="css/bootstrap.min.css" rel="stylesheet"/>
+<link href="css/bootstrap-theme.min.css" rel="stylesheet"/>
+<style>
+    body {
+				padding-top: 20px;
+        padding-bottom: 40px;
+    }
+    text {
+        font: 12px sans-serif;
+    }
+
+    svg {
+        display: block;
+    }
+</style>
+<body>
+		<div class="container-fluid">
+				<ul class="nav nav-pills pull-right">
+				<li><a href="index.html">Data Map</a></li>
+				<li class="active"><a href="#">Time Series Comparison</a></li>
+				<li><a href="team.html">Our team</a></li>
+			</ul>
+			<h3>GreenGuardian</h3>
+			<hr>
+				<div style="margin: 0 auto;width: 600px">
+						<select class="form-control" id="indicator" >
+								<option value="kt">CO2 emissions (kt)</option>
+								<option value="mt">CO2 emissions (metric tons per capita)</option>
+								<option value="tm">Terrestrial and marine protected areas (% of total territorial area)</option>
+								<option value="fa">Forest Area (% of land area)</option>
+								<option value="eo">Electricity production from oil, gas and coal sources (% of total)</option>
+								<option value="er">Electricity production from renewable sources, excluding hydroelectric (% of total)</option>
+								<option value="nr">Total natural resources rents (% of GDP)</option>
+						</select>
+				</div>
+    <script src="js/d3.v3.js"></script>
+    <script src="js/nv.d3.js"></script>
+    <script src="js/jquery-2.0.3.min.js"></script>
+		<script src="js/line.js"></script>
+    <div id="chart1" class='with-transitions'>
+        <svg></svg>
+    </div>
+				</div>
+</body>
+</html>
