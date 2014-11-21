@@ -3,6 +3,8 @@ GreenGuardian
 Welcome to Project Greenguardian! <br>
 This repository is created by SUN Fangzhou <w10036w@gmail.com>, owned by SUN, Li Xiang, Darren and Wei Yang for SMU IS428 Visualization Analytics Project, under Prof KAM Tin Seong <tskam@smu.edu.sg>.<br>
 
+Visit Our wiki to see our progress: https://wiki.smu.edu.sg/1415t1is428/GreenGuardian_Proposal
+
 View our demo at http://1-dot-crafty-shield-770.appspot.com/
 
 Objective
