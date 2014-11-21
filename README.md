@@ -1,7 +1,7 @@
 GreenGuardian
 =============
-Welcome to Project Greenguardian! 
-This repository is created by SUN Fangzhou<w10036w@gmail.com>, owned by SUN, Li Xiang, Darren and Wei Yang for SMU IS428 Visualization Analytics Project, under Prof KAM Tin Seong <tskam@smu.edu.sg>
+Welcome to Project Greenguardian! <br>
+This repository is created by SUN Fangzhou <w10036w@gmail.com>, owned by SUN, Li Xiang, Darren and Wei Yang for SMU IS428 Visualization Analytics Project, under Prof KAM Tin Seong <tskam@smu.edu.sg>.<br>
 
 View our demo at http://1-dot-crafty-shield-770.appspot.com/
 
@@ -11,9 +11,9 @@ In this project, the team will try to build an integrated interactive explorator
 
 We wish the user can use our model to visualize:
 
-different impacts of each key indicator among all countries at a specific time
-the impacts of specific key indicator among interested countries over a period of times
-the interested indicators' impacts on all countries at a specific time
+1. Different impacts of each key indicator among all countries at a specific time<br>
+2. The impacts of specific key indicator among interested countries over a period of times<br>
+3. The interested indicators' impacts on all countries at a specific time<br>
 
 Through our model, we hope to give expert users a holistic view of the environment data published by the world bank, and gain valuable insights on relationships among different countries, time periods, and key environmental indicators through interactivity before they conduct in-depth statistical analysis on the data; and provide general users a clear yet simple way to understand the environment data and show them the main factors that affecting their national environment and global environment.
 
@@ -26,4 +26,5 @@ As we continue to grow into a globally inter-connected world where the nations, 
 Credits
 =======
 Our data source can be downloaded from http://api.worldbank.org/v2/en/topic/6?downloadformat=excel.
+
 Technologies used are D3JS, NVD3JS angularJS and Twitter Bootstrap.
